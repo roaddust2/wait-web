@@ -33,9 +33,9 @@ dev:
 	$(MANAGE) runserver
 
 prod:
-	$(ENV) $(MANAGE) makemigrations
-	$(ENV) $(MANAGE) migrate
-	$(ENV) gunicorn -b 0.0.0.0:$(PORT) task_manager.wsgi
+	$(MANAGE) makemigrations
+	$(MANAGE) migrate
+	$(ENV) gunicorn -b 0.0.0.0:$(PORT) config.wsgi
 
 secretkey:
 	poetry run python -c 'from django.utils.crypto import get_random_string; print(get_random_string(40))'
