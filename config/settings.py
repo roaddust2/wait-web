@@ -83,7 +83,7 @@ DATABASES = {
     }
 }
 
-if not DEBUG:
+if os.getenv('DATABASE_TYPE') == 'postgresql':
     DATABASES['default'] = dj_database_url.config(conn_max_age=600)
 
 
