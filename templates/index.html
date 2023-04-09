@@ -6,51 +6,41 @@
     <div class="container">
         <div class="row flex-lg-row align-items-center">
             <div class="col-12 col-lg-4 mt-4 mt-lg-0">
-                <div id="carouselExampleCaptions" class="carousel slide">
-                    <div class="carousel-indicators">
-                        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-                        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
-                        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
-                        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="3" aria-label="Slide 4"></button>
-                    </div>
+                <div id="carouselMainPage" class="carousel slide" data-bs-ride="carousel">
+                    {% if carousel_items %}
+                        <div class="carousel-indicators">
+                            {% for item in carousel_items %}
+                                <button type="button" data-bs-target="#carouselIndicators" data-bs-slide-to="{{ forloop.counter0 }}" class="{% if forloop.first %}active{% endif %}" aria-current="true" aria-label="Slide {{ forloop.counter }}"></button>
+                            {% endfor %}
+                        </div>
+                    {% endif %}
                     <div class="carousel-inner">
-                        <div class="carousel-item active">
-                        <img src="{% static 'images/1.jpg' %}" class="d-block w-100" alt="...">
-                        <div class="carousel-caption">
-                            <h5>First slide label</h5>
-                            <p>Some representative placeholder content for the first slide.</p>
-                        </div>
-                        </div>
-                        <div class="carousel-item">
-                        <img src="{% static 'images/2.jpg' %}" class="d-block w-100" alt="...">
-                        <div class="carousel-caption">
-                            <h5>Second slide label</h5>
-                            <p>Some representative placeholder content for the second slide.</p>
-                        </div>
-                        </div>
-                        <div class="carousel-item">
-                        <img src="{% static 'images/3.jpg' %}" class="d-block w-100" alt="...">
-                        <div class="carousel-caption">
-                            <h5>Third slide label</h5>
-                            <p>Some representative placeholder content for the third slide.</p>
-                        </div>
-                        </div>
-                        <div class="carousel-item">
-                        <img src="{% static 'images/4.jpg' %}" class="d-block w-100" alt="...">
-                        <div class="carousel-caption">
-                            <h5>Fourth slide label</h5>
-                            <p>Some representative placeholder content for the fourth slide.</p>
-                        </div>
-                        </div>
+                        {% if carousel_items %}
+                            {% for item in carousel_items %}
+                                <div class="carousel-item {% if forloop.first %}active{% endif %}">
+                                    <img src="{{ item.image.url }}" class="d-block w-100" alt="{{ item.alt }}">
+                                    <div class="carousel-caption">
+                                        <h5>{{ item.label }}</h5>
+                                        <p>{{ item.placeholder }}</p>
+                                    </div>
+                                </div>  
+                            {% endfor %}
+                        {% else %}
+                            <div class="carousel-item active">
+                                <img src="{% static 'images/carousel_empty.jpg' %}" class="d-block w-100" alt="Empty">
+                            </div> 
+                        {% endif %}
                     </div>
-                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
-                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                        <span class="visually-hidden">Previous</span>
-                    </button>
-                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
-                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                        <span class="visually-hidden">Next</span>
-                    </button>
+                    {% if carousel_items %}
+                        <button class="carousel-control-prev" type="button" data-bs-target="#carouselMainPage" data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Previous</span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#carouselMainPage" data-bs-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Next</span>
+                        </button>
+                    {% endif %}
                 </div>
             </div>
             <div class="col-12 col-lg-8 p-4">
