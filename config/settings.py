@@ -76,13 +76,11 @@ WSGI_APPLICATION = 'config.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
-CONN_MAX_AGE = 600
-
 DATABASES = {
-    'default': dj_database_url.config(conn_max_age=CONN_MAX_AGE)
+    'default': dj_database_url.config(conn_max_age=600)
 }
 
-if DEBUG:
+if DEBUG is True:
     DATABASES['default'] = {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': BASE_DIR / 'db.sqlite3',
