@@ -1,5 +1,6 @@
 from django.views.generic.base import TemplateView
 from app.models.home import CarouselItem
+from app.models.product import Product
 
 
 class IndexView(TemplateView):
@@ -9,7 +10,17 @@ class IndexView(TemplateView):
 
     def get_context_data(self, **kwargs):
         context = super(IndexView, self).get_context_data(**kwargs)
-        carousel_items = CarouselItem.objects.all().order_by('priority')
+
+        # Collecting carousel items
+        carousel_items = CarouselItem.objects.all().order_by('priority')[:4]
         context['carousel_items'] = carousel_items
+
+        # Collecting recomended products
+        products = []
+        for product in Product.objects.all()[:4]:
+            default_image = product.productimage_set.filter(default=True).first()
+            if default_image:
+                products.append({'product': product, 'default_image': default_image})
+        context['products'] = products
 
         return context

@@ -2,12 +2,14 @@ from django.db import models
 
 
 class CarouselItem(models.Model):
-    label = models.CharField('Label', max_length=200)
-    placeholder = models.CharField('Placeholder', max_length=600)
-    image = models.ImageField('Image', upload_to='static/images/')
+    """Carousel slide object to display on home page"""
+
+    label = models.CharField('Label', max_length=255)
+    placeholder = models.CharField('Placeholder', max_length=255)
+    image = models.ImageField('Image', upload_to='static/images/carousel/')
     image_alt = models.CharField(
-        'Alternative text',
-        max_length=200,
+        'Image alternative text',
+        max_length=255,
         null=True,
         blank=True,
     )
