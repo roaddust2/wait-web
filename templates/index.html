@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 {% load static %}
-
+{% load i18n %}
 {% block content %}
 <section class="py-lg-5">
     <div class="container">
@@ -44,11 +44,10 @@
                 </div>
             </div>
             <div class="col-12 col-lg-8 p-4">
-                <h1 class="display-5 fw-bold text-body-emphasis lh-1 mb-3">Sustainability meets style</h1>
-                <p class="lead">We're excited to introduce you to our line of upcycled bags, handcrafted from used tarpaulin. Our commitment to sustainability means that we repurpose materials that would otherwise go to waste, resulting in unique and durable bags that are perfect for any adventure.</p>
+                <h1 class="display-5 fw-bold text-body-emphasis lh-1 mb-3">{% translate 'HeroTitle' %}</h1>
+                <p class="lead">{% translate 'HeroLead' %}</p>
                 <div>
-                    <button type="button" class="btn btn-dark btn-lg me-2">New collection</button>
-                    <button type="button" class="btn btn-outline-secondary btn-lg">Shop</button>
+                    <button type="button" class="btn btn-dark btn-lg me-2">{% translate 'HeroButton' %}</button>
                 </div>
             </div>
         </div>
@@ -61,41 +60,41 @@
                 <svg xmlns="http://www.w3.org/2000/svg" width="44" height="44" fill="currentColor" class="bi bi-truck" viewBox="0 0 16 16">
                     <path d="M0 3.5A1.5 1.5 0 0 1 1.5 2h9A1.5 1.5 0 0 1 12 3.5V5h1.02a1.5 1.5 0 0 1 1.17.563l1.481 1.85a1.5 1.5 0 0 1 .329.938V10.5a1.5 1.5 0 0 1-1.5 1.5H14a2 2 0 1 1-4 0H5a2 2 0 1 1-3.998-.085A1.5 1.5 0 0 1 0 10.5v-7zm1.294 7.456A1.999 1.999 0 0 1 4.732 11h5.536a2.01 2.01 0 0 1 .732-.732V3.5a.5.5 0 0 0-.5-.5h-9a.5.5 0 0 0-.5.5v7a.5.5 0 0 0 .294.456zM12 10a2 2 0 0 1 1.732 1h.768a.5.5 0 0 0 .5-.5V8.35a.5.5 0 0 0-.11-.312l-1.48-1.85A.5.5 0 0 0 13.02 6H12v4zm-9 1a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm9 0a1 1 0 1 0 0 2 1 1 0 0 0 0-2z"/>
                 </svg>
-                <h2 class="h3 mt-3">Tarpaulin</h3>
-                <p class="lh-lg px-3">Made from high-quality, used tarpaulin material that would otherwise go to waste, our upcycled bags promote sustainability by repurposing materials.</p>
+                <h2 class="h3 mt-3">{% translate 'IndexFeature1Title' %}</h3>
+                <p class="lh-lg px-3">{% translate 'IndexFeature1Text' %}</p>
             </div>
             <div class="col text-center mb-4 mb-lg-0">
                 <svg xmlns="http://www.w3.org/2000/svg" width="44" height="44" fill="currentColor" class="bi bi-scissors" viewBox="0 0 16 16">
                     <path d="M3.5 3.5c-.614-.884-.074-1.962.858-2.5L8 7.226 11.642 1c.932.538 1.472 1.616.858 2.5L8.81 8.61l1.556 2.661a2.5 2.5 0 1 1-.794.637L8 9.73l-1.572 2.177a2.5 2.5 0 1 1-.794-.637L7.19 8.61 3.5 3.5zm2.5 10a1.5 1.5 0 1 0-3 0 1.5 1.5 0 0 0 3 0zm7 0a1.5 1.5 0 1 0-3 0 1.5 1.5 0 0 0 3 0z"/>
                 </svg>
-                <h2 class="h3 mt-3">Prepared</h3>
-                <p class="lh-lg px-3">Each piece of tarpaulin is carefully washed, cut, and repurposed into one-of-a-kind bags that are both sustainable and stylish.</p>
+                <h2 class="h3 mt-3">{% translate 'IndexFeature2Title' %}</h3>
+                <p class="lh-lg px-3">{% translate 'IndexFeature2Text' %}</p>
             </div>
             <div class="col text-center mb-4 mb-lg-0">
                 <svg xmlns="http://www.w3.org/2000/svg" width="44" height="44" fill="currentColor" class="bi bi-stars" viewBox="0 0 16 16">
                     <path d="M7.657 6.247c.11-.33.576-.33.686 0l.645 1.937a2.89 2.89 0 0 0 1.829 1.828l1.936.645c.33.11.33.576 0 .686l-1.937.645a2.89 2.89 0 0 0-1.828 1.829l-.645 1.936a.361.361 0 0 1-.686 0l-.645-1.937a2.89 2.89 0 0 0-1.828-1.828l-1.937-.645a.361.361 0 0 1 0-.686l1.937-.645a2.89 2.89 0 0 0 1.828-1.828l.645-1.937zM3.794 1.148a.217.217 0 0 1 .412 0l.387 1.162c.173.518.579.924 1.097 1.097l1.162.387a.217.217 0 0 1 0 .412l-1.162.387A1.734 1.734 0 0 0 4.593 5.69l-.387 1.162a.217.217 0 0 1-.412 0L3.407 5.69A1.734 1.734 0 0 0 2.31 4.593l-1.162-.387a.217.217 0 0 1 0-.412l1.162-.387A1.734 1.734 0 0 0 3.407 2.31l.387-1.162zM10.863.099a.145.145 0 0 1 .274 0l.258.774c.115.346.386.617.732.732l.774.258a.145.145 0 0 1 0 .274l-.774.258a1.156 1.156 0 0 0-.732.732l-.258.774a.145.145 0 0 1-.274 0l-.258-.774a1.156 1.156 0 0 0-.732-.732L9.1 2.137a.145.145 0 0 1 0-.274l.774-.258c.346-.115.617-.386.732-.732L10.863.1z"/>
                 </svg>
-                <h2 class="h3 mt-3">Manufactured</h3>
-                <p class="lh-lg px-3">Our bags are handmade by skilled artisans, resulting in unique and personalized products that are made with care and attention to detail.</p>    
+                <h2 class="h3 mt-3">{% translate 'IndexFeature3Title' %}</h3>
+                <p class="lh-lg px-3">{% translate 'IndexFeature3Text' %}</p>    
             </div>
             <div class="col text-center">
                 <svg xmlns="http://www.w3.org/2000/svg" width="44" height="44" fill="currentColor" class="bi bi-handbag" viewBox="0 0 16 16">
                     <path d="M8 1a2 2 0 0 1 2 2v2H6V3a2 2 0 0 1 2-2zm3 4V3a3 3 0 1 0-6 0v2H3.36a1.5 1.5 0 0 0-1.483 1.277L.85 13.13A2.5 2.5 0 0 0 3.322 16h9.355a2.5 2.5 0 0 0 2.473-2.87l-1.028-6.853A1.5 1.5 0 0 0 12.64 5H11zm-1 1v1.5a.5.5 0 0 0 1 0V6h1.639a.5.5 0 0 1 .494.426l1.028 6.851A1.5 1.5 0 0 1 12.678 15H3.322a1.5 1.5 0 0 1-1.483-1.723l1.028-6.851A.5.5 0 0 1 3.36 6H5v1.5a.5.5 0 1 0 1 0V6h4z"/>
                 </svg>
-                <h2 class="h3 mt-3">Product</h3>
-                <p class="lh-lg px-3">From the distinct patterns to the individual wear and tear, each upcycled bag we create is completely unique, making it a statement piece for any outfit.</p>    
+                <h2 class="h3 mt-3">{% translate 'IndexFeature4Title' %}</h3>
+                <p class="lh-lg px-3">{% translate 'IndexFeature4Text' %}</p>    
             </div>
         </div>
     </div>
 </section>
 <section class="py-3 py-lg-5">
     <div class="container">
-        <div class="fs-3 fw-bold text-center mb-4">Recomended products</div>
+        <div class="fs-3 fw-bold text-center mb-4">{% translate 'IndexProductsTitle' %}</div>
         <div class="row flex-lg-row">
             {% for product in products %}
             <div class="col-12 col-lg-3 mb-4 px-4">
                 <div class="card">
-                    <img src="{{ product.default_image.image.url }}" class="card-img-top" alt="Mark">
+                    <img src="{{ product.default_image.image.url }}" class="card-img-top" alt="{{ product.product.name }}">
                     <div class="card-body">
                         <h5 class="card-title">{{ product.product.name }}</h5>
                         <p class="card-text">{{ product.product.description }}</p>

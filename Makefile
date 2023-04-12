@@ -19,6 +19,7 @@ test-coverage:
 makemessages:
 	$(ENV) django-admin makemessages -l en
 	$(ENV) django-admin makemessages -l ru
+	$(ENV) django-admin makemessages -l tt
 
 compilemessages:
 	$(ENV) django-admin compilemessages

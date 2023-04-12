@@ -1,38 +1,39 @@
 {% load static %}
+{% load i18n %}
 <footer class="footer border-top bg-light mt-auto">
     <div class="container">
         <div class="row py-4">
             <div class="col-6 col-md-2 mb-3">
-                <div class="fw-bold mt-3 mb-2">Information</div>
+                <div class="fw-bold mt-3 mb-2">{% translate 'FooterInformation' %}</div>
                 <nav>
                     <ul class="nav navbar-nav flex-column">
                         <li class="nav-item">
-                            <a href="#" class="nav-link">Payments</a>
+                            <a href="#" class="nav-link">{% translate 'FooterPayments' %}</a>
                         </li>
                         <li class="nav-item">
-                            <a href="#" class="nav-link">Delivery</a>
+                            <a href="#" class="nav-link">{% translate 'FooterDelivery' %}</a>
                         </li>
                         <li class="nav-item">
-                            <a href="#" class="nav-link">Returns</a>
+                            <a href="#" class="nav-link">{% translate 'FooterReturns' %}</a>
                         </li>
                     </ul>
                 </nav>
             </div>
             <div class="col-6 col-md-2 mb-3">
-                <div class="fw-bold mt-3 mb-2">My account</div>
+                <div class="fw-bold mt-3 mb-2">{% translate 'FooterMyAccount' %}</div>
                 <nav>
                     <ul class="nav navbar-nav flex-column">
                         <li class="nav-item">
-                            <a href="#" class="nav-link">My account</a>
+                            <a href="#" class="nav-link">{% translate 'FooterMyAccount' %}</a>
                         </li>
                         <li class="nav-item">
-                            <a href="#" class="nav-link">Order history</a>
+                            <a href="#" class="nav-link">{% translate 'FooterOrderHistory' %}</a>
                         </li>
                     </ul>
                 </nav>
             </div>
             <div class="col-6 col-md-2 mb-3">
-                <div class="fw-bold mt-3 mb-2">Our company</div>
+                <div class="fw-bold mt-3 mb-2">{% translate 'FooterOurCompany' %}</div>
                 <nav>
                     <ul class="nav navbar-nav flex-column">
                         <li class="nav-item">
@@ -45,7 +46,7 @@
                 </nav>
             </div>
             <div class="col-6 col-md-2 mb-3">
-                <div class="fw-bold mt-3 mb-2">Get connected</div>
+                <div class="fw-bold mt-3 mb-2">{% translate 'FooterGetConnected' %}</div>
                 <nav>
                     <ul class="nav navbar-nav flex-column">
                         <li class="nav-item d-flex flex-row text-muted">

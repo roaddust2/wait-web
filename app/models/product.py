@@ -1,66 +1,50 @@
 from django.db import models
-from utils.text import FormFields
-
-
-vname = FormFields()
+from django.utils.translation import gettext_lazy as _
 
 
 class Category(models.Model):
     """Categories of products"""
 
-    name = models.CharField(vname.category_name, max_length=255)
-    image = models.ImageField('Image', upload_to='static/images/categories/')
-    image_alt = models.CharField(
-        'Image alternative text',
-        max_length=255,
-        null=True,
-        blank=True,
-    )
+    name = models.CharField(_('Category'), max_length=255)
+    image = models.ImageField(_('Image'), upload_to='static/images/categories/')
+    image_alt = models.CharField(_('ImageAlt'), max_length=255, null=True, blank=True)
 
     def __str__(self):
         return self.name
 
     class Meta:
-        verbose_name_plural = 'Categories'
+        verbose_name = _('Category')
+        verbose_name_plural = _('Categories')
 
 
 class Product(models.Model):
     """Product model"""
 
-    name = models.CharField(vname.product_name, max_length=255)
-    description = models.TextField(vname.product_description, max_length=600)
-    price = models.DecimalField(
-        vname.product_price,
-        max_digits=10,
-        decimal_places=2,
-    )
-    category = models.ForeignKey(
-        Category,
-        on_delete=models.PROTECT,
-        verbose_name=vname.product_category,
-    )
-    created_at = models.DateTimeField(auto_now_add=True)
+    name = models.CharField(_('Denomination'), max_length=255)
+    description = models.TextField(_('Description'), max_length=600)
+    price = models.DecimalField(_('Price'), max_digits=10, decimal_places=2)
+    category = models.ForeignKey(Category, on_delete=models.PROTECT, verbose_name=_('Category'))
+    created_at = models.DateTimeField(auto_now_add=True, verbose_name=_('CareatedAt'))
 
     def __str__(self):
         return self.name
+
+    class Meta:
+        verbose_name = _('Product')
+        verbose_name_plural = _('Products')
 
 
 class ProductImage(models.Model):
     """Image model connected with product"""
 
-    image = models.ImageField('Image', upload_to='static/images/products/')
-    image_alt = models.CharField(
-        'Image alternative text',
-        max_length=200,
-        null=True,
-        blank=True,
-    )
-    product = models.ForeignKey(
-        Product,
-        on_delete=models.CASCADE,
-        verbose_name='Product',
-    )
-    default = models.BooleanField(default=False)
+    image = models.ImageField(_('Image'), upload_to='static/images/products/')
+    image_alt = models.CharField(_('ImageAlt'), max_length=255, null=True, blank=True)
+    product = models.ForeignKey(Product, on_delete=models.CASCADE, verbose_name=_('Product'))
+    default = models.BooleanField(default=False, verbose_name=_('Default'))
 
     def __str__(self):
         return self.image.url
+
+    class Meta:
+        verbose_name = _('Image')
+        verbose_name_plural = _('Images')
