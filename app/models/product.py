@@ -24,6 +24,7 @@ class Product(models.Model):
     description = models.TextField(_('Description'), max_length=600)
     price = models.DecimalField(_('Price'), max_digits=10, decimal_places=2)
     category = models.ForeignKey(Category, on_delete=models.PROTECT, verbose_name=_('Category'))
+    sold = models.BooleanField(default=False, verbose_name=_('Sold'))
     created_at = models.DateTimeField(auto_now_add=True, verbose_name=_('CareatedAt'))
 
     def __str__(self):
