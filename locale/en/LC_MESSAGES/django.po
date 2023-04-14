@@ -191,11 +191,11 @@ msgstr "Recommended products"
 
 #: templates/index.html:85
 msgid "IndexFeature4Text"
-msgstr "Product"
-
-#: templates/index.html:92
-msgid "IndexProductsTitle"
 msgstr ""
 "From the distinct patterns to the individual wear and tear, each upcycled "
 "bag we create is completely unique, making it a statement piece for any "
 "outfit."
+
+#: templates/index.html:92
+msgid "IndexProductsTitle"
+msgstr "Reccomended products"

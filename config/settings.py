@@ -126,7 +126,7 @@ USE_TZ = True
 LANGUAGES = (
     ('en', 'English'),
     ('ru', 'Русский'),
-    ('tt', 'Татар'),
+    ('tt', 'Татарча'),
 )
 
 LOCALE_PATHS = [
