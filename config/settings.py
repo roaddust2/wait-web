@@ -36,6 +36,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django.contrib.sites',
+    'django.contrib.flatpages',
     # Project apps
     'app',
 ]
@@ -73,6 +75,20 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'config.wsgi.application'
+
+
+# Site ID
+# https://docs.djangoproject.com/en/4.2/ref/settings/#std-setting-SITE_ID
+
+SITE_ID = 1
+
+
+# Change migration path for flatpages
+# https://docs.djangoproject.com/en/4.2/ref/settings/#std:setting-MIGRATION_MODULES
+
+MIGRATION_MODULES = {
+    'flatpages': 'app.migrations.flatpages',
+}
 
 
 # Database
