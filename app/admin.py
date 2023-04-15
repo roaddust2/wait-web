@@ -1,9 +1,9 @@
 from django.contrib import admin
+from modeltranslation.admin import TranslationAdmin
+from .models.user import CustomUser
 from django.contrib.auth.admin import UserAdmin
 from django.contrib.flatpages.models import FlatPage
 from django.contrib.flatpages.admin import FlatPageAdmin
-from modeltranslation.admin import TranslationAdmin
-from .models.user import CustomUser
 from .models.home import CarouselItem
 from .models.product import Category, Product, ProductImage
 
@@ -14,6 +14,7 @@ class CustomUserAdmin(UserAdmin):
 
 
 admin.site.unregister(FlatPage)
+
 
 @admin.register(FlatPage)
 class CustomFlatPageAdmin(TranslationAdmin, FlatPageAdmin):
