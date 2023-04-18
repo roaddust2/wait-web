@@ -91,21 +91,8 @@
         <div class="fs-3 fw-bold text-center mb-4">{% translate 'IndexProductsTitle' %}</div>
         <div class="row flex-lg-row">
             {% for product in products %}
-            <div class="col-12 col-lg-3 mb-4 px-4">
-                <div class="card">
-                    <img src="{{ product.default_image.image.url }}" class="card-img-top" alt="{{ product.product.name }}">
-                    <div class="card-body">
-                        <h5 class="card-title">{{ product.product.name }}</h5>
-                        <p class="card-text">{{ product.product.description }}</p>
-                        <p class="fs-3">{{ product.product.price }}$</p>
-                    </div>
-                    <div class="list-group list-group-flush text-center">
-                        <div class="btn-group">
-                            <a class="list-group-item btn btn-dark rounded-top-0 border-start-0 border-top-0 border-bottom-0 fs-5 fw-bold" href="#">Buy now</a>
-                            <a class="list-group-item btn btn-dark rounded-top-0 border-end-0 border-top-0 border-bottom-0 fs-5 fw-bold" href="#">Add to cart</a>
-                        </div>
-                    </div>
-                </div>
+            <div class="col-12 col-lg-3 mb-4">
+                {% include "components/product_card.html" with product=product %}
             </div>
             {% endfor %}
         </div>

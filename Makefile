@@ -34,8 +34,6 @@ dev:
 	$(MANAGE) runserver
 
 prod:
-	$(MANAGE) makemigrations
-	$(MANAGE) migrate
 	$(ENV) gunicorn -b 0.0.0.0:$(PORT) config.wsgi
 
 secretkey:

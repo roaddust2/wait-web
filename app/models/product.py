@@ -6,6 +6,7 @@ class Category(models.Model):
     """Categories of products"""
 
     name = models.CharField(_('Category'), max_length=255)
+    int_name = models.CharField(_('Category'), max_length=255)
     image = models.ImageField(_('Image'), upload_to='static/images/categories/')
     image_alt = models.CharField(_('ImageAlt'), max_length=255, null=True, blank=True)
 
@@ -21,11 +22,20 @@ class Product(models.Model):
     """Product model"""
 
     name = models.CharField(_('Denomination'), max_length=255)
+    int_name = models.CharField(_('Denomination'), max_length=255)
     description = models.TextField(_('Description'), max_length=600)
     price = models.DecimalField(_('Price'), max_digits=10, decimal_places=2)
     category = models.ForeignKey(Category, on_delete=models.PROTECT, verbose_name=_('Category'))
     sold = models.BooleanField(default=False, verbose_name=_('Sold'))
     created_at = models.DateTimeField(auto_now_add=True, verbose_name=_('CareatedAt'))
+
+    def get_default_image(self):
+        """Returns the product's first availible default image, or first in a set"""
+        default_image = self.productimage_set.filter(default=True).first()
+        if default_image:
+            return default_image
+        else:
+            return self.productimage_set.first()
 
     def __str__(self):
         return self.name

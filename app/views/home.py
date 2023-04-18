@@ -15,12 +15,8 @@ class IndexView(TemplateView):
         carousel_items = CarouselItem.objects.all().order_by('priority')[:4]
         context['carousel_items'] = carousel_items
 
-        # Collecting recomended products
-        products = []
-        for product in Product.objects.all()[:4]:
-            default_image = product.productimage_set.filter(default=True).first()
-            if default_image:
-                products.append({'product': product, 'default_image': default_image})
+        # Collecting featured products
+        products = Product.objects.all()[:4]
         context['products'] = products
 
         return context

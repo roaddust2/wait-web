@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% load i18n static %}
+{% block content %}
+<section class="py-3 py-lg-5">
+    <div class="container">
+        <div class="row flex-lg-row m-5">
+            <div class="col">
+                <div class="border">
+                    <img src="{{ product.get_default_image }}" class="card-img-top" alt="{{ product.name }}">
+                </div>
+            </div>
+            <div class="col">
+                <div class="p-3">
+                    <h1 class="display-6 fw-bold text-body-emphasis lh-1 mb-3">{{ product.int_name }}</h1>
+                    <p class="lead">{{ product.description }}</p>
+                    <p class="fs-3">{{ product.price }}$</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
+Lorem ipsum dolor, sit amet consectetur adipisicing elit. Delectus incidunt sint dolorum optio tempore sequi laborum quod commodi at iusto, iste eveniet itaque nobis, quaerat, minus cumque cum odit saepe?

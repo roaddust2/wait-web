@@ -12,7 +12,18 @@
                         <a class="nav-link" href="{% url 'index' %}">{% translate 'HeaderHome' %}</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">{% translate 'HeaderShop' %}</a>
+                        <ul class="navbar-nav btn-group">
+                            <a class="nav-link dropdown-toggle" data-bs-toggle='dropdown' role='button' aria-expanded='false'>
+                                {% translate 'HeaderShop' %}
+                            </a>
+                            <ul class='dropdown-menu'>
+                                <li><a class="dropdown-item" href="{% url 'catalog' %}">{% translate 'ShopAll' %}</a></li>
+                                <li><a class="dropdown-item" href="{% url 'catalog' category='backpacks' %}">{% translate 'Backpacks' %}</a></li>
+                                <li><a class="dropdown-item" href="{% url 'catalog' category='rolltops' %}">{% translate 'Rolltops' %}</a></li>
+                                <li><a class="dropdown-item" href="{% url 'catalog' category='tote' %}">{% translate 'Tote' %}</a></li>
+                                <li><a class="dropdown-item" href="{% url 'catalog' category='sportbags' %}">{% translate 'Sport bags' %}</a></li>
+                            </ul>
+                        </ul>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="{% url 'about' %}">{% translate 'HeaderAbout' %}</a>
@@ -45,7 +56,7 @@
                                     {% endfor %}
                                 </form>    
                                 </li>
-                            </ul>  
+                            </ul>
                         </ul>                    
                     </li>
                     <!-- <li class="nav-item">

@@ -8,10 +8,14 @@ from .models.home import CarouselItem
 from .models.product import Category, Product, ProductImage
 
 
+# Customized User
+
 @admin.register(CustomUser)
 class CustomUserAdmin(UserAdmin):
     model = CustomUser
 
+
+# Internalized flatpages
 
 admin.site.unregister(FlatPage)
 
@@ -21,9 +25,16 @@ class CustomFlatPageAdmin(TranslationAdmin, FlatPageAdmin):
     model = FlatPage
 
 
-admin.site.register(CarouselItem)
+# App's models register
 
-admin.site.register(Category)
+@admin.register(CarouselItem)
+class CategoryAdmin(TranslationAdmin):
+    model = CarouselItem
+
+
+@admin.register(Category)
+class CategoryAdmin(TranslationAdmin):
+    model = Category
 
 
 class ProductImageInline(admin.StackedInline):
@@ -31,5 +42,5 @@ class ProductImageInline(admin.StackedInline):
 
 
 @admin.register(Product)
-class ProductAdmin(admin.ModelAdmin):
+class ProductAdmin(TranslationAdmin, admin.ModelAdmin):
     inlines = [ProductImageInline]
