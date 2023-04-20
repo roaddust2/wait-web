@@ -33,7 +33,7 @@ class Product(models.Model):
         """Returns the product's related images from ProductImage model, defaults first"""
         images = self.productimage_set.all().order_by('default')
         return images
-    
+
     def get_default_image(self):
         """Returns the product's first availible default image, or first in a set"""
         default_image = self.productimage_set.filter(default=True).first()

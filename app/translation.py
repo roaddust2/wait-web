@@ -10,7 +10,7 @@ class FlatPageTranslationOptions(TranslationOptions):
 
 
 @register(CarouselItem)
-class CategoryTranslationOptions(TranslationOptions):
+class CarouselTranslationOptions(TranslationOptions):
     fields = ('label', 'placeholder',)
 
 

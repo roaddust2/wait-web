@@ -28,7 +28,7 @@ class CustomFlatPageAdmin(TranslationAdmin, FlatPageAdmin):
 # App's models register
 
 @admin.register(CarouselItem)
-class CategoryAdmin(TranslationAdmin):
+class CarouselAdmin(TranslationAdmin):
     model = CarouselItem
 
 
