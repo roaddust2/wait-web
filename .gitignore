@@ -21,3 +21,8 @@ venv/
 ENV/
 env.bak/
 venv.bak/
+
+# Test static
+static/images/carousel/
+static/images/categories/
+static/images/products/
