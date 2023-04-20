@@ -4,6 +4,19 @@
 <section class="py-3 py-lg-5">
     <div class="container">
 
+        <!-- Breadcrumbs -->
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+              <li class="breadcrumb-item"><a href="{% url 'index' %}">{% translate 'HeaderHome' %}</a></li>
+              {% if category %}
+              <li class="breadcrumb-item"><a href="{% url 'catalog' %}">{% translate 'Catalog' %}</a></li>
+              <li class="breadcrumb-item active" aria-current="page">{{ category.int_name }}</li>
+              {% else %}
+              <li class="breadcrumb-item active" aria-current="page">{% translate 'Catalog' %}</li>
+              {% endif %}
+            </ol>
+        </nav>
+
         {% if category %}
         <!-- Category block -->
         <h1 class="display-5 fw-bold text-body-emphasis lh-1 mb-3">{{ category.int_name }}</h1>

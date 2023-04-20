@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-04-20 13:14+0400\n"
+"POT-Creation-Date: 2023-04-20 13:47+0400\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -52,7 +52,7 @@ msgstr "Carousel items"
 msgid "Category"
 msgstr "Category"
 
-#: app/models/product.py:18 templates/catalog.html:20
+#: app/models/product.py:18 templates/catalog.html:33
 msgid "Categories"
 msgstr "Categories"
 
@@ -92,11 +92,20 @@ msgstr "Default"
 msgid "Images"
 msgstr "Images"
 
-#: templates/catalog.html:37 templates/index.html:91
+#: templates/catalog.html:10 templates/header.html:12 templates/product.html:9
+msgid "HeaderHome"
+msgstr "Home"
+
+#: templates/catalog.html:12 templates/catalog.html:15
+#: templates/product.html:10
+msgid "Catalog"
+msgstr "Catalog"
+
+#: templates/catalog.html:50 templates/index.html:91
 msgid "IndexProductsTitle"
 msgstr "Recomended products"
 
-#: templates/components/product_card.html:39 templates/product.html:49
+#: templates/components/product_card.html:39 templates/product.html:58
 msgid "Buy"
 msgstr "Buy now"
 
@@ -131,10 +140,6 @@ msgstr "Our company"
 #: templates/footer.html:48
 msgid "FooterGetConnected"
 msgstr "Get connected"
-
-#: templates/header.html:12
-msgid "HeaderHome"
-msgstr "Home"
 
 #: templates/header.html:17
 msgid "HeaderShop"

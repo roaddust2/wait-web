@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-04-20 13:14+0400\n"
+"POT-Creation-Date: 2023-04-20 13:47+0400\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -52,7 +52,7 @@ msgstr ""
 msgid "Category"
 msgstr ""
 
-#: app/models/product.py:18 templates/catalog.html:20
+#: app/models/product.py:18 templates/catalog.html:33
 msgid "Categories"
 msgstr ""
 
@@ -92,11 +92,20 @@ msgstr ""
 msgid "Images"
 msgstr ""
 
-#: templates/catalog.html:37 templates/index.html:91
+#: templates/catalog.html:10 templates/header.html:12 templates/product.html:9
+msgid "HeaderHome"
+msgstr ""
+
+#: templates/catalog.html:12 templates/catalog.html:15
+#: templates/product.html:10
+msgid "Catalog"
+msgstr ""
+
+#: templates/catalog.html:50 templates/index.html:91
 msgid "IndexProductsTitle"
 msgstr ""
 
-#: templates/components/product_card.html:39 templates/product.html:49
+#: templates/components/product_card.html:39 templates/product.html:58
 msgid "Buy"
 msgstr ""
 
@@ -130,10 +139,6 @@ msgstr ""
 
 #: templates/footer.html:48
 msgid "FooterGetConnected"
-msgstr ""
-
-#: templates/header.html:12
-msgid "HeaderHome"
 msgstr ""
 
 #: templates/header.html:17

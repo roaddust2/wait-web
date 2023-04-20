@@ -3,6 +3,15 @@
 {% block content %}
 <section class="py-3 py-lg-5">
     <div class="container">
+        <!-- Breadcrumbs -->
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+              <li class="breadcrumb-item"><a href="{% url 'index' %}">{% translate 'HeaderHome' %}</a></li>
+              <li class="breadcrumb-item"><a href="{% url 'catalog' %}">{% translate 'Catalog' %}</a></li>
+              <li class="breadcrumb-item"><a href="{% url 'catalog' category=product.category.name %}">{{ product.category.int_name }}</a></li>
+              <li class="breadcrumb-item active" aria-current="page">{{ product.int_name }}</li>
+            </ol>
+        </nav>
         <div class="row flex-lg-row m-5">
             <div class="col">
                 <div class="border">
