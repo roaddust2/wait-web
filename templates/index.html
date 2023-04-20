@@ -9,7 +9,7 @@
                     {% if carousel_items %}
                         <div class="carousel-indicators">
                             {% for item in carousel_items %}
-                                <button type="button" data-bs-target="#carouselIndicators" data-bs-slide-to="{{ forloop.counter0 }}" class="{% if forloop.first %}active{% endif %}" aria-current="true" aria-label="Slide {{ forloop.counter }}"></button>
+                                <button type="button" data-bs-target="#carouselMainPage" data-bs-slide-to="{{ forloop.counter0 }}" class="{% if forloop.first %}active{% endif %}" aria-current="true" aria-label="Slide {{ forloop.counter }}"></button>
                             {% endfor %}
                         </div>
                     {% endif %}

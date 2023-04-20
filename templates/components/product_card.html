@@ -1,3 +1,4 @@
+{% load i18n static %}
 {% comment %}
 <!-- Product card component,
     to use this template, pass variable "product" within "include" tag -->
@@ -30,12 +31,12 @@
         </div>
     </a>
     <div class="card-body">
-        <h5 class="card-title fs-3">{{ product.name }}</h5>
+        <h5 class="card-title fs-3">{{ product.int_name }}</h5>
         <p class="card-text">{{ product.description }}</p>
         <p class="fs-4">{{ product.price }}$</p>
     </div>
     <div class="list-group list-group-flush text-center">
-        <a class="btn btn-success rounded-top-0 fs-5 fw-bold" href="#">Buy now</a>
+        <a class="btn btn-success rounded-top-0 fs-5 fw-bold" href="#">{% translate 'Buy' %}</a>
         </div>
     </div>
 </div>

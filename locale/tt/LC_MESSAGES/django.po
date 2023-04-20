@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-04-13 15:24+0400\n"
+"POT-Creation-Date: 2023-04-20 13:14+0400\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -26,12 +26,12 @@ msgstr ""
 msgid "Placeholder"
 msgstr ""
 
-#: app/models/home.py:10 app/models/product.py:9 app/models/product.py:41
-#: app/models/product.py:50
+#: app/models/home.py:10 app/models/product.py:10 app/models/product.py:56
+#: app/models/product.py:65
 msgid "Image"
 msgstr ""
 
-#: app/models/home.py:11 app/models/product.py:10 app/models/product.py:42
+#: app/models/home.py:11 app/models/product.py:11 app/models/product.py:57
 msgid "ImageAlt"
 msgstr ""
 
@@ -47,142 +47,167 @@ msgstr ""
 msgid "CarouselItems"
 msgstr ""
 
-#: app/models/product.py:8 app/models/product.py:16 app/models/product.py:26
+#: app/models/product.py:8 app/models/product.py:9 app/models/product.py:17
+#: app/models/product.py:28
 msgid "Category"
 msgstr ""
 
-#: app/models/product.py:17
+#: app/models/product.py:18 templates/catalog.html:20
 msgid "Categories"
 msgstr ""
 
-#: app/models/product.py:23
+#: app/models/product.py:24 app/models/product.py:25
 msgid "Denomination"
 msgstr ""
 
-#: app/models/product.py:24
+#: app/models/product.py:26
 msgid "Description"
 msgstr ""
 
-#: app/models/product.py:25
+#: app/models/product.py:27
 msgid "Price"
 msgstr ""
 
-#: app/models/product.py:27
+#: app/models/product.py:29
 msgid "Sold"
 msgstr ""
 
-#: app/models/product.py:28
+#: app/models/product.py:30
 msgid "CareatedAt"
 msgstr ""
 
-#: app/models/product.py:34 app/models/product.py:43
+#: app/models/product.py:49 app/models/product.py:58
 msgid "Product"
 msgstr ""
 
-#: app/models/product.py:35
+#: app/models/product.py:50
 msgid "Products"
 msgstr ""
 
-#: app/models/product.py:44
+#: app/models/product.py:59
 msgid "Default"
 msgstr ""
 
-#: app/models/product.py:51
+#: app/models/product.py:66
 msgid "Images"
 msgstr ""
 
-#: templates/footer.html:7
+#: templates/catalog.html:37 templates/index.html:91
+msgid "IndexProductsTitle"
+msgstr ""
+
+#: templates/components/product_card.html:39 templates/product.html:49
+msgid "Buy"
+msgstr ""
+
+#: templates/footer.html:6
 msgid "FooterInformation"
 msgstr ""
 
-#: templates/footer.html:11
+#: templates/footer.html:10
 msgid "FooterPayments"
 msgstr ""
 
-#: templates/footer.html:14
+#: templates/footer.html:13
 msgid "FooterDelivery"
 msgstr ""
 
-#: templates/footer.html:17
+#: templates/footer.html:16
 msgid "FooterReturns"
 msgstr ""
 
-#: templates/footer.html:23 templates/footer.html:27
+#: templates/footer.html:22 templates/footer.html:26
 msgid "FooterMyAccount"
 msgstr ""
 
-#: templates/footer.html:30
+#: templates/footer.html:29
 msgid "FooterOrderHistory"
 msgstr ""
 
-#: templates/footer.html:36
+#: templates/footer.html:35
 msgid "FooterOurCompany"
 msgstr ""
 
-#: templates/footer.html:49
+#: templates/footer.html:48
 msgid "FooterGetConnected"
 msgstr ""
 
-#: templates/header.html:13
+#: templates/header.html:12
 msgid "HeaderHome"
 msgstr ""
 
-#: templates/header.html:16
+#: templates/header.html:17
 msgid "HeaderShop"
 msgstr ""
 
-#: templates/header.html:19
+#: templates/header.html:20
+msgid "ShopAll"
+msgstr ""
+
+#: templates/header.html:21
+msgid "Backpacks"
+msgstr ""
+
+#: templates/header.html:22
+msgid "Rolltops"
+msgstr ""
+
+#: templates/header.html:23
+msgid "Tote"
+msgstr ""
+
+#: templates/header.html:24
+msgid "Sport bags"
+msgstr ""
+
+#: templates/header.html:29
 msgid "HeaderAbout"
 msgstr ""
 
-#: templates/header.html:25
+#: templates/header.html:35
 msgid "HeaderBrandAlt"
 msgstr ""
 
-#: templates/index.html:47
+#: templates/index.html:46
 msgid "HeroTitle"
 msgstr ""
 
-#: templates/index.html:48
+#: templates/index.html:47
 msgid "HeroLead"
 msgstr ""
 
-#: templates/index.html:50
+#: templates/index.html:49
 msgid "HeroButton"
 msgstr ""
 
-#: templates/index.html:63
+#: templates/index.html:62
 msgid "IndexFeature1Title"
 msgstr ""
 
-#: templates/index.html:64
+#: templates/index.html:63
 msgid "IndexFeature1Text"
 msgstr ""
 
-#: templates/index.html:70
+#: templates/index.html:69
 msgid "IndexFeature2Title"
 msgstr ""
 
-#: templates/index.html:71
+#: templates/index.html:70
 msgid "IndexFeature2Text"
 msgstr ""
 
-#: templates/index.html:77
+#: templates/index.html:76
 msgid "IndexFeature3Title"
 msgstr ""
 
-#: templates/index.html:78
+#: templates/index.html:77
 msgid "IndexFeature3Text"
 msgstr ""
 
-#: templates/index.html:84
+#: templates/index.html:83
 msgid "IndexFeature4Title"
 msgstr ""
 
-#: templates/index.html:85
+#: templates/index.html:84
 msgid "IndexFeature4Text"
-msgstr ""
-
-#: templates/index.html:92
-msgid "IndexProductsTitle"
 msgstr ""

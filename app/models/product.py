@@ -30,8 +30,8 @@ class Product(models.Model):
     created_at = models.DateTimeField(auto_now_add=True, verbose_name=_('CareatedAt'))
 
     def get_all_images(self):
-        """Returns the product's related images from ProductImage model"""
-        images = self.productimage_set.all()
+        """Returns the product's related images from ProductImage model, defaults first"""
+        images = self.productimage_set.all().order_by('default')
         return images
     
     def get_default_image(self):

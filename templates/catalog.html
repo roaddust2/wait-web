@@ -17,17 +17,19 @@
 
         {% else %}
         <!-- Categories block -->
+        <h1 class="display-5 fw-bold text-body-emphasis lh-1 mb-3">{% translate 'Categories' %}</h1>
         <div class="row row-cols-2 row-cols-lg-4">
             {% for category in categories %}
-            <div class="col mb-4">
-                <div class="card">
-                    <a href="{% url 'catalog' category=category.name %}">
-                        <img src="{{ category.image.url }}" class="card-img-top" alt="{% if category.image_alt %}{{ category.image_alt }}{% else %}{{ category.int_name }}{% endif %}">
+            <div class="col mb-4 text-center">
+                <a href="{% url 'catalog' category=category.name %}">
+                    <img src="{{ category.image.url }}" class="card-img-top" alt="{% if category.image_alt %}{{ category.image_alt }}{% else %}{{ category.int_name }}{% endif %}">
+                </a>
+                
+                <h2 class="card-text h4 mt-3">
+                    <a class="nav-link" href="{% url 'catalog' category=category.name %}">
+                        {{ category.int_name }}
                     </a>
-                    <div class="card-body">
-                        <h5 class="card-text">{{ category.int_name }}</h5>
-                    </div>
-                </div>
+                </h2>
             </div>
             {% endfor %}
         </div>
