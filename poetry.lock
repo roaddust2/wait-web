@@ -129,6 +129,20 @@ argon2 = ["argon2-cffi (>=19.1.0)"]
 bcrypt = ["bcrypt"]
 
 [[package]]
+name = "django-inline-svg"
+version = "0.1.1"
+description = "A simple SVG template tag for Django"
+category = "main"
+optional = false
+python-versions = "*"
+files = [
+    {file = "django-inline-svg-0.1.1.tar.gz", hash = "sha256:9a908eb7f2ed23317f896be6e0c355ec488b1944e6f4d2d829a74d1d4e5fb918"},
+]
+
+[package.dependencies]
+Django = ">=1.8"
+
+[[package]]
 name = "django-modeltranslation"
 version = "0.18.9"
 description = "Translates Django models using a registration approach."
@@ -570,4 +584,4 @@ brotli = ["Brotli"]
 [metadata]
 lock-version = "2.0"
 python-versions = "3.10.*"
-content-hash = "429aebc3c1e503a41571d53348bcac04de9e2f0edad31d81a4f8f4d96fb28d9e"
+content-hash = "f2d5301daa881d8b92564b09a0e79fcb80012b902d8fb873bd05fb10051b7e45"

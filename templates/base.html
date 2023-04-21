@@ -7,15 +7,16 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="{% static 'favicon.ico' %}">
+    <link rel="stylesheet" href="{% static 'css/main.css' %}">
     <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
     <title>WAIT!</title>
 </head>
 <body class="pt-5 pt-sm-6">
-    {% include 'header.html' %}
+    {% include 'components/header.html' %}
     <main>
         {% block content %}{% endblock %}
     </main>
-    {% include 'footer.html' %}
+    {% include 'components/footer.html' %}
     <script src="{% static 'js/bootstrap.bundle.js' %}"></script>
 </body>
 </html>

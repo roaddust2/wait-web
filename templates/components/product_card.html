@@ -1,29 +1,4 @@
 {% load i18n static %}
-{% comment %}
-<!-- Product card component,
-    to use this template, pass variable "product" within "include" tag -->
-{% endcomment %}
-<style>
-    .card-img-wrap {
-    overflow: hidden;
-    position: relative;
-    }
-    .card-img-wrap:after {
-    content: '';
-    position: absolute;
-    top: 0; left: 0; right: 0; bottom: 0;
-    }
-    .card-img-wrap img {
-    transition: transform .25s;
-    width: 100%;
-    }
-    .card-img-wrap:hover img {
-    transform: scale(1.2);
-    }
-    .card-img-wrap:hover:after {
-    opacity: 1;
-    }
-</style>
 <div class="card">
     <a href="{% url 'product' category=product.category.name pk=product.id %}">
         <div class="card-img-wrap rounded-top">
@@ -32,11 +7,9 @@
     </a>
     <div class="card-body">
         <h5 class="card-title fs-3">{{ product.int_name }}</h5>
-        <p class="card-text">{{ product.description }}</p>
-        <p class="fs-4">{{ product.price }}$</p>
+        <p class="fs-4">{{ product.price }} ₽</p>
     </div>
     <div class="list-group list-group-flush text-center">
         <a class="btn btn-success rounded-top-0 fs-5 fw-bold" href="#">{% translate 'Buy' %}</a>
-        </div>
     </div>
 </div>

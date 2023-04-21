@@ -1,0 +1,67 @@
+{% load i18n static svg %}
+<footer class="footer border-top bg-light mt-auto">
+    <div class="container">
+        <div class="row py-4">
+            <div class="col-6 col-md-2 mb-3">
+                <div class="fw-bold mt-3 mb-2">{% translate 'FooterInformation' %}</div>
+                <nav>
+                    <ul class="nav navbar-nav flex-column">
+                        <li class="nav-item">
+                            <a href="{% url 'payments' %}" class="nav-link">{% translate 'FooterPayments' %}</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="{% url 'delivery' %}" class="nav-link">{% translate 'FooterDelivery' %}</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="{% url 'returns' %}" class="nav-link">{% translate 'FooterReturns' %}</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="col-6 col-md-2 mb-3">
+                <div class="fw-bold mt-3 mb-2">{% translate 'FooterMyAccount' %}</div>
+                <nav>
+                    <ul class="nav navbar-nav flex-column">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link disabled text-muted">{% translate 'FooterMyAccount' %}</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link disabled text-muted">{% translate 'FooterOrderHistory' %}</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="col-6 col-md-2 mb-3">
+                <div class="fw-bold mt-3 mb-2">{% translate 'FooterOurCompany' %}</div>
+                <nav>
+                    <ul class="nav navbar-nav flex-column">
+                        <li class="nav-item">
+                            <p class="nav-link">
+                                <span class="d-block">+7 800 00 00 00</span>
+                                <span class="d-block">© {% now "Y" %} WAIT!</span>
+                            </p>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="col-6 col-md-2 mb-3">
+                <div class="fw-bold mt-3 mb-2">{% translate 'FooterGetConnected' %}</div>
+                <nav>
+                    <ul class="nav navbar-nav flex-column">
+                        <li class="nav-item d-flex flex-row text-muted">
+                            <a href="#" class="nav-link me-2">
+                                {% svg 'telegram' %}
+                            </a>
+                            <a href="#" class="nav-link me-2">
+                                {% svg 'whatsapp' %}
+                            </a>
+                            <a href="#" class="nav-link me-2">
+                                {% svg 'instagram' %}
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </div>
+</footer>
