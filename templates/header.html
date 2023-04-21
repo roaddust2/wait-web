@@ -18,10 +18,9 @@
                             </a>
                             <ul class='dropdown-menu'>
                                 <li><a class="dropdown-item" href="{% url 'catalog' %}">{% translate 'ShopAll' %}</a></li>
-                                <li><a class="dropdown-item" href="{% url 'catalog' category='backpacks' %}">{% translate 'Backpacks' %}</a></li>
-                                <li><a class="dropdown-item" href="{% url 'catalog' category='rolltops' %}">{% translate 'Rolltops' %}</a></li>
-                                <li><a class="dropdown-item" href="{% url 'catalog' category='tote' %}">{% translate 'Tote' %}</a></li>
-                                <li><a class="dropdown-item" href="{% url 'catalog' category='sportbags' %}">{% translate 'Sport bags' %}</a></li>
+                                {% for category in categories %}
+                                <li><a class="dropdown-item" href="{% url 'catalog' category=category.name %}">{{ category.int_name }}</a></li>
+                                {% endfor %}
                             </ul>
                         </ul>
                     </li>

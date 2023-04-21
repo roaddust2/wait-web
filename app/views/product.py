@@ -21,8 +21,6 @@ class ProductListView(ListView):
         category_name = self.kwargs.get('category')
         if category_name:
             context['category'] = Category.objects.get(name=category_name)
-        else:
-            context['categories'] = Category.objects.all()
         return context
 
 

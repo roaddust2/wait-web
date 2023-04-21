@@ -24,10 +24,10 @@ def carousel_item(db):
 @pytest.fixture
 def carousel_item_data():
     data = {
-        'label':'Label1',
-        'placeholder':'Placeholder1',
-        'image':'carousel_empty.jpeg',
-        'image_alt':'alt_text',
-        'priority':1
+        'label': 'Label1',
+        'placeholder': 'Placeholder1',
+        'image': 'carousel_empty.jpeg',
+        'image_alt': 'alt_text',
+        'priority': 1,
     }
     return data
