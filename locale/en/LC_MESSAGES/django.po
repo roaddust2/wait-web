@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-04-20 13:47+0400\n"
+"POT-Creation-Date: 2023-04-22 21:11+0400\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -26,12 +26,12 @@ msgstr "Label"
 msgid "Placeholder"
 msgstr "Placeholder"
 
-#: app/models/home.py:10 app/models/product.py:10 app/models/product.py:56
-#: app/models/product.py:65
+#: app/models/home.py:10 app/models/product.py:10 app/models/product.py:74
+#: app/models/product.py:83
 msgid "Image"
 msgstr "Image"
 
-#: app/models/home.py:11 app/models/product.py:11 app/models/product.py:57
+#: app/models/home.py:11 app/models/product.py:11 app/models/product.py:75
 msgid "ImageAlt"
 msgstr "Image alternative text"
 
@@ -52,7 +52,7 @@ msgstr "Carousel items"
 msgid "Category"
 msgstr "Category"
 
-#: app/models/product.py:18 templates/catalog.html:33
+#: app/models/product.py:18 templates/components/categories_list.html:2
 msgid "Categories"
 msgstr "Categories"
 
@@ -76,102 +76,136 @@ msgstr "Sold"
 msgid "CareatedAt"
 msgstr "Date of creation"
 
-#: app/models/product.py:49 app/models/product.py:58
+#: app/models/product.py:54 app/models/product.py:61 app/models/product.py:76
 msgid "Product"
 msgstr "Product"
 
-#: app/models/product.py:50
+#: app/models/product.py:55
 msgid "Products"
 msgstr "Products"
 
-#: app/models/product.py:59
+#: app/models/product.py:60 app/models/product.py:67
+msgid "Feature"
+msgstr "Feature"
+
+#: app/models/product.py:68
+msgid "Features"
+msgstr "Features"
+
+#: app/models/product.py:77
 msgid "Default"
 msgstr "Default"
 
-#: app/models/product.py:66
+#: app/models/product.py:84
 msgid "Images"
 msgstr "Images"
 
-#: templates/catalog.html:10 templates/header.html:12 templates/product.html:9
+#: templates/catalog.html:8 templates/components/header.html:12
+#: templates/product.html:9
 msgid "HeaderHome"
 msgstr "Home"
 
-#: templates/catalog.html:12 templates/catalog.html:15
+#: templates/catalog.html:10 templates/catalog.html:13
 #: templates/product.html:10
 msgid "Catalog"
 msgstr "Catalog"
 
-#: templates/catalog.html:50 templates/index.html:91
+#: templates/catalog.html:19 templates/index.html:62
 msgid "IndexProductsTitle"
 msgstr "Recomended products"
 
-#: templates/components/product_card.html:39 templates/product.html:58
-msgid "Buy"
-msgstr "Buy now"
+#: templates/components/features_list.html:5
+msgid "IndexFeature1Title"
+msgstr "Tarpaulin"
 
-#: templates/footer.html:6
+#: templates/components/features_list.html:6
+msgid "IndexFeature1Text"
+msgstr ""
+"Made from high-quality, used tarpaulin material that would otherwise go to "
+"waste, our upcycled bags promote sustainability by repurposing materials."
+
+#: templates/components/features_list.html:10
+msgid "IndexFeature2Title"
+msgstr "Prepared"
+
+#: templates/components/features_list.html:11
+msgid "IndexFeature2Text"
+msgstr ""
+"Each piece of tarpaulin is carefully washed, cut, and repurposed into one-of-"
+"a-kind bags that are both sustainable and stylish."
+
+#: templates/components/features_list.html:15
+msgid "IndexFeature3Title"
+msgstr "Manufactured"
+
+#: templates/components/features_list.html:16
+msgid "IndexFeature3Text"
+msgstr ""
+"Our bags are handmade by skilled artisans, resulting in unique and "
+"personalized products that are made with care and attention to detail."
+
+#: templates/components/features_list.html:20
+msgid "IndexFeature4Title"
+msgstr "Unique"
+
+#: templates/components/features_list.html:21
+msgid "IndexFeature4Text"
+msgstr ""
+"From the distinct patterns to the individual wear and tear, each upcycled "
+"bag we create is completely unique, making it a statement piece for any "
+"outfit."
+
+#: templates/components/footer.html:6
 msgid "FooterInformation"
 msgstr "Information"
 
-#: templates/footer.html:10
+#: templates/components/footer.html:10
 msgid "FooterPayments"
 msgstr "Payments"
 
-#: templates/footer.html:13
+#: templates/components/footer.html:13
 msgid "FooterDelivery"
 msgstr "Delivery"
 
-#: templates/footer.html:16
+#: templates/components/footer.html:16
 msgid "FooterReturns"
 msgstr "Returns"
 
-#: templates/footer.html:22 templates/footer.html:26
+#: templates/components/footer.html:22 templates/components/footer.html:26
 msgid "FooterMyAccount"
 msgstr "My account"
 
-#: templates/footer.html:29
+#: templates/components/footer.html:29
 msgid "FooterOrderHistory"
 msgstr "Order history"
 
-#: templates/footer.html:35
+#: templates/components/footer.html:35
 msgid "FooterOurCompany"
 msgstr "Our company"
 
-#: templates/footer.html:48
+#: templates/components/footer.html:48
 msgid "FooterGetConnected"
 msgstr "Get connected"
 
-#: templates/header.html:17
+#: templates/components/header.html:17
 msgid "HeaderShop"
 msgstr "Shop"
 
-#: templates/header.html:20
+#: templates/components/header.html:20
 msgid "ShopAll"
 msgstr "Shop all"
 
-#: templates/header.html:21
-msgid "Backpacks"
-msgstr "Backpacks"
-
-#: templates/header.html:22
-msgid "Rolltops"
-msgstr "Rolltops"
-
-#: templates/header.html:23
-msgid "Tote"
-msgstr "Tote bags"
-
-#: templates/header.html:24
-msgid "Sport bags"
-msgstr "Sport bags"
-
-#: templates/header.html:29
+#: templates/components/header.html:28
 msgid "HeaderAbout"
 msgstr "About us"
 
-#: templates/header.html:35
+#: templates/components/header.html:34
 msgid "HeaderBrandAlt"
 msgstr "Logo"
+
+#: templates/components/product_card.html:12 templates/product.html:66
+msgid "Buy"
+msgstr "Buy now"
 
 #: templates/index.html:46
 msgid "HeroTitle"
@@ -188,44 +222,3 @@ msgstr ""
 #: templates/index.html:49
 msgid "HeroButton"
 msgstr "Shop now"
-
-#: templates/index.html:62
-msgid "IndexFeature1Title"
-msgstr "Tarpaulin"
-
-#: templates/index.html:63
-msgid "IndexFeature1Text"
-msgstr ""
-"Made from high-quality, used tarpaulin material that would otherwise go to "
-"waste, our upcycled bags promote sustainability by repurposing materials."
-
-#: templates/index.html:69
-msgid "IndexFeature2Title"
-msgstr "Prepared"
-
-#: templates/index.html:70
-msgid "IndexFeature2Text"
-msgstr ""
-"Each piece of tarpaulin is carefully washed, cut, and repurposed into one-of-"
-"a-kind bags that are both sustainable and stylish."
-
-#: templates/index.html:76
-msgid "IndexFeature3Title"
-msgstr "Manufactured"
-
-#: templates/index.html:77
-msgid "IndexFeature3Text"
-msgstr ""
-"Our bags are handmade by skilled artisans, resulting in unique and "
-"personalized products that are made with care and attention to detail."
-
-#: templates/index.html:83
-msgid "IndexFeature4Title"
-msgstr "Recommended products"
-
-#: templates/index.html:84
-msgid "IndexFeature4Text"
-msgstr ""
-"From the distinct patterns to the individual wear and tear, each upcycled "
-"bag we create is completely unique, making it a statement piece for any "
-"outfit."

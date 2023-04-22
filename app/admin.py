@@ -46,5 +46,5 @@ class ProductImageInline(admin.StackedInline):
 
 
 @admin.register(Product)
-class ProductAdmin(TranslationAdmin, admin.ModelAdmin):
+class ProductAdmin(TranslationAdmin):
     inlines = [ProductFeatureInline, ProductImageInline]

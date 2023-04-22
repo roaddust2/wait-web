@@ -1,0 +1,23 @@
+{% load i18n static svg %}
+<div class="row row-cols-1 row-cols-lg-4 py-4">
+    <div class="col text-center mb-4 mb-lg-0">
+        {% svg 'truck' %}
+        <h2 class="h3 mt-3">{% translate 'IndexFeature1Title' %}</h3>
+        <p class="lh-lg px-3">{% translate 'IndexFeature1Text' %}</p>
+    </div>
+    <div class="col text-center mb-4 mb-lg-0">
+        {% svg 'scissors' %}
+        <h2 class="h3 mt-3">{% translate 'IndexFeature2Title' %}</h3>
+        <p class="lh-lg px-3">{% translate 'IndexFeature2Text' %}</p>
+    </div>
+    <div class="col text-center mb-4 mb-lg-0">
+        {% svg 'stars' %}
+        <h2 class="h3 mt-3">{% translate 'IndexFeature3Title' %}</h3>
+        <p class="lh-lg px-3">{% translate 'IndexFeature3Text' %}</p>    
+    </div>
+    <div class="col text-center">
+        {% svg 'handbag' %}
+        <h2 class="h3 mt-3">{% translate 'IndexFeature4Title' %}</h3>
+        <p class="lh-lg px-3">{% translate 'IndexFeature4Text' %}</p>    
+    </div>
+</div>

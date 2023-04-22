@@ -3,8 +3,6 @@
 {% block content %}
 <section class="py-3 py-lg-5">
     <div class="container">
-
-        <!-- Breadcrumbs -->
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb">
               <li class="breadcrumb-item"><a href="{% url 'index' %}">{% translate 'HeaderHome' %}</a></li>
@@ -16,46 +14,19 @@
               {% endif %}
             </ol>
         </nav>
-
-        {% if category %}
-        <!-- Category block -->
-        <h1 class="display-5 fw-bold text-body-emphasis lh-1 mb-3">{{ category.int_name }}</h1>
-        <div class="row flex-lg-row">
-            {% for product in products %}
-            <div class="col-12 col-lg-3 mb-4">
-                {% include "components/product_card.html" with product=product %}
-            </div>
-            {% endfor %}
-        </div>
-
+        {% if not category %}
+        {% include "components/categories_list.html" with categories=categories %}
+        <h5 class="fs-3 fw-bold text-center mb-4">{% translate 'IndexProductsTitle' %}</h1>
         {% else %}
-        <!-- Categories block -->
-        <h1 class="display-5 fw-bold text-body-emphasis lh-1 mb-3">{% translate 'Categories' %}</h1>
-        <div class="row row-cols-2 row-cols-lg-4">
-            {% for category in categories %}
-            <div class="col mb-4 text-center">
-                <a href="{% url 'catalog' category=category.name %}">
-                    <img src="{{ category.image.url }}" class="card-img-top" alt="{% if category.image_alt %}{{ category.image_alt }}{% else %}{{ category.int_name }}{% endif %}">
-                </a>
-                
-                <h2 class="card-text h4 mt-3">
-                    <a class="nav-link" href="{% url 'catalog' category=category.name %}">
-                        {{ category.int_name }}
-                    </a>
-                </h2>
-            </div>
-            {% endfor %}
-        </div>
+        <h1 class="display-5 fw-bold text-body-emphasis lh-1 mb-3">{{ category.int_name }}</h1>
+        {% endif %}
         <div class="row flex-lg-row">
-            <div class="fs-3 fw-bold text-center mb-4">{% translate 'IndexProductsTitle' %}</div>
             {% for product in products %}
             <div class="col-12 col-lg-3 mb-4">
                 {% include "components/product_card.html" with product=product %}
             </div>
             {% endfor %}
         </div>
-        {% endif %}
-
     </div>
 </section>
 {% endblock %}
