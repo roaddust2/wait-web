@@ -1,7 +1,7 @@
 from modeltranslation.translator import register, TranslationOptions
 from django.contrib.flatpages.models import FlatPage
 from .models.home import CarouselItem
-from .models.product import Category, Product
+from .models.product import Category, Product, ProductFeature
 
 
 @register(FlatPage)
@@ -22,3 +22,8 @@ class CategoryTranslationOptions(TranslationOptions):
 @register(Product)
 class ProductTranslationOptions(TranslationOptions):
     fields = ('int_name', 'description',)
+
+
+@register(ProductFeature)
+class ProductFeatureTranslationOptions(TranslationOptions):
+    fields = ('feature',)

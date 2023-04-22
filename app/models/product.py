@@ -29,6 +29,11 @@ class Product(models.Model):
     sold = models.BooleanField(default=False, verbose_name=_('Sold'))
     created_at = models.DateTimeField(auto_now_add=True, verbose_name=_('CareatedAt'))
 
+    def get_all_features(self):
+        """Returns the product's related ауфегкуы from ProductFeature model"""
+        images = self.productfeature_set.all()
+        return images
+    
     def get_all_images(self):
         """Returns the product's related images from ProductImage model, defaults first"""
         images = self.productimage_set.all().order_by('default')
@@ -48,6 +53,19 @@ class Product(models.Model):
     class Meta:
         verbose_name = _('Product')
         verbose_name_plural = _('Products')
+
+
+class ProductFeature(models.Model):
+    """Features model (size, weight, color, etc.) connected with product"""
+    feature = models.CharField(_('Feature'), max_length=255)
+    product = models.ForeignKey(Product, on_delete=models.CASCADE, verbose_name=_('Product'))
+
+    def __str__(self):
+        return self.feature
+
+    class Meta:
+        verbose_name = _('Feature')
+        verbose_name_plural = _('Features')
 
 
 class ProductImage(models.Model):

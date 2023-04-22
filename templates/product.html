@@ -52,8 +52,16 @@
             <div class="col">
                 <div class="p-3">
                     <h1 class="display-6 fw-bold text-body-emphasis lh-1 mb-3">{{ product.int_name }}</h1>
+                    <hr>
+                    <p class="fs-3">{{ product.price }} ₽</p>
                     <p class="lead">{{ product.description }}</p>
-                    <p class="fs-3">{{ product.price }}$</p>
+                    {% if product.get_all_features %}
+                    <ul>
+                        {% for feature in product.get_all_features %}
+                        <li class="fs-5">{{ feature }}</li>
+                        {% endfor %}
+                    </ul>
+                    {% endif %}
                         <a href="#">
                             <button type="button" class="btn btn-dark btn-lg me-2">{% translate 'Buy' %}</button>
                         </a>

@@ -1,11 +1,11 @@
 from django.contrib import admin
-from modeltranslation.admin import TranslationAdmin
+from modeltranslation.admin import TranslationAdmin, TranslationTabularInline
 from .models.user import CustomUser
 from django.contrib.auth.admin import UserAdmin
 from django.contrib.flatpages.models import FlatPage
 from django.contrib.flatpages.admin import FlatPageAdmin
 from .models.home import CarouselItem
-from .models.product import Category, Product, ProductImage
+from .models.product import Category, Product, ProductFeature, ProductImage
 
 
 # Customized User
@@ -37,10 +37,14 @@ class CategoryAdmin(TranslationAdmin):
     model = Category
 
 
+class ProductFeatureInline(TranslationTabularInline):
+    model = ProductFeature
+
+
 class ProductImageInline(admin.StackedInline):
     model = ProductImage
 
 
 @admin.register(Product)
 class ProductAdmin(TranslationAdmin, admin.ModelAdmin):
-    inlines = [ProductImageInline]
+    inlines = [ProductFeatureInline, ProductImageInline]
