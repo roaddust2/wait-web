@@ -33,7 +33,7 @@ class Product(models.Model):
         """Returns the product's related ауфегкуы from ProductFeature model"""
         images = self.productfeature_set.all()
         return images
-    
+
     def get_all_images(self):
         """Returns the product's related images from ProductImage model, defaults first"""
         images = self.productimage_set.all().order_by('default')
