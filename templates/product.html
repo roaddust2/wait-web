@@ -8,7 +8,7 @@
             <ol class="breadcrumb">
               <li class="breadcrumb-item"><a href="{% url 'index' %}">{% translate 'HeaderHome' %}</a></li>
               <li class="breadcrumb-item"><a href="{% url 'catalog' %}">{% translate 'Catalog' %}</a></li>
-              <li class="breadcrumb-item"><a href="{% url 'catalog' product.category.category_slug %}">{{ product.category.name }}</a></li>
+              <li class="breadcrumb-item"><a href="{% url 'category' product.category.category_slug %}">{{ product.category.name }}</a></li>
               <li class="breadcrumb-item active" aria-current="page">{{ product.name }}</li>
             </ol>
         </nav>
