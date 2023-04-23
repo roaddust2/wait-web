@@ -9,7 +9,7 @@
               <li class="breadcrumb-item"><a href="{% url 'index' %}">{% translate 'HeaderHome' %}</a></li>
               <li class="breadcrumb-item"><a href="{% url 'catalog' %}">{% translate 'Catalog' %}</a></li>
               <li class="breadcrumb-item"><a href="{% url 'catalog' product.category.category_slug %}">{{ product.category.name }}</a></li>
-              <li class="breadcrumb-item active" aria-current="page">{{ product.int_name }}</li>
+              <li class="breadcrumb-item active" aria-current="page">{{ product.name }}</li>
             </ol>
         </nav>
         <div class="row row-cols-1 row-cols-lg-2 flex-lg-row m-lg-5">
@@ -51,7 +51,7 @@
             </div>
             <div class="col">
                 <div class="p-3">
-                    <h1 class="display-6 fw-bold text-body-emphasis lh-1 mb-3">{{ product.int_name }}</h1>
+                    <h1 class="display-6 fw-bold text-body-emphasis lh-1 mb-3">{{ product.name }}</h1>
                     <hr>
                     <p class="fs-3">{{ product.price }} ₽</p>
                     <p class="lead">{{ product.description }}</p>

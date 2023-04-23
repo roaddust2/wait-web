@@ -5,13 +5,14 @@ from django.utils.translation import gettext_lazy as _
 class Category(models.Model):
     """Categories of products"""
 
-    category_slug = models.SlugField(_('Category'))
+    category_slug = models.SlugField(_('Category'), unique=True)
     name = models.CharField(_('Category'), max_length=255)
+    description = models.TextField(_('Description'), max_length=600)
     image = models.ImageField(_('Image'), upload_to='static/images/categories/')
     image_alt = models.CharField(_('ImageAlt'), max_length=255, null=True, blank=True)
 
     def __str__(self):
-        return self.category_slug
+        return self.name
 
     class Meta:
         verbose_name = _('Category')
@@ -21,8 +22,8 @@ class Category(models.Model):
 class Product(models.Model):
     """Product model"""
 
+    product_slug = models.SlugField(_('Denomination'), unique=True)
     name = models.CharField(_('Denomination'), max_length=255)
-    int_name = models.CharField(_('Denomination'), max_length=255)
     description = models.TextField(_('Description'), max_length=600)
     price = models.DecimalField(_('Price'), max_digits=10, decimal_places=2)
     category = models.ForeignKey(Category, on_delete=models.PROTECT, verbose_name=_('Category'))

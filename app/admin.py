@@ -48,4 +48,6 @@ class ProductImageInline(admin.StackedInline):
 
 @admin.register(Product)
 class ProductAdmin(TranslationAdmin):
+    model = Product
     inlines = [ProductFeatureInline, ProductImageInline]
+    prepopulated_fields = {'product_slug': ['name']}

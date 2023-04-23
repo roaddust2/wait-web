@@ -34,3 +34,5 @@ class ProductDetailView(DetailView):
     model = Product
     template_name = 'product.html'
     context_object_name = 'product'
+    slug_field = 'product_slug'
+    slug_url_kwarg = 'product_slug'
