@@ -19,7 +19,7 @@
                             <ul class='dropdown-menu'>
                                 <li><a class="dropdown-item" href="{% url 'catalog' %}">{% translate 'ShopAll' %}</a></li>
                                 {% for category in categories %}
-                                <li><a class="dropdown-item" href="{% url 'catalog' category=category.name %}">{{ category.int_name }}</a></li>
+                                <li><a class="dropdown-item" href="{% url 'catalog' category.category_slug %}">{{ category.name }}</a></li>
                                 {% endfor %}
                             </ul>
                         </ul>
@@ -43,15 +43,15 @@
                             </a>
                             <ul class='dropdown-menu'>
                                 <li>
-                                <form action="{% url 'set_language' %}" method="post">
-                                    <input name="next" type="hidden" value="{{ redirect_to }}">
-                                    {% csrf_token %}
-                                    {% get_available_languages as AVAILABLE_LANGUAGES %}
-                                    {% get_language_info_list for AVAILABLE_LANGUAGES as languages %}
-                                    {% for language in languages %}
-                                        <button class="dropdown-item" name="language" value="{{ language.code }}" type="submit">{{ language.name_local }}</button>
-                                    {% endfor %}
-                                </form>    
+                                    <form action="{% url 'set_language' %}" method="post">
+                                        <input name="next" type="hidden" value="{{ redirect_to }}">
+                                        {% csrf_token %}
+                                        {% get_available_languages as AVAILABLE_LANGUAGES %}
+                                        {% get_language_info_list for AVAILABLE_LANGUAGES as languages %}
+                                        {% for language in languages %}
+                                            <button class="dropdown-item" name="language" value="{{ language.code }}" type="submit">{{ language.name_local }}</button>
+                                        {% endfor %}
+                                    </form>   
                                 </li>
                             </ul>
                         </ul>                    

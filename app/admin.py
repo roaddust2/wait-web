@@ -35,6 +35,7 @@ class CarouselAdmin(TranslationAdmin):
 @admin.register(Category)
 class CategoryAdmin(TranslationAdmin):
     model = Category
+    prepopulated_fields = {'category_slug': ['name']}
 
 
 class ProductFeatureInline(TranslationTabularInline):

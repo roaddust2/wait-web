@@ -16,7 +16,7 @@ class CarouselTranslationOptions(TranslationOptions):
 
 @register(Category)
 class CategoryTranslationOptions(TranslationOptions):
-    fields = ('int_name',)
+    fields = ('name',)
 
 
 @register(Product)

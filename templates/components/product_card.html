@@ -1,6 +1,6 @@
 {% load i18n static %}
 <div class="card">
-    <a href="{% url 'product' category=product.category.name pk=product.id %}">
+    <a href="{% url 'product' product.category.category_slug product.id %}">
         <div class="card-img-wrap rounded-top">
             <img src="{{ product.get_default_image }}" class="card-img-top zoom" alt="{{ product.name }}">
         </div>

@@ -8,7 +8,7 @@
               <li class="breadcrumb-item"><a href="{% url 'index' %}">{% translate 'HeaderHome' %}</a></li>
               {% if category %}
               <li class="breadcrumb-item"><a href="{% url 'catalog' %}">{% translate 'Catalog' %}</a></li>
-              <li class="breadcrumb-item active" aria-current="page">{{ category.int_name }}</li>
+              <li class="breadcrumb-item active" aria-current="page">{{ category.name }}</li>
               {% else %}
               <li class="breadcrumb-item active" aria-current="page">{% translate 'Catalog' %}</li>
               {% endif %}
@@ -18,7 +18,7 @@
         {% include "components/categories_list.html" with categories=categories %}
         <h5 class="fs-3 fw-bold text-center mb-4">{% translate 'IndexProductsTitle' %}</h1>
         {% else %}
-        <h1 class="display-5 fw-bold text-body-emphasis lh-1 mb-3">{{ category.int_name }}</h1>
+        <h1 class="display-5 fw-bold text-body-emphasis lh-1 mb-3">{{ category.name }}</h1>
         {% endif %}
         <div class="row flex-lg-row">
             {% for product in products %}
