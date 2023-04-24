@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-04-22 21:11+0400\n"
+"POT-Creation-Date: 2023-04-24 18:04+0400\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -26,12 +26,12 @@ msgstr ""
 msgid "Placeholder"
 msgstr ""
 
-#: app/models/home.py:10 app/models/product.py:10 app/models/product.py:74
-#: app/models/product.py:83
+#: app/models/home.py:10 app/models/product.py:12 app/models/product.py:93
+#: app/models/product.py:102
 msgid "Image"
 msgstr ""
 
-#: app/models/home.py:11 app/models/product.py:11 app/models/product.py:75
+#: app/models/home.py:11 app/models/product.py:13 app/models/product.py:94
 msgid "ImageAlt"
 msgstr ""
 
@@ -47,56 +47,56 @@ msgstr ""
 msgid "CarouselItems"
 msgstr ""
 
-#: app/models/product.py:8 app/models/product.py:9 app/models/product.py:17
-#: app/models/product.py:28
+#: app/models/product.py:9 app/models/product.py:10 app/models/product.py:16
+#: app/models/product.py:37
 msgid "Category"
 msgstr ""
 
-#: app/models/product.py:18 templates/components/categories_list.html:2
-msgid "Categories"
-msgstr ""
-
-#: app/models/product.py:24 app/models/product.py:25
-msgid "Denomination"
-msgstr ""
-
-#: app/models/product.py:26
+#: app/models/product.py:11 app/models/product.py:35
 msgid "Description"
 msgstr ""
 
-#: app/models/product.py:27
+#: app/models/product.py:17 templates/components/categories_list.html:2
+msgid "Categories"
+msgstr ""
+
+#: app/models/product.py:33 app/models/product.py:34
+msgid "Denomination"
+msgstr ""
+
+#: app/models/product.py:36
 msgid "Price"
 msgstr ""
 
-#: app/models/product.py:29
+#: app/models/product.py:38
 msgid "Sold"
 msgstr ""
 
-#: app/models/product.py:30
+#: app/models/product.py:39
 msgid "CareatedAt"
 msgstr ""
 
-#: app/models/product.py:54 app/models/product.py:61 app/models/product.py:76
+#: app/models/product.py:60 app/models/product.py:80 app/models/product.py:95
 msgid "Product"
 msgstr ""
 
-#: app/models/product.py:55
+#: app/models/product.py:61
 msgid "Products"
 msgstr ""
 
-#: app/models/product.py:60 app/models/product.py:67
+#: app/models/product.py:79 app/models/product.py:86
 msgid "Feature"
 msgstr ""
 
-#: app/models/product.py:68
+#: app/models/product.py:87
 msgid "Features"
 msgstr ""
 
-#: app/models/product.py:77
+#: app/models/product.py:96
 msgid "Default"
 msgstr ""
 
-#: app/models/product.py:84
+#: app/models/product.py:103
 msgid "Images"
 msgstr ""
 
@@ -192,6 +192,16 @@ msgstr ""
 
 #: templates/components/header.html:34
 msgid "HeaderBrandAlt"
+msgstr ""
+
+#: templates/components/pagination.html:6
+#: templates/components/pagination.html:10
+msgid "Previous"
+msgstr ""
+
+#: templates/components/pagination.html:27
+#: templates/components/pagination.html:31
+msgid "Next"
 msgstr ""
 
 #: templates/components/product_card.html:12 templates/product.html:66
