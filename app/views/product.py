@@ -10,6 +10,7 @@ class ProductListView(ListView):
     model = Product
     template_name = 'catalog.html'
     context_object_name = 'products'
+    ordering = ['sold']
     paginate_by = PAGINATION
 
 
@@ -18,7 +19,7 @@ class ProductCategorizedListView(ProductListView):
 
     def get_queryset(self):
         category_slug = self.kwargs.get('category_slug')
-        return Product.objects.filter(category__category_slug=category_slug)
+        return Product.objects.filter(category__category_slug=category_slug).order_by('sold')
 
     def get_context_data(self, **kwargs):
         context = super(ProductListView, self).get_context_data(**kwargs)
