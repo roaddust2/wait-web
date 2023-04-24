@@ -114,7 +114,7 @@ msgstr "Каталог"
 
 #: templates/catalog.html:19 templates/index.html:62
 msgid "IndexProductsTitle"
-msgstr "Рекоммендованные товары"
+msgstr "Рекомендованные товары"
 
 #: templates/components/features_list.html:5
 msgid "IndexFeature1Title"

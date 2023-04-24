@@ -6,10 +6,10 @@
         <!-- Breadcrumbs -->
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb">
-              <li class="breadcrumb-item"><a href="{% url 'index' %}">{% translate 'HeaderHome' %}</a></li>
-              <li class="breadcrumb-item"><a href="{% url 'catalog' %}">{% translate 'Catalog' %}</a></li>
-              <li class="breadcrumb-item"><a href="{{ product.category.get_absolute_url }}">{{ product.category.name }}</a></li>
-              <li class="breadcrumb-item active" aria-current="page">{{ product.name }}</li>
+              <li class="breadcrumb-item"><a class="text-dark" href="{% url 'index' %}">{% translate 'HeaderHome' %}</a></li>
+              <li class="breadcrumb-item"><a class="text-dark" href="{% url 'catalog' %}">{% translate 'Catalog' %}</a></li>
+              <li class="breadcrumb-item"><a class="text-dark" href="{{ product.category.get_absolute_url }}">{{ product.category.name }}</a></li>
+              <li class="breadcrumb-item text-dark active" aria-current="page">{{ product.name }}</li>
             </ol>
         </nav>
         <div class="row row-cols-1 row-cols-lg-2 flex-lg-row m-lg-5">
@@ -54,11 +54,11 @@
                     <h1 class="display-6 fw-bold text-body-emphasis lh-1 mb-3">{{ product.name }}</h1>
                     <hr>
                     <p class="fs-3">{{ product.price }} ₽</p>
-                    <p class="lead">{{ product.description }}</p>
+                    <p class="fs-5">{{ product.description }}</p>
                     {% if product.get_all_features %}
-                    <ul>
+                    <ul class="lh-lg">
                         {% for feature in product.get_all_features %}
-                        <li class="fs-5">{{ feature }}</li>
+                        <li class="fs-6">{{ feature }}</li>
                         {% endfor %}
                     </ul>
                     {% endif %}

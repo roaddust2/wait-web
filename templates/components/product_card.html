@@ -1,15 +1,10 @@
 {% load i18n static %}
-<div class="card">
-    <a href="{{ product.get_absolute_url }}">
-        <div class="card-img-wrap rounded-top">
-            <img src="{{ product.get_default_image }}" class="card-img-top zoom" alt="{{ product.name }}">
-        </div>
-    </a>
-    <div class="card-body">
-        <h5 class="card-title fs-3">{{ product.name }}</h5>
-        <p class="fs-4">{{ product.price }} ₽</p>
-        <div class="d-grid">
-            <a class="btn btn-outline-dark fs-5 fw-bold" href="#">{% translate 'Buy' %}</a>
-        </div>
+<a href="{{ product.get_absolute_url }}">
+    <div class="card-img-wrap">
+        <img src="{{ product.get_default_image }}" class="card-img-top zoom" alt="{{ product.name }}">
     </div>
+</a>
+<div class="mt-2 text-center">
+    <h5 class="card-title">{{ product.name }}</h5>
+    <p class="">{{ product.price }} ₽</p>
 </div>

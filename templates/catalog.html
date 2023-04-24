@@ -5,9 +5,9 @@
     <div class="container">
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb">
-              <li class="breadcrumb-item"><a href="{% url 'index' %}">{% translate 'HeaderHome' %}</a></li>
+              <li class="breadcrumb-item"><a class="text-dark" href="{% url 'index' %}">{% translate 'HeaderHome' %}</a></li>
               {% if category %}
-              <li class="breadcrumb-item"><a href="{% url 'catalog' %}">{% translate 'Catalog' %}</a></li>
+              <li class="breadcrumb-item"><a class="text-dark" href="{% url 'catalog' %}">{% translate 'Catalog' %}</a></li>
               <li class="breadcrumb-item active" aria-current="page">{{ category.name }}</li>
               {% else %}
               <li class="breadcrumb-item active" aria-current="page">{% translate 'Catalog' %}</li>
