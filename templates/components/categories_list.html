@@ -3,12 +3,12 @@
 <div class="row row-cols-2 row-cols-lg-4">
     {% for category in categories %}
     <div class="col mb-4 text-center">
-        <a href="{% url 'category' category.category_slug %}">
+        <a href="{{ category.get_absolute_url }}">
             <img src="{{ category.image.url }}" class="card-img-top" alt="{% if category.image_alt %}{{ category.image_alt }}{% else %}{{ category.name }}{% endif %}">
         </a>
         
         <h2 class="card-text h4 mt-3">
-            <a class="nav-link" href="{% url 'category' category.category_slug %}">
+            <a class="nav-link" href="{{ category.get_absolute_url }}">
                 {{ category.name }}
             </a>
         </h2>

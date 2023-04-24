@@ -1,4 +1,5 @@
 from django.db import models
+from django.urls import reverse
 from django.utils.translation import gettext_lazy as _
 
 
@@ -11,12 +12,19 @@ class Category(models.Model):
     image = models.ImageField(_('Image'), upload_to='static/images/categories/')
     image_alt = models.CharField(_('ImageAlt'), max_length=255, null=True, blank=True)
 
-    def __str__(self):
-        return self.name
-
     class Meta:
         verbose_name = _('Category')
         verbose_name_plural = _('Categories')
+
+    def __str__(self):
+        return self.name
+
+    def get_absolute_url(self):
+        """Return the url of an instance."""
+        return reverse(
+            'category',
+            args=[self.category_slug],
+        )
 
 
 class Product(models.Model):
@@ -48,12 +56,21 @@ class Product(models.Model):
         else:
             return self.productimage_set.first()
 
-    def __str__(self):
-        return self.name
-
     class Meta:
         verbose_name = _('Product')
         verbose_name_plural = _('Products')
+
+    def __str__(self):
+        return self.name
+
+    def get_absolute_url(self):
+        """Return the url of an instance."""
+        return reverse(
+            'product',
+            args=[
+                self.category.category_slug,
+                self.product_slug],
+        )
 
 
 class ProductFeature(models.Model):
