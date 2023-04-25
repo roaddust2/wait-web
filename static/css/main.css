@@ -21,3 +21,28 @@
 .card-img-wrap:hover:after {
     opacity: 1;
 }
+
+.card-img-wrap-sold {
+    overflow: hidden;
+    position: relative;
+}
+
+.card-img-wrap-sold:after {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+}
+
+.card-img-wrap-sold img {
+    transition: transform .25s;
+    width: 100%;
+    filter: grayscale(100%);
+}
+
+.card-img-wrap-sold:hover img {
+    transform: scale(1.2);
+}
+
+.card-img-wrap-sold:hover:after {
+    opacity: 1;
+}

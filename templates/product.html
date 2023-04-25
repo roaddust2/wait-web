@@ -3,7 +3,6 @@
 {% block content %}
 <section class="py-3 py-lg-5">
     <div class="container">
-        <!-- Breadcrumbs -->
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb">
               <li class="breadcrumb-item"><a class="text-dark" href="{% url 'index' %}">{% translate 'HeaderHome' %}</a></li>
@@ -62,10 +61,13 @@
                         {% endfor %}
                     </ul>
                     {% endif %}
-                        <a href="#">
-                            <button type="button" class="btn btn-dark btn-lg me-2">{% translate 'Buy' %}</button>
-                        </a>
-                    </button>
+                    {% if product.sold %}
+                    <button type="button" class="btn btn-dark btn-lg me-2 disabled">{% translate 'Sold' %}</button>
+                    {% else %}
+                    <a href="#">
+                        <button type="button" class="btn btn-dark btn-lg me-2">{% translate 'Buy' %}</button>
+                    </a>
+                    {% endif %}
                 </div>
             </div>
         </div>

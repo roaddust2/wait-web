@@ -1,10 +1,10 @@
 {% load i18n static %}
 <a href="{{ product.get_absolute_url }}">
-    <div class="card-img-wrap">
+    <div class="card-img-wrap{% if product.sold %}-sold{% endif %}">
         <img src="{{ product.get_default_image }}" class="card-img-top zoom" alt="{{ product.name }}">
     </div>
 </a>
 <div class="mt-2 text-center">
     <h5 class="card-title">{{ product.name }}</h5>
-    <p class="">{{ product.price }} ₽</p>
+    <p>{{ product.price }} ₽</p>
 </div>
