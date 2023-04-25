@@ -12,4 +12,5 @@ urlpatterns = [
     path('payments/', fp_views.flatpage, {"url": "/payments/"}, name="payments"),
     path('delivery/', fp_views.flatpage, {"url": "/delivery/"}, name="delivery"),
     path('returns/', fp_views.flatpage, {"url": "/returns/"}, name="returns"),
+    path('cooperation/', fp_views.flatpage, {"url": "/cooperation/"}, name="cooperation"),
 ]

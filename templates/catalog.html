@@ -20,9 +20,9 @@
         {% else %}
         <h1 class="display-5 fw-bold text-body-emphasis lh-1 mb-3">{{ category.name }}</h1>
         {% endif %}
-        <div class="row flex-lg-row">
+        <div class="row">
             {% for product in page_obj %}
-            <div class="col-12 col-lg-3 mb-4">
+            <div class="col-6 col-lg-3 mb-2">
                 {% include "components/product_card.html" with product=product %}
             </div>
             {% endfor %}

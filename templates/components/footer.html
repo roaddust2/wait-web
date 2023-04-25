@@ -36,6 +36,12 @@
                 <nav>
                     <ul class="nav navbar-nav flex-column">
                         <li class="nav-item">
+                            <a href="{% url 'about' %}" class="nav-link">{% translate 'FooterAbout' %}</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="{% url 'cooperation' %}" class="nav-link">{% translate 'FooterCooperation' %}</a>
+                        </li>
+                        <li class="nav-item">
                             <p class="nav-link">
                                 <span class="d-block">+7 800 00 00 00</span>
                                 <span class="d-block">© {% now "Y" %} WAIT!</span>
