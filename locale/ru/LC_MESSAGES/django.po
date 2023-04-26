@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-04-24 18:04+0400\n"
+"POT-Creation-Date: 2023-04-26 15:00+0400\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -70,7 +70,7 @@ msgstr "Наименование"
 msgid "Price"
 msgstr "Цена"
 
-#: app/models/product.py:38
+#: app/models/product.py:38 templates/product.html:65
 msgid "Sold"
 msgstr "Продано"
 
@@ -103,12 +103,11 @@ msgid "Images"
 msgstr "Изображения"
 
 #: templates/catalog.html:8 templates/components/header.html:12
-#: templates/product.html:9
+#: templates/product.html:8
 msgid "HeaderHome"
 msgstr "Главная"
 
-#: templates/catalog.html:10 templates/catalog.html:13
-#: templates/product.html:10
+#: templates/catalog.html:10 templates/catalog.html:13 templates/product.html:9
 msgid "Catalog"
 msgstr "Каталог"
 
@@ -187,7 +186,15 @@ msgstr "История заказов"
 msgid "FooterOurCompany"
 msgstr "Наша компания"
 
-#: templates/components/footer.html:48
+#: templates/components/footer.html:39
+msgid "FooterAbout"
+msgstr "О нас"
+
+#: templates/components/footer.html:42
+msgid "FooterCooperation"
+msgstr "Сотрудничество"
+
+#: templates/components/footer.html:54
 msgid "FooterGetConnected"
 msgstr "Оставайтесь на связи"
 
@@ -217,10 +224,6 @@ msgstr "Предыдущая"
 msgid "Next"
 msgstr "Следующая"
 
-#: templates/components/product_card.html:12 templates/product.html:66
-msgid "Buy"
-msgstr "Купить"
-
 #: templates/index.html:46
 msgid "HeroTitle"
 msgstr "Экологичность и стиль"
@@ -237,3 +240,7 @@ msgstr ""
 #: templates/index.html:49
 msgid "HeroButton"
 msgstr "За покупками"
+
+#: templates/product.html:68
+msgid "Buy"
+msgstr "Купить"

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-04-24 18:04+0400\n"
+"POT-Creation-Date: 2023-04-26 15:01+0400\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -68,7 +68,7 @@ msgstr ""
 msgid "Price"
 msgstr ""
 
-#: app/models/product.py:38
+#: app/models/product.py:38 templates/product.html:65
 msgid "Sold"
 msgstr ""
 
@@ -101,12 +101,11 @@ msgid "Images"
 msgstr ""
 
 #: templates/catalog.html:8 templates/components/header.html:12
-#: templates/product.html:9
+#: templates/product.html:8
 msgid "HeaderHome"
 msgstr ""
 
-#: templates/catalog.html:10 templates/catalog.html:13
-#: templates/product.html:10
+#: templates/catalog.html:10 templates/catalog.html:13 templates/product.html:9
 msgid "Catalog"
 msgstr ""
 
@@ -174,7 +173,15 @@ msgstr ""
 msgid "FooterOurCompany"
 msgstr ""
 
-#: templates/components/footer.html:48
+#: templates/components/footer.html:39
+msgid "FooterAbout"
+msgstr ""
+
+#: templates/components/footer.html:42
+msgid "FooterCooperation"
+msgstr ""
+
+#: templates/components/footer.html:54
 msgid "FooterGetConnected"
 msgstr ""
 
@@ -204,10 +211,6 @@ msgstr ""
 msgid "Next"
 msgstr ""
 
-#: templates/components/product_card.html:12 templates/product.html:66
-msgid "Buy"
-msgstr ""
-
 #: templates/index.html:46
 msgid "HeroTitle"
 msgstr ""
@@ -218,4 +221,8 @@ msgstr ""
 
 #: templates/index.html:49
 msgid "HeroButton"
+msgstr ""
+
+#: templates/product.html:68
+msgid "Buy"
 msgstr ""
