@@ -1,6 +1,5 @@
 from pathlib import Path
 import os
-import logging
 from dotenv import load_dotenv
 
 load_dotenv()
@@ -8,16 +7,6 @@ load_dotenv()
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-
-# Logging setup
-logging.basicConfig(
-    level=logging.DEBUG,
-    filename=os.path.join(BASE_DIR, 'logs/events.log'),
-    filemode='w',
-    format='{asctime} - {levelname} - {message}',
-    datefmt='%H:%M:%S',
-    style='{',
-)
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
