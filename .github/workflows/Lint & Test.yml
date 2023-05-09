@@ -4,8 +4,8 @@ on:
   - push
 
 env:
-  SECRET_KEY: ${{ secrets.DJANGO_SECRET_KEY }}
-  DEBUG: ${{ vars.DJANGO_DEBUG }}
+  SECRET_KEY: ${{ secrets.SECRET_KEY }}
+  DEBUG: ${{ vars.DEBUG }}
   CC_TEST_REPORTER_ID: ${{ secrets.CC_TEST_REPORTER_ID }}
 
 jobs:
