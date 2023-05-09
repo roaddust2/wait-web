@@ -1,6 +1,5 @@
 from pathlib import Path
 import os
-import logging
 from dotenv import load_dotenv
 import dj_database_url
 
@@ -10,16 +9,6 @@ load_dotenv()
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 
-# Logging setup
-logging.basicConfig(
-    level=logging.DEBUG,
-    filename=os.path.join(BASE_DIR, 'logs/events.log'),
-    filemode='w',
-    format='{asctime} - {levelname} - {message}',
-    datefmt='%H:%M:%S',
-    style='{',
-)
-
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
 
@@ -27,7 +16,7 @@ logging.basicConfig(
 SECRET_KEY = os.getenv('DJANGO_SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = os.getenv('DJANGO_DEBUG', False) == 'True'
+DEBUG = os.getenv('DEBUG', False) == 'True'
 
 ALLOWED_HOSTS = os.getenv('DJANGO_ALLOWED_HOSTS', '127.0.0.1').split(',')
 
