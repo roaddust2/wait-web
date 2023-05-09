@@ -2,6 +2,7 @@ from pathlib import Path
 import os
 import logging
 from dotenv import load_dotenv
+import dj_database_url
 
 load_dotenv()
 
@@ -57,6 +58,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
 ]
 
 ROOT_URLCONF = 'config.urls'
@@ -107,15 +109,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': BASE_DIR / 'db.sqlite3',
     },
-    'production': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'CONN_MAX_AGE': CONN_MAX_AGE,
-        'NAME': os.getenv('POSTGRES_DB'),
-        'USER': os.getenv('POSTGRES_USER'),
-        'PASSWORD': os.getenv('POSTGRES_PASSWORD'),
-        'HOST': os.getenv('POSTGRES_HOST'),
-        'PORT': os.getenv('POSTGRES_PORT'),
-    }
+    'production': dj_database_url.config(conn_max_age=CONN_MAX_AGE)
 }
 
 DATABASES['default'] = DATABASES['dev' if DEBUG else 'production']
