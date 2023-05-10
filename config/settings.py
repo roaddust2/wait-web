@@ -13,12 +13,16 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = os.getenv('DJANGO_SECRET_KEY')
+SECRET_KEY = os.getenv('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = os.getenv('DEBUG', False) == 'True'
+DEBUG = os.getenv('DEBUG')
 
-ALLOWED_HOSTS = os.getenv('DJANGO_ALLOWED_HOSTS', '127.0.0.1').split(',')
+ALLOWED_HOSTS = [
+    'localhost',
+    '127.0.0.1',
+    '0.0.0.0',
+]
 
 
 # Application definition
@@ -91,17 +95,15 @@ MIGRATION_MODULES = {
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
-CONN_MAX_AGE = 500
-
 DATABASES = {
-    'dev': {
+    'default': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': BASE_DIR / 'db.sqlite3',
-    },
-    'production': dj_database_url.config(conn_max_age=CONN_MAX_AGE)
+    }
 }
 
-DATABASES['default'] = DATABASES['dev' if DEBUG else 'production']
+if os.getenv('DATABASE_TYPE') == 'postgresql':
+    DATABASES['default'] = dj_database_url.config(conn_max_age=600)
 
 
 # Custom user model
