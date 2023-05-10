@@ -95,8 +95,9 @@ DATABASES = {
     'dev': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': BASE_DIR / 'db.sqlite3',
-        "TEST": {
-            "NAME": 'test.sqlite3',
+        'TEST': {
+            'ENGINE': 'django.db.backends.sqlite3',
+            'NAME': 'test.sqlite3',
         },
     },
     'production': {
@@ -107,6 +108,10 @@ DATABASES = {
         'PASSWORD': os.getenv('POSTGRES_PASSWORD'),
         'HOST': os.getenv('POSTGRES_HOST'),
         'PORT': os.getenv('POSTGRES_PORT'),
+        'TEST': {
+            'ENGINE': 'django.db.backends.sqlite3',
+            'NAME': 'test.sqlite3',
+        },
     }
 }
 
