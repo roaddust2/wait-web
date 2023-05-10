@@ -15,7 +15,6 @@ gunicorn = "20.1.0"
 pillow = "9.5.0"
 django-modeltranslation = "0.18.9"
 django-inline-svg = "0.1.1"
-dj-database-url = "2.0.0"
 
 
 [tool.poetry.group.dev.dependencies]
