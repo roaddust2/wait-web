@@ -107,16 +107,13 @@ DATABASES = {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': BASE_DIR / 'db.sqlite3',
         'TEST': {
-            'NAME': 'pytest'
+            'ENGINE': 'django.db.backends.sqlite3',
+            'NAME': BASE_DIR / 'pytest',
         }
     }
 }
 
 DATABASES['default'] = DATABASES['development' if DEBUG else 'production']
-
-if 'test' in sys.argv or 'test\\_coverage' in sys.argv:
-    DATABASES['default']['ENGINE'] = 'django.db.backends.sqlite3'
-    DATABASES['default']['NAME'] = ':memory:'
 
 
 # Custom user model
