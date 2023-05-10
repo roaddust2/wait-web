@@ -6,6 +6,7 @@ on:
 env:
   SECRET_KEY: ${{ secrets.DJANGO_SECRET_KEY }}
   DEBUG: ${{ vars.DJANGO_DEBUG }}
+  DJANGO_ALLOWED_HOSTS: ${{ vars.DJANGO_ALLOWED_HOSTS }}
   CC_TEST_REPORTER_ID: ${{ secrets.CC_TEST_REPORTER_ID }}
 
 jobs:
