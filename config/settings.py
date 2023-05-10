@@ -1,6 +1,7 @@
 from pathlib import Path
 import os
 from dotenv import load_dotenv
+import dj_database_url
 
 load_dotenv()
 
@@ -92,15 +93,7 @@ MIGRATION_MODULES = {
 CONN_MAX_AGE = 600
 
 DATABASES = {
-    'dev': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-        'TEST': {
-            'ENGINE': 'django.db.backends.sqlite3',
-            'NAME': 'test.sqlite3',
-        },
-    },
-    'production': {
+    'default': {
         'ENGINE': 'django.db.backends.postgresql',
         'CONN_MAX_AGE': CONN_MAX_AGE,
         'NAME': os.getenv('POSTGRES_DB'),
@@ -111,8 +104,19 @@ DATABASES = {
     }
 }
 
-DATABASES['default'] = DATABASES['dev' if DEBUG else 'production']
+SQLITE_SETTINGS = {
+    'ENGINE': 'django.db.backends.sqlite3',
+    'NAME': BASE_DIR / 'db.sqlite3',
+}
 
+if os.getenv('DJANGO_DB_ENGINE') == 'SQLite':
+    DATABASES['default'] = SQLITE_SETTINGS
+
+# Use the DATABASE_URL environment variable
+# https://pypi.org/project/dj-database-url/
+
+if os.getenv('DATABASE_URL'):
+    DATABASES['default'] = dj_database_url.config(conn_max_age=CONN_MAX_AGE)
 
 # Custom user model
 # https://docs.djangoproject.com/en/4.1/ref/settings/#std-setting-AUTH_USER_MODEL
