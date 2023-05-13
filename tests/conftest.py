@@ -3,6 +3,12 @@ from app.models.home import CarouselItem
 from app.models.product import Category, Product, ProductImage
 
 
+@pytest.fixture(autouse=True)
+def whitenoise_autorefresh(settings):
+    """Skip whitenoise "No directory at" warning"""
+    settings.WHITENOISE_AUTOREFRESH = True
+
+
 @pytest.fixture
 def carousel_item(db):
     item = CarouselItem.objects.create(
