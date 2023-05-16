@@ -19,7 +19,7 @@ django-modeltranslation = "0.18.9"
 django-inline-svg = "^0.1.1"
 
 
-[tool.poetry.group.dev.dependencies]
+[tool.poetry.dev-dependencies]
 flake8 = "^6.0.0"
 pytest-django = "^4.5.2"
 coverage = "^7.2.2"
