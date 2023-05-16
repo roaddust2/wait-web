@@ -1,7 +1,6 @@
 from pathlib import Path
 import os
 from dotenv import load_dotenv
-import dj_database_url
 
 load_dotenv()
 
@@ -90,6 +89,8 @@ MIGRATION_MODULES = {
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
+CONN_MAX_AGE = 600
+
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
@@ -97,8 +98,16 @@ DATABASES = {
     }
 }
 
-if os.getenv('DATABASE_TYPE') == 'postgresql':
-    DATABASES['default'] = dj_database_url.config(conn_max_age=600)
+if os.getenv('DATABASE_TYPE') == 'postgres':
+    DATABASES['default'] = {
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': os.getenv('POSTGRES_DB'),
+        'USER': os.getenv('POSTGRES_USER'),
+        'PASSWORD': os.getenv('POSTGRES_PASSWORD'),
+        'HOST': os.getenv('POSTGRES_HOST'),
+        'PORT': os.getenv('POSTGRES_PORT'),
+        'CONN_MAX_AGE': CONN_MAX_AGE,
+    }
 
 
 # Custom user model
