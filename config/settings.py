@@ -173,6 +173,6 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 # Inline svg settings
 # https://pypi.org/project/django-inline-svg/
 
-SVG_DIRS=[
+SVG_DIRS = [
     os.path.join(STATIC_ROOT, 'svg')
 ]
