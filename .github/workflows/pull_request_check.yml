@@ -5,3 +5,4 @@ on: [pull_request]
 jobs:
   lint_test:
     uses: ./.github/workflows/lint_test.yml
+    secrets: inherit
