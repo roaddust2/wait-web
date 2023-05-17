@@ -1,0 +1,7 @@
+name: Pull request check
+
+on: [pull_request]
+
+jobs:
+  lint_test:
+    uses: ./.github/workflows/lint_test.yml
