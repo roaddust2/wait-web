@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-04-26 15:00+0400\n"
+"POT-Creation-Date: 2023-05-31 14:56+0400\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -101,6 +101,10 @@ msgstr "По умолчанию"
 #: app/models/product.py:103
 msgid "Images"
 msgstr "Изображения"
+
+#: app/models/user.py:11
+msgid "ErrorEmptyEmail"
+msgstr "Поле Email должно быть заполнено"
 
 #: templates/catalog.html:8 templates/components/header.html:12
 #: templates/product.html:8
