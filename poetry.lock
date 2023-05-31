@@ -46,6 +46,18 @@ argon2 = ["argon2-cffi (>=19.1.0)"]
 bcrypt = ["bcrypt"]
 
 [[package]]
+name = "django-debug-toolbar"
+version = "4.1.0"
+description = "A configurable set of panels that display various debug information about the current request/response."
+category = "dev"
+optional = false
+python-versions = ">=3.8"
+
+[package.dependencies]
+django = ">=3.2.4"
+sqlparse = ">=0.2"
+
+[[package]]
 name = "django-inline-svg"
 version = "0.1.1"
 description = "A simple SVG template tag for Django"
@@ -263,7 +275,7 @@ python-versions = ">=2"
 [metadata]
 lock-version = "1.1"
 python-versions = "3.10.*"
-content-hash = "8de2cfb7044a47e0ec5025435fff5c568f4295bc0a1f7d3fe02a1a1cdfdd1968"
+content-hash = "317068421aee79dce7407275beef736afb24beaa6f7d8256867d44d07483d738"
 
 [metadata.files]
 asgiref = [
@@ -330,6 +342,10 @@ coverage = [
 django = [
     {file = "Django-4.2-py3-none-any.whl", hash = "sha256:ad33ed68db9398f5dfb33282704925bce044bef4261cd4fb59e4e7f9ae505a78"},
     {file = "Django-4.2.tar.gz", hash = "sha256:c36e2ab12824e2ac36afa8b2515a70c53c7742f0d6eaefa7311ec379558db997"},
+]
+django-debug-toolbar = [
+    {file = "django_debug_toolbar-4.1.0-py3-none-any.whl", hash = "sha256:a0b532ef5d52544fd745d1dcfc0557fa75f6f0d1962a8298bd568427ef2fa436"},
+    {file = "django_debug_toolbar-4.1.0.tar.gz", hash = "sha256:f57882e335593cb8e74c2bda9f1116bbb9ca8fc0d81b50a75ace0f83de5173c7"},
 ]
 django-inline-svg = [
     {file = "django-inline-svg-0.1.1.tar.gz", hash = "sha256:9a908eb7f2ed23317f896be6e0c355ec488b1944e6f4d2d829a74d1d4e5fb918"},

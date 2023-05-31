@@ -33,11 +33,13 @@ INSTALLED_APPS = [
     'django.contrib.sites',
     'django.contrib.flatpages',
     'svg',
+    'debug_toolbar',
     # Project apps
     'app',
 ]
 
 MIDDLEWARE = [
+    'debug_toolbar.middleware.DebugToolbarMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     "django.middleware.locale.LocaleMiddleware",
@@ -160,8 +162,13 @@ LANGUAGE_CODE = 'en'
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
-STATIC_ROOT = os.path.join(BASE_DIR, 'static/')
 STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'static/')
+STATICFILES_DIRS = (
+    ("css", os.path.join(STATIC_ROOT, 'css/')),
+    ("images", os.path.join(STATIC_ROOT, 'images/')),
+    ("js", os.path.join(STATIC_ROOT, 'js/'))
+)
 
 
 # Default primary key field type
@@ -175,4 +182,10 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 SVG_DIRS = [
     os.path.join(STATIC_ROOT, 'svg')
+]
+
+
+INTERNAL_IPS = [
+    '127.0.0.1',
+    'localhost',
 ]
