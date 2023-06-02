@@ -17,7 +17,13 @@
                         {% if carousel_items %}
                             {% for item in carousel_items %}
                                 <div class="carousel-item {% if forloop.first %}active{% endif %}">
+                                    {% if item.link %}
+                                    <a href="{% url item.link %}">
+                                        <img src="{{ item.image.url }}" class="d-block w-100" alt="{{ item.image_alt }}">
+                                    </a>
+                                    {% else %}
                                     <img src="{{ item.image.url }}" class="d-block w-100" alt="{{ item.image_alt }}">
+                                    {% endif %}
                                     <div class="carousel-caption">
                                         <h5>{{ item.label }}</h5>
                                         <p>{{ item.placeholder }}</p>
