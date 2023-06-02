@@ -1,10 +1,9 @@
 name: Deploy
 
 on:
-  workflow_call:
-#   push:
-#     branches:
-#       - main
+  push:
+    branches:
+      - main
 
 jobs:
   lint_test:
@@ -14,6 +13,7 @@ jobs:
   code_coverage:
     name: Code coverage
     uses: ./.github/workflows/code_coverage.yml
+    needs: [lint_test]
     secrets: inherit
   deploy:
     name: Deploy
@@ -21,25 +21,32 @@ jobs:
     needs: [lint_test, code_coverage]
     timeout-minutes: 10
     steps:
-      - name: Deploy via SSH
-        uses: appleboy/ssh-action@v0.1.10
+      - name: Configure SSH
         env:
-          PATH: ${{ secrets.VPS_PROJECT_PATH }}
+          SSH_HOST: ${{ secrets.VPS_IP }}
+          SSH_USER: ${{ secrets.VPS_USER }}
+          SSH_KEY: ${{ secrets.VPS_KEY }}
+        run: |
+            mkdir -p ~/.ssh/
+            echo "$SSH_KEY" > ~/.ssh/deploy.key
+            chmod 600 ~/.ssh/deploy.key
+            cat >>~/.ssh/config <<END
+            Host deploy
+              HostName $SSH_HOST
+              User $SSH_USER
+              IdentityFile ~/.ssh/deploy.key
+              StrictHostKeyChecking no
+            END
+      - name: Stop app
+        env: 
           PASSWORD: ${{ secrets.VPS_PASSWORD }}
-        with:
-          host: ${{ secrets.VPS_IP }}
-          username: ${{ secrets.VPS_USER }}
-          key: ${{ secrets.VPS_KEY }}
-          port: ${{ secrets.VPS_PORT }}
-          envs: PATH,PASSWORD
-          script_stop: true
-          script: |
-            echo $PASSWORD | sudo -S systemctl stop gunicorn.socket
-            cd $PATH
-            git pull
-            make install
-            make migrate
-            make collectstatic
-            echo $PASSWORD | sudo -S systemctl start gunicorn.socket
-            make collectstatic
-            sudo systemctl start gunicorn.socket
+        run: ssh deploy 'echo $PASSWORD | sudo -S systemctl stop gunicorn.socket'
+      - name: Pull repo and apply migrations
+        env: 
+          PATH: ${{ secrets.VPS_PROJECT_PATH }}
+        run: ssh deploy 'cd $PATH && make install && make migrate && make collectstatic'
+      - name: Start app
+        if: ${{ always() }}
+        env: 
+          PASSWORD: ${{ secrets.VPS_PASSWORD }}
+        run: ssh deploy 'echo $PASSWORD | sudo -S systemctl stop gunicorn.socket'
