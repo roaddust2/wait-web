@@ -51,7 +51,6 @@ start:
 
 # Deploy commands
 setup:
-	cd /var/www/production/wait-web/
 	source venv/bin/activate
 	pip install --upgrade pip
 	pip install -r requirements.txt
