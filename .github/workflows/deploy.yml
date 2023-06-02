@@ -38,25 +38,11 @@ jobs:
               StrictHostKeyChecking no
             END
       - name: Stop app
-        env: 
-          PASSWORD: ${{ secrets.VPS_PASSWORD }}
-        run: |
-          ssh deploy
-          echo $PASSWORD | sudo -S systemctl stop gunicorn.socket
-      - name: Pull repo and apply migrations
-        env: 
-          PATH: ${{ secrets.VPS_PROJECT_PATH }}
-        run: |
-          ssh deploy
-          cd $PATH
-          git pull
-          make install
-          make migrate
-          make collectstatic
+        run: ssh deploy 'sudo systemctl stop gunicorn.socket'
+      - name: Pull repo
+        run: ssh deploy 'cd /var/www/production/wait-web/ && git pull'
+      - name: Apply migrations
+        run: ssh deploy 'cd /var/www/production/wait-web/ && make install && make migrate && make collectstatic'
       - name: Start app
         if: ${{ always() }}
-        env: 
-          PASSWORD: ${{ secrets.VPS_PASSWORD }}
-        run: |
-          ssh deploy
-          echo $PASSWORD | sudo -S systemctl start gunicorn.socket
+        run: ssh deploy 'sudo systemctl stop gunicorn.socket'
