@@ -40,7 +40,7 @@ jobs:
       - name: Stop app
         run: ssh deploy 'sudo systemctl stop gunicorn.socket'
       - name: Pull repo & Apply migrations
-        run: ssh deploy 'cd /var/www/production/wait-web/ && git pull && make install && make migrate && make collectstatic'
+        run: ssh deploy 'make setup'
       - name: Start app
         if: ${{ always() }}
         run: ssh deploy 'sudo systemctl start gunicorn.socket'
