@@ -1,0 +1,31 @@
+name: Code coverage
+
+on:
+  workflow_call:
+
+env:
+  DJANGO_SECRET_KEY: ${{ secrets.DJANGO_SECRET_KEY }}
+  DJANGO_DEBUG: ${{ vars.DJANGO_DEBUG }}
+  DJANGO_ALLOWED_HOSTS: ${{ vars.DJANGO_ALLOWED_HOSTS }}
+  CC_TEST_REPORTER_ID: ${{ secrets.CC_TEST_REPORTER_ID }}
+
+jobs:
+  code_coverage:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Set up Python 3.10
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.10'
+          architecture: 'x64'
+      - name: Install dependencies
+        run: |
+          python3 -m pip install --upgrade pip
+          pip install poetry
+          poetry install
+      - name: Test & publish code coverage
+        uses: paambaati/codeclimate-action@v3.2.0
+        with:
+          coverageCommand: make test-coverage
+          debug: true
