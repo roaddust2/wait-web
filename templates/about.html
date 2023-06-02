@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% load i18n static svg %}
+{% block content %}
+<section class="py-lg-5">
+    <div class="container">
+        <div class="row">
+            <div class="col p-5">
+                <h1 class="display-5 fw-bold text-body-emphasis lh-1 mb-3">{% translate 'HeaderAbout' %}</h1>
+                {% if LANGUAGE_CODE == 'en' %}
+                    {% include "components/about_en.html" %}
+                {% else %}
+                    {% include "components/about_ru.html" %}
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

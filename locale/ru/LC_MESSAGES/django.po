@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-05-31 14:56+0400\n"
+"POT-Creation-Date: 2023-06-02 16:16+0400\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -20,91 +20,95 @@ msgstr ""
 "n%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || "
 "(n%100>=11 && n%100<=14)? 2 : 3);\n"
 
-#: app/models/home.py:8
+#: app/models/home.py:9
 msgid "Label"
 msgstr "Лейбл"
 
-#: app/models/home.py:9
+#: app/models/home.py:10
 msgid "Placeholder"
 msgstr "Заполнитель"
 
-#: app/models/home.py:10 app/models/product.py:12 app/models/product.py:93
-#: app/models/product.py:102
+#: app/models/home.py:11 app/models/product.py:13 app/models/product.py:99
+#: app/models/product.py:113
 msgid "Image"
 msgstr "Изображение"
 
-#: app/models/home.py:11 app/models/product.py:13 app/models/product.py:94
+#: app/models/home.py:12 app/models/product.py:14 app/models/product.py:100
 msgid "ImageAlt"
 msgstr "Альтернативный текст изображения"
 
-#: app/models/home.py:12
+#: app/models/home.py:13
 msgid "Priority"
 msgstr "Приоритет"
 
-#: app/models/home.py:18
+#: app/models/home.py:24
 msgid "CarouselItem"
 msgstr "Элемент карусели"
 
-#: app/models/home.py:19
+#: app/models/home.py:25
 msgid "CarouselItems"
 msgstr "Элементы карусели"
 
-#: app/models/product.py:9 app/models/product.py:10 app/models/product.py:16
-#: app/models/product.py:37
+#: app/models/product.py:10 app/models/product.py:11 app/models/product.py:17
+#: app/models/product.py:43
 msgid "Category"
 msgstr "Категория"
 
-#: app/models/product.py:11 app/models/product.py:35
+#: app/models/product.py:12 app/models/product.py:41
 msgid "Description"
 msgstr "Описание"
 
-#: app/models/product.py:17 templates/components/categories_list.html:2
+#: app/models/product.py:18 templates/components/categories_list.html:2
 msgid "Categories"
 msgstr "Категории"
 
-#: app/models/product.py:33 app/models/product.py:34
+#: app/models/product.py:39 app/models/product.py:40
 msgid "Denomination"
 msgstr "Наименование"
 
-#: app/models/product.py:36
+#: app/models/product.py:42
 msgid "Price"
 msgstr "Цена"
 
-#: app/models/product.py:38 templates/product.html:65
+#: app/models/product.py:44 templates/product.html:65
 msgid "Sold"
 msgstr "Продано"
 
-#: app/models/product.py:39
+#: app/models/product.py:45
 msgid "CareatedAt"
 msgstr "Дата создания"
 
-#: app/models/product.py:60 app/models/product.py:80 app/models/product.py:95
+#: app/models/product.py:66 app/models/product.py:86 app/models/product.py:101
 msgid "Product"
 msgstr "Товар"
 
-#: app/models/product.py:61
+#: app/models/product.py:67
 msgid "Products"
 msgstr "Товары"
 
-#: app/models/product.py:79 app/models/product.py:86
+#: app/models/product.py:85 app/models/product.py:92
 msgid "Feature"
 msgstr "Особенность"
 
-#: app/models/product.py:87
+#: app/models/product.py:93
 msgid "Features"
 msgstr "Особенности"
 
-#: app/models/product.py:96
+#: app/models/product.py:102
 msgid "Default"
 msgstr "По умолчанию"
 
-#: app/models/product.py:103
+#: app/models/product.py:114
 msgid "Images"
 msgstr "Изображения"
 
 #: app/models/user.py:11
 msgid "ErrorEmptyEmail"
 msgstr "Поле Email должно быть заполнено"
+
+#: templates/about.html:8 templates/components/header.html:28
+msgid "HeaderAbout"
+msgstr "О нас"
 
 #: templates/catalog.html:8 templates/components/header.html:12
 #: templates/product.html:8
@@ -210,10 +214,6 @@ msgstr "Магазин"
 msgid "ShopAll"
 msgstr "Посмотреть все"
 
-#: templates/components/header.html:28
-msgid "HeaderAbout"
-msgstr "О нас"
-
 #: templates/components/header.html:34
 msgid "HeaderBrandAlt"
 msgstr "Логотип"
@@ -248,3 +248,8 @@ msgstr "За покупками"
 #: templates/product.html:68
 msgid "Buy"
 msgstr "Купить"
+
+#, fuzzy
+#~| msgid "FooterAbout"
+#~ msgid "ContentAbout"
+#~ msgstr "О нас"
