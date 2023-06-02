@@ -21,7 +21,7 @@ test-coverage:
 	$(ENV) coverage xml --omit=*/tests/*,*/migrations/*
 
 migprepare:
-	$(ENV) $(MANAGE) makemigrations
+	$(MANAGE) makemigrations
 
 # Translation commands
 # Need to have GNU gettext installed
@@ -38,7 +38,10 @@ install:
 	poetry install
 
 migrate:
-	$(ENV) $(MANAGE) migrate
+	$(MANAGE) migrate
+
+collectstatic:
+	$(MANAGE) collectstatic --no-input
 
 dev:
 	$(MANAGE) runserver
