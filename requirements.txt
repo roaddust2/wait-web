@@ -1,12 +1,23 @@
-asgiref==3.7.2 ; python_version >= "3.10" and python_version < "3.11"
-django-inline-svg==0.1.1 ; python_version >= "3.10" and python_version < "3.11"
-django-modeltranslation==0.18.9 ; python_version >= "3.10" and python_version < "3.11"
-django==4.2 ; python_version >= "3.10" and python_version < "3.11"
-gunicorn==20.1.0 ; python_version >= "3.10" and python_version < "3.11"
-pillow==9.5.0 ; python_version >= "3.10" and python_version < "3.11"
-psycopg2-binary==2.9.6 ; python_version >= "3.10" and python_version < "3.11"
-python-dotenv==1.0.0 ; python_version >= "3.10" and python_version < "3.11"
-setuptools==67.8.0 ; python_version >= "3.10" and python_version < "3.11"
-sqlparse==0.4.4 ; python_version >= "3.10" and python_version < "3.11"
-typing-extensions==4.6.2 ; python_version >= "3.10" and python_version < "3.11"
-tzdata==2023.3 ; python_version >= "3.10" and python_version < "3.11" and sys_platform == "win32"
+asgiref==3.7.2
+coverage==7.2.7
+Django==4.2
+django-debug-toolbar==4.1.0
+django-inline-svg==0.1.1
+django-modeltranslation==0.18.9
+exceptiongroup==1.1.1
+flake8==6.0.0
+gunicorn==20.1.0
+iniconfig==2.0.0
+mccabe==0.7.0
+packaging==23.1
+Pillow==9.5.0
+pluggy==1.0.0
+psycopg2-binary==2.9.6
+pycodestyle==2.10.0
+pyflakes==3.0.1
+pytest==7.3.1
+pytest-django==4.5.2
+python-dotenv==1.0.0
+sqlparse==0.4.4
+tomli==2.0.1
+typing_extensions==4.6.2
