@@ -48,3 +48,12 @@ dev:
 
 start:
 	$(ENV) gunicorn -b 0.0.0.0:$(PORT) config.wsgi
+
+# Deploy commands
+setup:
+	cd /var/www/production/wait-web/
+	source venv/bin/activate
+	pip install --upgrade pip
+	pip install -r requirements.txt
+	pytnon3 manage.py migrate
+	pytnon3 manage.py collectstatic --no-input
