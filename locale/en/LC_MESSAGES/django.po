@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-06-02 15:53+0400\n"
+"POT-Creation-Date: 2023-06-03 16:39+0400\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -26,24 +26,28 @@ msgstr "Label"
 msgid "Placeholder"
 msgstr "Placeholder"
 
-#: app/models/home.py:11 app/models/product.py:13 app/models/product.py:99
+#: app/models/home.py:11
+msgid "Link"
+msgstr ""
+
+#: app/models/home.py:12 app/models/product.py:13 app/models/product.py:99
 #: app/models/product.py:113
 msgid "Image"
 msgstr "Image"
 
-#: app/models/home.py:12 app/models/product.py:14 app/models/product.py:100
+#: app/models/home.py:13 app/models/product.py:14 app/models/product.py:100
 msgid "ImageAlt"
 msgstr "Image alternative text"
 
-#: app/models/home.py:13
+#: app/models/home.py:14
 msgid "Priority"
 msgstr "Priority"
 
-#: app/models/home.py:24
+#: app/models/home.py:25
 msgid "CarouselItem"
 msgstr "Carousel item"
 
-#: app/models/home.py:25
+#: app/models/home.py:26
 msgid "CarouselItems"
 msgstr "Carousel items"
 
@@ -68,7 +72,7 @@ msgstr "Name"
 msgid "Price"
 msgstr "Price"
 
-#: app/models/product.py:44 templates/product.html:65
+#: app/models/product.py:44 templates/product.html:34
 msgid "Sold"
 msgstr "Sold"
 
@@ -117,7 +121,7 @@ msgstr "Home"
 msgid "Catalog"
 msgstr "Catalog"
 
-#: templates/catalog.html:19 templates/index.html:62
+#: templates/catalog.html:19 templates/index.html:31
 msgid "IndexProductsTitle"
 msgstr "Recomended products"
 
@@ -214,6 +218,16 @@ msgstr "Shop all"
 msgid "HeaderBrandAlt"
 msgstr "Logo"
 
+#: templates/components/modal.html:6
+msgid "messengerModalTitle"
+msgstr "Feel free to contact us!"
+
+#: templates/components/modal.html:10
+msgid "messengerModalText"
+msgstr ""
+"Unfortunately, ordering goods through the site is currently unavailable. You "
+"can contact us using the messengers below. Sorry for the inconvenience."
+
 #: templates/components/pagination.html:6
 #: templates/components/pagination.html:10
 msgid "Previous"
@@ -224,11 +238,11 @@ msgstr "Previous"
 msgid "Next"
 msgstr "Next"
 
-#: templates/index.html:46
+#: templates/index.html:13
 msgid "HeroTitle"
 msgstr "Sustainability meets style"
 
-#: templates/index.html:47
+#: templates/index.html:14
 msgid "HeroLead"
 msgstr ""
 "We're excited to introduce you to our line of upcycled bags, handcrafted "
@@ -236,10 +250,10 @@ msgstr ""
 "repurpose materials that would otherwise go to waste, resulting in unique "
 "and durable bags that are perfect for any adventure."
 
-#: templates/index.html:49
+#: templates/index.html:17
 msgid "HeroButton"
 msgstr "Shop now"
 
-#: templates/product.html:68
+#: templates/product.html:37
 msgid "Buy"
 msgstr "Buy now"

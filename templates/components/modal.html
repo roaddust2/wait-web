@@ -1,0 +1,19 @@
+{% load i18n static svg %}
+<div class="modal fade" id="messengerModal" tabindex="-1" aria-labelledby="messengerModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="messengerModalLabel">{% translate 'messengerModalTitle' %}</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            {% translate 'messengerModalText' %}
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-outline-primary"><span>{% svg 'telegram' %}</span> Telegram</button>
+            <button type="button" class="btn btn-outline-success"><span>{% svg 'whatsapp' %}</span> WhatsApp</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  

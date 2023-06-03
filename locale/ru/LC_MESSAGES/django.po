@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-06-02 16:16+0400\n"
+"POT-Creation-Date: 2023-06-03 16:39+0400\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -28,24 +28,28 @@ msgstr "Лейбл"
 msgid "Placeholder"
 msgstr "Заполнитель"
 
-#: app/models/home.py:11 app/models/product.py:13 app/models/product.py:99
+#: app/models/home.py:11
+msgid "Link"
+msgstr ""
+
+#: app/models/home.py:12 app/models/product.py:13 app/models/product.py:99
 #: app/models/product.py:113
 msgid "Image"
 msgstr "Изображение"
 
-#: app/models/home.py:12 app/models/product.py:14 app/models/product.py:100
+#: app/models/home.py:13 app/models/product.py:14 app/models/product.py:100
 msgid "ImageAlt"
 msgstr "Альтернативный текст изображения"
 
-#: app/models/home.py:13
+#: app/models/home.py:14
 msgid "Priority"
 msgstr "Приоритет"
 
-#: app/models/home.py:24
+#: app/models/home.py:25
 msgid "CarouselItem"
 msgstr "Элемент карусели"
 
-#: app/models/home.py:25
+#: app/models/home.py:26
 msgid "CarouselItems"
 msgstr "Элементы карусели"
 
@@ -70,7 +74,7 @@ msgstr "Наименование"
 msgid "Price"
 msgstr "Цена"
 
-#: app/models/product.py:44 templates/product.html:65
+#: app/models/product.py:44 templates/product.html:34
 msgid "Sold"
 msgstr "Продано"
 
@@ -119,7 +123,7 @@ msgstr "Главная"
 msgid "Catalog"
 msgstr "Каталог"
 
-#: templates/catalog.html:19 templates/index.html:62
+#: templates/catalog.html:19 templates/index.html:31
 msgid "IndexProductsTitle"
 msgstr "Рекомендованные товары"
 
@@ -218,6 +222,17 @@ msgstr "Посмотреть все"
 msgid "HeaderBrandAlt"
 msgstr "Логотип"
 
+#: templates/components/modal.html:6
+msgid "messengerModalTitle"
+msgstr "Свяжитесь с нами!"
+
+#: templates/components/modal.html:10
+msgid "messengerModalText"
+msgstr ""
+"К сожалению заказ товаров через сайт на текущий момент недоступен. Вы можете "
+"связаться с нами по средствам мессенджеров представленных ниже. Извините за "
+"неудобства."
+
 #: templates/components/pagination.html:6
 #: templates/components/pagination.html:10
 msgid "Previous"
@@ -228,11 +243,11 @@ msgstr "Предыдущая"
 msgid "Next"
 msgstr "Следующая"
 
-#: templates/index.html:46
+#: templates/index.html:13
 msgid "HeroTitle"
 msgstr "Экологичность и стиль"
 
-#: templates/index.html:47
+#: templates/index.html:14
 msgid "HeroLead"
 msgstr ""
 "Мы рады представить вам нашу линию переработанных сумок, изготовленных "
@@ -241,11 +256,11 @@ msgstr ""
 "бы потрачены впустую, в результате чего мы создаем уникальные и прочные "
 "сумки, которые идеально подходят для любых приключений."
 
-#: templates/index.html:49
+#: templates/index.html:17
 msgid "HeroButton"
 msgstr "За покупками"
 
-#: templates/product.html:68
+#: templates/product.html:37
 msgid "Buy"
 msgstr "Купить"
 

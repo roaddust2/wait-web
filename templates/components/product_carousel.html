@@ -1,0 +1,51 @@
+{% load i18n static svg %}
+{% if product.get_all_images.count > 1 %}
+<div id="carouselProductDetail" class="carousel slide">
+    {% if product.get_all_images %}
+    <div class="carousel-indicators">
+        {% for item in product.get_all_images %}
+            <button type="button" data-bs-target="#carouselProductDetail" data-bs-slide-to="{{ forloop.counter0 }}" class="{% if forloop.first %}active{% endif %}" aria-current="true" aria-label="Slide {{ forloop.counter }}"></button>
+        {% endfor %}
+    </div>
+    {% endif %}
+    <div class="carousel-inner">
+        {% if product.get_all_images %}
+            {% for image in product.get_all_images %}
+                <div class="carousel-item {% if forloop.first %}active{% endif %}">
+                    <img src="{{ image.image.url }}" class="d-block w-100" alt="{{ image.image_alt }}">
+                </div>  
+            {% endfor %}
+        {% else %}
+            <div class="carousel-item active">
+                <img src="{{ product.get_default_image }}" class="d-block w-100" alt="Empty">
+            </div> 
+        {% endif %}
+    </div>
+    {% if product.get_all_images %}
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselProductDetail" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselProductDetail" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+    </button>
+    {% endif %}
+</div>
+{% else %}
+<div id="carouselProductDetail" class="carousel slide">
+    <div class="carousel-inner">
+        {% if product.get_all_images %}
+            {% for image in product.get_all_images %}
+                <div class="carousel-item {% if forloop.first %}active{% endif %}">
+                    <img src="{{ image.image.url }}" class="d-block w-100" alt="{{ image.image_alt }}">
+                </div>  
+            {% endfor %}
+        {% else %}
+            <div class="carousel-item active">
+                <img src="{{ product.get_default_image }}" class="d-block w-100" alt="Empty">
+            </div> 
+        {% endif %}
+    </div>
+</div>
+{% endif %}
