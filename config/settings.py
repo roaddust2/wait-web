@@ -23,7 +23,7 @@ ALLOWED_HOSTS = os.getenv('DJANGO_ALLOWED_HOSTS', '127.0.0.1').split(',')
 # Application definition
 
 INSTALLED_APPS = [
-    'modeltranslation',
+    'modeltranslation', # Models translations, put as high as possible
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -34,8 +34,8 @@ INSTALLED_APPS = [
     'django.contrib.flatpages',
     'svg',
     'debug_toolbar',
-    # Project apps
-    'app',
+    'app', # Project app
+    'django_cleanup.apps.CleanupConfig', # Uses signals, put in the bottom
 ]
 
 MIDDLEWARE = [
@@ -184,6 +184,9 @@ SVG_DIRS = [
     os.path.join(STATIC_ROOT, 'svg')
 ]
 
+
+# Django debug toolbar settings
+# https://django-debug-toolbar.readthedocs.io/en/latest/installation.html#configure-internal-ips
 
 INTERNAL_IPS = [
     '127.0.0.1',
