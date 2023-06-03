@@ -42,11 +42,11 @@ jobs:
       - name: Pull repository
         run: ssh deploy 'cd /var/www/production/wait-web/ && git pull'
       - name: Install dependencies
-        run: ssh deploy 'cd /var/www/production/wait-web/ && make install'
+        run: ssh deploy 'cd /var/www/production/wait-web/ && poetry install'
       - name: Apply migrations
-        run: ssh deploy 'cd /var/www/production/wait-web/ && make migrate'
+        run: ssh deploy 'cd /var/www/production/wait-web/ && poetry run python3 manage.py migrate'
       - name: Collect static files
-        run: ssh deploy 'cd /var/www/production/wait-web/ && make collectstatic'
+        run: ssh deploy 'cd /var/www/production/wait-web/ && poetry run python3 manage.py collectstatic'
       - name: Start app
         if: ${{ always() }}
         run: ssh deploy 'sudo systemctl start gunicorn.socket'
