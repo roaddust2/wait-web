@@ -23,7 +23,7 @@ ALLOWED_HOSTS = os.getenv('DJANGO_ALLOWED_HOSTS', '127.0.0.1').split(',')
 # Application definition
 
 INSTALLED_APPS = [
-    'modeltranslation', # Models translations, put as high as possible
+    'modeltranslation',  # Models translations, put as high as possible
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -34,8 +34,8 @@ INSTALLED_APPS = [
     'django.contrib.flatpages',
     'svg',
     'debug_toolbar',
-    'app', # Project app
-    'django_cleanup.apps.CleanupConfig', # Uses signals, put in the bottom
+    'app',  # Project app
+    'django_cleanup.apps.CleanupConfig',  # Uses signals, put in the bottom
 ]
 
 MIDDLEWARE = [
