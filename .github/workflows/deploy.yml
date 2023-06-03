@@ -39,8 +39,14 @@ jobs:
             END
       - name: Stop app
         run: ssh deploy 'sudo systemctl stop gunicorn.socket'
-      - name: Pull repo & Apply migrations
-        run: ssh deploy 'cd /var/www/production/wait-web/ && git pull && make install && make migrate && make collectstatic'
+      - name: Pull repository
+        run: ssh deploy 'cd /var/www/production/wait-web/ && git pull'
+      - name: Install dependencies
+        run: ssh deploy 'cd /var/www/production/wait-web/ && make install'
+      - name: Apply migrations
+        run: ssh deploy 'cd /var/www/production/wait-web/ && make migrate'
+      - name: Collect static files
+        run: ssh deploy 'cd /var/www/production/wait-web/ && make collectstatic'
       - name: Start app
         if: ${{ always() }}
         run: ssh deploy 'sudo systemctl start gunicorn.socket'
