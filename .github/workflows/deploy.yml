@@ -46,7 +46,7 @@ jobs:
       - name: Apply migrations
         run: ssh deploy 'cd /var/www/production/wait-web/ && poetry run python3 manage.py migrate'
       - name: Collect static files
-        run: ssh deploy 'cd /var/www/production/wait-web/ && poetry run python3 manage.py collectstatic'
+        run: ssh deploy 'cd /var/www/production/wait-web/ && poetry run python3 manage.py collectstatic --no-input'
       - name: Start app
         if: ${{ always() }}
         run: ssh deploy 'sudo systemctl start gunicorn.socket'
