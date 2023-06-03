@@ -40,7 +40,7 @@ jobs:
       - name: Stop app
         run: ssh deploy 'sudo systemctl stop gunicorn.socket'
       - name: Pull repo & Apply migrations
-        run: ssh deploy 'make setup'
+        run: ssh deploy 'poetry --version'
       - name: Start app
         if: ${{ always() }}
         run: ssh deploy 'sudo systemctl start gunicorn.socket'
