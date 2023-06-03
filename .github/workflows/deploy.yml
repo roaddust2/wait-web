@@ -37,10 +37,20 @@ jobs:
               IdentityFile ~/.ssh/deploy.key
               StrictHostKeyChecking no
             END
-      - name: Stop app
-        run: ssh deploy 'sudo systemctl stop gunicorn.socket'
-      - name: Pull repo & Apply migrations
-        run: ssh deploy 'poetry --version'
-      - name: Start app
-        if: ${{ always() }}
-        run: ssh deploy 'sudo systemctl start gunicorn.socket'
+      - name: Debug Environment
+        run: | 
+          ssh deploy 'echo "User: $(whoami)"'
+          ssh deploy 'echo "Environment: $(env)"'
+      - name: Debug PATH
+        run: | 
+          ssh deploy 'echo "PATH: $PATH"'
+      - name: Poetry
+        run: | 
+          ssh deploy '/home/wait_github/.local/bin/poetry --version'
+#       - name: Stop app
+#         run: ssh deploy 'sudo systemctl stop gunicorn.socket'
+#       - name: Pull repo & Apply migrations
+#         run: ssh deploy 'poetry --version'
+#       - name: Start app
+#         if: ${{ always() }}
+#         run: ssh deploy 'sudo systemctl start gunicorn.socket'
