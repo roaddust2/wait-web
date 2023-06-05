@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-06-05 14:49+0400\n"
+"POT-Creation-Date: 2023-06-05 15:05+0400\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -111,6 +111,10 @@ msgstr ""
 #: templates/about.html:3 templates/about.html:9
 #: templates/components/header.html:28
 msgid "HeaderAbout"
+msgstr ""
+
+#: templates/base.html:8 templates/index.html:3
+msgid "IndexTitle"
 msgstr ""
 
 #: templates/catalog.html:7 templates/catalog.html:17 templates/catalog.html:20
@@ -227,10 +231,6 @@ msgstr ""
 #: templates/components/pagination.html:27
 #: templates/components/pagination.html:31
 msgid "Next"
-msgstr ""
-
-#: templates/index.html:3
-msgid "IndexTitle"
 msgstr ""
 
 #: templates/index.html:14

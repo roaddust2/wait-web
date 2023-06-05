@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-06-05 14:49+0400\n"
+"POT-Creation-Date: 2023-06-05 15:05+0400\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -112,6 +112,12 @@ msgstr "Email field must not be empty"
 #: templates/components/header.html:28
 msgid "HeaderAbout"
 msgstr "About us"
+
+#: templates/base.html:8 templates/index.html:3
+#, fuzzy
+#| msgid "IndexProductsTitle"
+msgid "IndexTitle"
+msgstr "Recomended products"
 
 #: templates/catalog.html:7 templates/catalog.html:17 templates/catalog.html:20
 #: templates/product.html:10
@@ -239,12 +245,6 @@ msgstr "Previous"
 #: templates/components/pagination.html:31
 msgid "Next"
 msgstr "Next"
-
-#: templates/index.html:3
-#, fuzzy
-#| msgid "IndexProductsTitle"
-msgid "IndexTitle"
-msgstr "Recomended products"
 
 #: templates/index.html:14
 msgid "HeroTitle"
