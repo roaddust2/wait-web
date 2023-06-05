@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-06-03 16:39+0400\n"
+"POT-Creation-Date: 2023-06-05 14:49+0400\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -72,7 +72,7 @@ msgstr ""
 msgid "Price"
 msgstr ""
 
-#: app/models/product.py:44 templates/product.html:34
+#: app/models/product.py:44 templates/product.html:35
 msgid "Sold"
 msgstr ""
 
@@ -108,20 +108,22 @@ msgstr ""
 msgid "ErrorEmptyEmail"
 msgstr ""
 
-#: templates/about.html:8 templates/components/header.html:28
+#: templates/about.html:3 templates/about.html:9
+#: templates/components/header.html:28
 msgid "HeaderAbout"
 msgstr ""
 
-#: templates/catalog.html:8 templates/components/header.html:12
-#: templates/product.html:8
-msgid "HeaderHome"
-msgstr ""
-
-#: templates/catalog.html:10 templates/catalog.html:13 templates/product.html:9
+#: templates/catalog.html:7 templates/catalog.html:17 templates/catalog.html:20
+#: templates/product.html:10
 msgid "Catalog"
 msgstr ""
 
-#: templates/catalog.html:19 templates/index.html:31
+#: templates/catalog.html:15 templates/components/header.html:12
+#: templates/product.html:9
+msgid "HeaderHome"
+msgstr ""
+
+#: templates/catalog.html:26 templates/index.html:32
 msgid "IndexProductsTitle"
 msgstr ""
 
@@ -227,18 +229,22 @@ msgstr ""
 msgid "Next"
 msgstr ""
 
-#: templates/index.html:13
-msgid "HeroTitle"
+#: templates/index.html:3
+msgid "IndexTitle"
 msgstr ""
 
 #: templates/index.html:14
+msgid "HeroTitle"
+msgstr ""
+
+#: templates/index.html:15
 msgid "HeroLead"
 msgstr ""
 
-#: templates/index.html:17
+#: templates/index.html:18
 msgid "HeroButton"
 msgstr ""
 
-#: templates/product.html:37
+#: templates/product.html:38
 msgid "Buy"
 msgstr ""

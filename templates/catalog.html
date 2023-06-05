@@ -1,5 +1,12 @@
 {% extends "base.html" %}
 {% load i18n static %}
+{% block title %}
+    {% if category %}
+        {{ category.name }} | WAIT!
+    {% else %}
+        {% translate 'Catalog' %} | WAIT!
+    {% endif %}
+{% endblock %}
 {% block content %}
 <section class="py-3 py-lg-5">
     <div class="container">

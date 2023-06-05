@@ -9,7 +9,7 @@
     <link rel="icon" href="{% static 'favicon.ico' %}">
     <link rel="stylesheet" href="{% static 'css/main.css' %}">
     <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
-    <title>WAIT!</title>
+    <title>{% block title %}{% endblock %}</title>
 </head>
 <body class="pt-5 pt-sm-6">
     {% include 'components/header.html' %}
