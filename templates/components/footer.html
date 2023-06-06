@@ -23,10 +23,10 @@
                 <nav>
                     <ul class="nav navbar-nav flex-column">
                         <li class="nav-item">
-                            <a href="#" class="nav-link disabled text-muted">{% translate 'FooterMyAccount' %}</a>
+                            <a href="#" class="nav-link disabled text-muted" rel="nofollow">{% translate 'FooterMyAccount' %}</a>
                         </li>
                         <li class="nav-item">
-                            <a href="#" class="nav-link disabled text-muted">{% translate 'FooterOrderHistory' %}</a>
+                            <a href="#" class="nav-link disabled text-muted" rel="nofollow">{% translate 'FooterOrderHistory' %}</a>
                         </li>
                     </ul>
                 </nav>
@@ -43,7 +43,7 @@
                         </li>
                         <li class="nav-item">
                             <p class="nav-link">
-                                <span class="d-block">+7 800 00 00 00</span>
+                                <a href = "mailto:support@waitbags.ru">support@waitbags.ru</a>
                                 <span class="d-block">© {% now "Y" %} WAIT!</span>
                             </p>
                         </li>
@@ -53,14 +53,10 @@
             <div class="col-6 col-md-2 mb-3">
                 <div class="fw-bold mt-3 mb-2">{% translate 'FooterGetConnected' %}</div>
                 <nav>
-                    <ul class="nav navbar-nav flex-column">
-                        <li class="nav-item d-flex flex-row text-muted">
-                            <a href="#" class="nav-link me-2">
-                                {% svg 'telegram' %}
-                            </a>
-                            <a href="#" class="nav-link me-2">
-                                {% svg 'whatsapp' %}
-                            </a>
+                    <ul class="nav navbar-nav flex-column text-muted">
+                        <li class="nav-item d-flex flex-row">
+                            <a href="#" class="nav-link me-2">{% svg 'telegram' %}</a>
+                            <a href="#" class="nav-link me-2">{% svg 'whatsapp' %}</a>
                         </li>
                     </ul>
                 </nav>
