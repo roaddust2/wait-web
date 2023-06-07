@@ -2,7 +2,7 @@ from django.views.generic import ListView, DetailView
 from app.models.product import Category, Product
 
 
-PAGINATION = 4
+PAGINATION = 20
 
 
 class ProductListView(ListView):
