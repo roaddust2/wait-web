@@ -28,7 +28,7 @@ msgstr "Placeholder"
 
 #: app/models/home.py:11
 msgid "Link"
-msgstr ""
+msgstr "Link"
 
 #: app/models/home.py:12 app/models/product.py:13 app/models/product.py:99
 #: app/models/product.py:113
@@ -114,10 +114,8 @@ msgid "HeaderAbout"
 msgstr "About us"
 
 #: templates/base.html:8 templates/index.html:3
-#, fuzzy
-#| msgid "IndexProductsTitle"
 msgid "IndexTitle"
-msgstr "Recomended products"
+msgstr "Upcycled accessories from used materials"
 
 #: templates/catalog.html:7 templates/catalog.html:17 templates/catalog.html:20
 #: templates/product.html:10

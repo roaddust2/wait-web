@@ -10,7 +10,7 @@
         {% for item in carousel_items %}
             <div class="carousel-item {% if forloop.first %}active{% endif %}">
                 {% if item.link %}
-                <a href="{% url item.link %}">
+                <a href="{{ item.link }}">
                     <img src="{{ item.image.url }}" class="d-block w-100" alt="{{ item.image_alt }}">
                 </a>
                 {% else %}
