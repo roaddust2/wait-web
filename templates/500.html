@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% block title %}{% translate '500Title' %} | WAIT!{% endblock %}
+{% block content %}
+<section class="py-3 py-lg-5">
+    <div class="container">
+        <h1 class="display-5 fw-bold text-body-emphasis lh-1 mb-3">{% translate '500Title' %}</h1>
+        <div class="row">
+            <div class="col">
+                <p>{% translate '500Text' %}</p>
+                <a href="{% url 'index' %}">{% translate 'BackOnMain' %}</a>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

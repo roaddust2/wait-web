@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-06-05 15:05+0400\n"
+"POT-Creation-Date: 2023-06-08 19:15+0400\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -108,9 +108,34 @@ msgstr ""
 msgid "ErrorEmptyEmail"
 msgstr ""
 
-#: templates/about.html:3 templates/about.html:9
+#: templates/404.html:3 templates/404.html:7
+msgid "404Title"
+msgstr ""
+
+#: templates/404.html:10
+msgid "404Text"
+msgstr ""
+
+#: templates/404.html:11 templates/500.html:11
+msgid "BackOnMain"
+msgstr ""
+
+#: templates/500.html:3 templates/500.html:7
+msgid "500Title"
+msgstr ""
+
+#: templates/500.html:10
+msgid "500Text"
+msgstr ""
+
+#: templates/about.html:3 templates/about.html:10 templates/about.html:13
 #: templates/components/header.html:28
 msgid "HeaderAbout"
+msgstr ""
+
+#: templates/about.html:9 templates/catalog.html:15
+#: templates/components/header.html:12 templates/product.html:9
+msgid "HeaderHome"
 msgstr ""
 
 #: templates/base.html:8 templates/index.html:3
@@ -120,11 +145,6 @@ msgstr ""
 #: templates/catalog.html:7 templates/catalog.html:17 templates/catalog.html:20
 #: templates/product.html:10
 msgid "Catalog"
-msgstr ""
-
-#: templates/catalog.html:15 templates/components/header.html:12
-#: templates/product.html:9
-msgid "HeaderHome"
 msgstr ""
 
 #: templates/catalog.html:26 templates/index.html:32

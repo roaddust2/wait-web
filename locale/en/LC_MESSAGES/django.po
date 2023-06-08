@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-06-05 15:05+0400\n"
+"POT-Creation-Date: 2023-06-08 19:15+0400\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -108,10 +108,35 @@ msgstr "Images"
 msgid "ErrorEmptyEmail"
 msgstr "Email field must not be empty"
 
-#: templates/about.html:3 templates/about.html:9
+#: templates/404.html:3 templates/404.html:7
+msgid "404Title"
+msgstr "Page not found 404"
+
+#: templates/404.html:10
+msgid "404Text"
+msgstr "Unfortunately page not found"
+
+#: templates/404.html:11 templates/500.html:11
+msgid "BackOnMain"
+msgstr "Back on Main page"
+
+#: templates/500.html:3 templates/500.html:7
+msgid "500Title"
+msgstr "Server error 500"
+
+#: templates/500.html:10
+msgid "500Text"
+msgstr "Unfortunately server error occured"
+
+#: templates/about.html:3 templates/about.html:10 templates/about.html:13
 #: templates/components/header.html:28
 msgid "HeaderAbout"
 msgstr "About us"
+
+#: templates/about.html:9 templates/catalog.html:15
+#: templates/components/header.html:12 templates/product.html:9
+msgid "HeaderHome"
+msgstr "Home"
 
 #: templates/base.html:8 templates/index.html:3
 msgid "IndexTitle"
@@ -121,11 +146,6 @@ msgstr "Upcycled accessories from used materials"
 #: templates/product.html:10
 msgid "Catalog"
 msgstr "Catalog"
-
-#: templates/catalog.html:15 templates/components/header.html:12
-#: templates/product.html:9
-msgid "HeaderHome"
-msgstr "Home"
 
 #: templates/catalog.html:26 templates/index.html:32
 msgid "IndexProductsTitle"

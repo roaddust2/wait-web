@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-06-05 15:05+0400\n"
+"POT-Creation-Date: 2023-06-08 19:15+0400\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -110,10 +110,35 @@ msgstr "Изображения"
 msgid "ErrorEmptyEmail"
 msgstr "Поле Email должно быть заполнено"
 
-#: templates/about.html:3 templates/about.html:9
+#: templates/404.html:3 templates/404.html:7
+msgid "404Title"
+msgstr "Страница не найдена 404"
+
+#: templates/404.html:10
+msgid "404Text"
+msgstr "К сожалению страница не найдена"
+
+#: templates/404.html:11 templates/500.html:11
+msgid "BackOnMain"
+msgstr "Вернуться на Главную"
+
+#: templates/500.html:3 templates/500.html:7
+msgid "500Title"
+msgstr "Ошибка сервера 500"
+
+#: templates/500.html:10
+msgid "500Text"
+msgstr "К сожалению произошла ошибка на сервере"
+
+#: templates/about.html:3 templates/about.html:10 templates/about.html:13
 #: templates/components/header.html:28
 msgid "HeaderAbout"
 msgstr "О нас"
+
+#: templates/about.html:9 templates/catalog.html:15
+#: templates/components/header.html:12 templates/product.html:9
+msgid "HeaderHome"
+msgstr "Главная"
 
 #: templates/base.html:8 templates/index.html:3
 msgid "IndexTitle"
@@ -123,11 +148,6 @@ msgstr "Аксессуары из переработанных материал�
 #: templates/product.html:10
 msgid "Catalog"
 msgstr "Каталог"
-
-#: templates/catalog.html:15 templates/components/header.html:12
-#: templates/product.html:9
-msgid "HeaderHome"
-msgstr "Главная"
 
 #: templates/catalog.html:26 templates/index.html:32
 msgid "IndexProductsTitle"
@@ -269,8 +289,3 @@ msgstr "За покупками"
 #: templates/product.html:38
 msgid "Buy"
 msgstr "Купить"
-
-#, fuzzy
-#~| msgid "FooterAbout"
-#~ msgid "ContentAbout"
-#~ msgstr "О нас"
