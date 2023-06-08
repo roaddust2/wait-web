@@ -4,8 +4,14 @@
 {% block content %}
 <section class="py-lg-5">
     <div class="container">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+              <li class="breadcrumb-item"><a class="text-dark" href="{% url 'index' %}">{% translate 'HeaderHome' %}</a></li>
+              <li class="breadcrumb-item text-dark active" aria-current="page">{{ flatpage.title }}</li>
+            </ol>
+        </nav>
         <div class="row">
-            <div class="col p-5">
+            <div class="col">
                 <h1 class="display-5 fw-bold text-body-emphasis lh-1 mb-3">{{ flatpage.title }}</h1>
                 {{ flatpage.content }}
             </div>
