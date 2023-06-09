@@ -271,15 +271,11 @@ msgstr "Next"
 
 #: templates/index.html:14
 msgid "HeroTitle"
-msgstr "Sustainability meets style"
+msgstr "Upcycle. Simplicity. Quality."
 
 #: templates/index.html:15
 msgid "HeroLead"
-msgstr ""
-"We're excited to introduce you to our line of upcycled bags, handcrafted "
-"from used tarpaulin. Our commitment to sustainability means that we "
-"repurpose materials that would otherwise go to waste, resulting in unique "
-"and durable bags that are perfect for any adventure."
+msgstr "The formula that we applied in the manufacture of our collection. We present to you our line of recycled bags from a used truck tarps. Each bag is hand-sewn in a single copy. The result is unique and durable bags that are perfect for any adventure."
 
 #: templates/index.html:18
 msgid "HeroButton"
