@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-06-08 19:15+0400\n"
+"POT-Creation-Date: 2023-06-09 16:18+0400\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -27,27 +27,31 @@ msgid "Placeholder"
 msgstr "Placeholder"
 
 #: app/models/home.py:11
+msgid "TextColor"
+msgstr "Text color"
+
+#: app/models/home.py:12
 msgid "Link"
 msgstr "Link"
 
-#: app/models/home.py:12 app/models/product.py:13 app/models/product.py:99
+#: app/models/home.py:13 app/models/product.py:13 app/models/product.py:99
 #: app/models/product.py:113
 msgid "Image"
 msgstr "Image"
 
-#: app/models/home.py:13 app/models/product.py:14 app/models/product.py:100
+#: app/models/home.py:14 app/models/product.py:14 app/models/product.py:100
 msgid "ImageAlt"
 msgstr "Image alternative text"
 
-#: app/models/home.py:14
+#: app/models/home.py:15
 msgid "Priority"
 msgstr "Priority"
 
-#: app/models/home.py:25
+#: app/models/home.py:26
 msgid "CarouselItem"
 msgstr "Carousel item"
 
-#: app/models/home.py:26
+#: app/models/home.py:27
 msgid "CarouselItems"
 msgstr "Carousel items"
 
@@ -134,7 +138,8 @@ msgid "HeaderAbout"
 msgstr "About us"
 
 #: templates/about.html:9 templates/catalog.html:15
-#: templates/components/header.html:12 templates/product.html:9
+#: templates/components/header.html:12 templates/flatpages/default.html:9
+#: templates/product.html:9
 msgid "HeaderHome"
 msgstr "Home"
 

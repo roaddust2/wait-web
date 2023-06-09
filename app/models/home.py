@@ -7,7 +7,8 @@ class CarouselItem(models.Model):
     """Carousel slide object to display on home page"""
 
     label = models.CharField(_('Label'), max_length=255)
-    placeholder = models.CharField(_('Placeholder'), max_length=255)
+    placeholder = models.CharField(_('Placeholder'), max_length=255, null=True, blank=True)
+    text_color = models.CharField(_('TextColor'), max_length=255, null=True, blank=True)
     link = models.CharField(_('Link'), max_length=255, null=True, blank=True)
     image = models.ImageField(_('Image'), upload_to='static/images/carousel/')
     image_alt = models.CharField(_('ImageAlt'), max_length=255, null=True, blank=True)

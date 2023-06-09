@@ -17,8 +17,10 @@
                 <img src="{{ item.image.url }}" class="d-block w-100" alt="{{ item.image_alt }}">
                 {% endif %}
                 <div class="carousel-caption">
-                    <h5>{{ item.label }}</h5>
-                    <p>{{ item.placeholder }}</p>
+                    <h5 class="text-{{item.text_color}}">{{ item.label }}</h5>
+                    {% if item.placeholder %}
+                        <p class="text-{{item.text_color}}">{{ item.placeholder }}</p>
+                    {% endif %}
                 </div>
             </div>  
         {% endfor %}
@@ -45,8 +47,10 @@
                 <img src="{{ item.image.url }}" class="d-block w-100" alt="{{ item.image_alt }}">
                 {% endif %}
                 <div class="carousel-caption">
-                    <h5>{{ item.label }}</h5>
-                    <p>{{ item.placeholder }}</p>
+                    <h5 class="text-{{item.text_color}}">{{ item.label }}</h5>
+                    {% if item.placeholder %}
+                        <p class="text-{{item.text_color}}">{{ item.placeholder }}</p>
+                    {% endif %}
                 </div>
             </div>  
         {% endfor %}
