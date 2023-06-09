@@ -3,7 +3,7 @@ from app.models.home import CarouselItem
 from app.models.product import Product
 
 
-ITEMS_COUNT_CAROUSEL = 4
+ITEMS_COUNT_CAROUSEL = 10
 ITEMS_COUNT_FEATURED = 4
 
 
