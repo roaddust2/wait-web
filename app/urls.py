@@ -9,7 +9,6 @@ urlpatterns = [
     path('catalog/<slug:category_slug>/', views.product.ProductCategorizedListView.as_view(), name='category'),
     path('catalog/<slug:category_slug>/<slug:product_slug>', views.product.ProductDetailView.as_view(), name='product'),
     path('about/', views.about.About.as_view(), name="about"),
-    path('payments/', fp_views.flatpage, {"url": "/payments/"}, name="payments"),
     path('delivery/', fp_views.flatpage, {"url": "/delivery/"}, name="delivery"),
     path('returns/', fp_views.flatpage, {"url": "/returns/"}, name="returns"),
     path('cooperation/', fp_views.flatpage, {"url": "/cooperation/"}, name="cooperation"),

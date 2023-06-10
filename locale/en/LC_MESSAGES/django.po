@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-06-09 16:18+0400\n"
+"POT-Creation-Date: 2023-06-10 15:35+0400\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -152,88 +152,91 @@ msgstr "Upcycled accessories from used materials"
 msgid "Catalog"
 msgstr "Catalog"
 
-#: templates/catalog.html:26 templates/index.html:32
+#: templates/catalog.html:26 templates/index.html:30
 msgid "IndexProductsTitle"
 msgstr "Recomended products"
 
-#: templates/components/features_list.html:5
+#: templates/components/features_list.html:6
+#: templates/components/features_list.html:29
 msgid "IndexFeature1Title"
 msgstr "Tarpaulin"
 
-#: templates/components/features_list.html:6
+#: templates/components/features_list.html:7
+#: templates/components/features_list.html:34
 msgid "IndexFeature1Text"
 msgstr ""
-"Made from high-quality, used tarpaulin material that would otherwise go to "
-"waste, our upcycled bags promote sustainability by repurposing materials."
+"In production, we use a used cargo tarp, durable, "
+"moisture-resistant material. However, we are always in search of new raw materials"
 
 #: templates/components/features_list.html:10
+#: templates/components/features_list.html:41
 msgid "IndexFeature2Title"
 msgstr "Prepared"
 
 #: templates/components/features_list.html:11
+#: templates/components/features_list.html:46
 msgid "IndexFeature2Text"
 msgstr ""
-"Each piece of tarpaulin is carefully washed, cut, and repurposed into one-of-"
-"a-kind bags that are both sustainable and stylish."
+"Each awning is carefully washed and processed, after which it goes into "
+"production"
 
-#: templates/components/features_list.html:15
+#: templates/components/features_list.html:14
+#: templates/components/features_list.html:53
 msgid "IndexFeature3Title"
 msgstr "Manufactured"
 
-#: templates/components/features_list.html:16
+#: templates/components/features_list.html:15
+#: templates/components/features_list.html:58
 msgid "IndexFeature3Text"
 msgstr ""
-"Our bags are handmade by skilled artisans, resulting in unique and "
-"personalized products that are made with care and attention to detail."
+"Our bags are handmade by experienced artisians, resulting in "
+"unique and personalized products"
 
-#: templates/components/features_list.html:20
+#: templates/components/features_list.html:18
+#: templates/components/features_list.html:65
 msgid "IndexFeature4Title"
 msgstr "Unique"
 
-#: templates/components/features_list.html:21
+#: templates/components/features_list.html:19
+#: templates/components/features_list.html:70
 msgid "IndexFeature4Text"
 msgstr ""
-"From the distinct patterns to the individual wear and tear, each upcycled "
-"bag we create is completely unique, making it a statement piece for any "
-"outfit."
+"Every product we create is completely unique, from different "
+"color solutions and textures to individual fraying"
 
 #: templates/components/footer.html:6
 msgid "FooterInformation"
 msgstr "Information"
 
 #: templates/components/footer.html:10
-msgid "FooterPayments"
-msgstr "Payments"
-
-#: templates/components/footer.html:13
 msgid "FooterDelivery"
 msgstr "Delivery"
 
-#: templates/components/footer.html:16
+#: templates/components/footer.html:13
 msgid "FooterReturns"
 msgstr "Returns"
 
-#: templates/components/footer.html:22 templates/components/footer.html:26
+#: templates/components/footer.html:19 templates/components/footer.html:23
 msgid "FooterMyAccount"
 msgstr "My account"
 
-#: templates/components/footer.html:29
+#: templates/components/footer.html:26
 msgid "FooterOrderHistory"
 msgstr "Order history"
 
-#: templates/components/footer.html:35
+#: templates/components/footer.html:32
 msgid "FooterOurCompany"
 msgstr "Our company"
 
-#: templates/components/footer.html:39
+#: templates/components/footer.html:36
 msgid "FooterAbout"
 msgstr "About"
 
-#: templates/components/footer.html:42
+#: templates/components/footer.html:39
 msgid "FooterCooperation"
 msgstr "Cooperation"
 
-#: templates/components/footer.html:54
+#: templates/components/footer.html:51
 msgid "FooterGetConnected"
 msgstr "Get connected"
 
@@ -275,7 +278,11 @@ msgstr "Upcycle. Simplicity. Quality."
 
 #: templates/index.html:15
 msgid "HeroLead"
-msgstr "The formula that we applied in the manufacture of our collection. We present to you our line of recycled bags from a used truck tarps. Each bag is hand-sewn in a single copy. The result is unique and durable bags that are perfect for any adventure."
+msgstr ""
+"The formula that we applied in the manufacture of our collection. We present "
+"to you our line of recycled bags from a used truck tarps. Each bag is hand-"
+"sewn in a single copy. The result is unique and durable bags that are "
+"perfect for any adventure."
 
 #: templates/index.html:18
 msgid "HeroButton"

@@ -1,23 +1,75 @@
 {% load i18n static svg %}
-<div class="row row-cols-1 row-cols-lg-4 py-4">
-    <div class="col text-center mb-4 mb-lg-0">
-        {% svg 'truck' %}
-        <h2 class="h3 mt-3">{% translate 'IndexFeature1Title' %}</h3>
-        <p class="lh-lg px-3">{% translate 'IndexFeature1Text' %}</p>
+<div class="d-none d-md-block">
+    <div class="container">
+        <div class="row row-cols-4 py-3">
+            <div class="col text-center">
+                <h2 class="h3 mt-3"><span>{% svg 'truck' %}</span> {% translate 'IndexFeature1Title' %}</h2>
+                <p class="lh-lg px-3">{% translate 'IndexFeature1Text' %}</p>
+            </div>
+            <div class="col text-center">
+                <h2 class="h3 mt-3"><span>{% svg 'scissors' %}</span> {% translate 'IndexFeature2Title' %}</h2>
+                <p class="lh-lg px-3">{% translate 'IndexFeature2Text' %}</p>
+            </div>
+            <div class="col text-center">
+                <h2 class="h3 mt-3"><span>{% svg 'stars' %}</span> {% translate 'IndexFeature3Title' %}</h2>
+                <p class="lh-lg px-3">{% translate 'IndexFeature3Text' %}</p>    
+            </div>
+            <div class="col text-center">
+                <h2 class="h3 mt-3"><span>{% svg 'handbag' %}</span> {% translate 'IndexFeature4Title' %}</h2>
+                <p class="lh-lg px-3">{% translate 'IndexFeature4Text' %}</p>    
+            </div>
+        </div>
     </div>
-    <div class="col text-center mb-4 mb-lg-0">
-        {% svg 'scissors' %}
-        <h2 class="h3 mt-3">{% translate 'IndexFeature2Title' %}</h3>
-        <p class="lh-lg px-3">{% translate 'IndexFeature2Text' %}</p>
-    </div>
-    <div class="col text-center mb-4 mb-lg-0">
-        {% svg 'stars' %}
-        <h2 class="h3 mt-3">{% translate 'IndexFeature3Title' %}</h3>
-        <p class="lh-lg px-3">{% translate 'IndexFeature3Text' %}</p>    
-    </div>
-    <div class="col text-center">
-        {% svg 'handbag' %}
-        <h2 class="h3 mt-3">{% translate 'IndexFeature4Title' %}</h3>
-        <p class="lh-lg px-3">{% translate 'IndexFeature4Text' %}</p>    
+</div>
+<div class="d-block d-md-none">
+    <div class="accordion accordion-flush" id="accordionFeatures">
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="headingOne">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                    <span class="me-3">{% svg 'truck' %}</span>{% translate 'IndexFeature1Title' %}
+                </button>
+            </h2>
+            <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionFeatures">
+                <div class="accordion-body">
+                    {% translate 'IndexFeature1Text' %}
+                </div>
+            </div>
+        </div>
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="headingTwo">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                    <span class="me-3">{% svg 'scissors' %}</span>{% translate 'IndexFeature2Title' %}
+                </button>
+            </h2>
+            <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionFeatures">
+                <div class="accordion-body">
+                    {% translate 'IndexFeature2Text' %}
+                </div>
+            </div>
+        </div>
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="headingThree">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                    <span class="me-3">{% svg 'stars' %}</span>{% translate 'IndexFeature3Title' %}
+                </button>
+            </h2>
+            <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionFeatures">
+                <div class="accordion-body">
+                    {% translate 'IndexFeature3Text' %}
+                </div>
+            </div>
+        </div>
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="headingFour">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                    <span class="me-3">{% svg 'handbag' %} </span>{% translate 'IndexFeature4Title' %}
+                </button>
+            </h2>
+            <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#accordionFeatures">
+                <div class="accordion-body">
+                    {% translate 'IndexFeature4Text' %}
+                </div>
+            </div>
+        </div>
     </div>
 </div>
