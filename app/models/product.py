@@ -91,6 +91,7 @@ class ProductFeature(models.Model):
     class Meta:
         verbose_name = _('Feature')
         verbose_name_plural = _('Features')
+        ordering = ['id']
 
 
 class ProductImage(models.Model):
