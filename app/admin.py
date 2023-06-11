@@ -44,6 +44,8 @@ class CustomFlatPageAdmin(TranslationAdmin, FlatPageAdmin):
 
 @admin.register(CarouselItem)
 class CarouselAdmin(TranslationAdmin):
+    list_display = ('label', 'placeholder', 'link', 'priority')
+    search_fields = ['label', 'placehilder']
     model = CarouselItem
 
 
