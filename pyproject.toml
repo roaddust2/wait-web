@@ -1,9 +1,10 @@
 [tool.poetry]
 name = "wait-web"
 version = "0.1.0"
-description = ""
+description = "Open-source commerce website for local upcycle brand 'WAIT!'"
 authors = ["roaddust2 <roaddust2@yahoo.com>"]
 readme = "README.md"
+license = "MIT"
 packages = [{include = "app"}]
 
 [tool.poetry.dependencies]
