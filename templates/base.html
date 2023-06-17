@@ -25,6 +25,11 @@
     </script>
     <noscript><div><img src="https://mc.yandex.ru/watch/93955502" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
     <!-- /Yandex.Metrika counter -->
+    <meta property="og:site_name" content="WAIT!">
+    <meta property="og:type" content="website">
+    {% block og %}
+    {% endblock %}
+    <meta property="og:description" content="{% translate 'IndexTitle' %}">
     <title>{% block title %}{% endblock %}</title>
 </head>
 <body class="pt-5 pt-sm-6">
