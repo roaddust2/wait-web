@@ -1,5 +1,12 @@
 {% extends "base.html" %}
 {% load i18n static %}
+{% block og %}
+<meta property="og:title" content="{{ product.name }} | WAIT!">
+<meta property="og:url" content="https://waitbags.ru{{ request.get_full_path }}">
+{% with product.get_default_image as image %}
+<meta property="og:image" content="https://waitbags.ru{{ image }}">
+{% endwith %}
+{% endblock %}
 {% block title %}{{ product.name }} | WAIT!{% endblock %}
 {% block content %}
 <section class="py-3 py-lg-5">
