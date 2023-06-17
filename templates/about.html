@@ -15,8 +15,10 @@
             <div class="col">
                 {% if LANGUAGE_CODE == 'en' %}
                     {% include "components/about_en.html" %}
-                {% else %}
+                {% elif LANGUAGE_CODE == 'ru' %}
                     {% include "components/about_ru.html" %}
+                {% elif LANGUAGE_CODE == 'tt' %}
+                    {% include "components/about_tt.html" %}
                 {% endif %}
             </div>
         </div>
