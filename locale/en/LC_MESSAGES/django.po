@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-06-10 15:35+0400\n"
+"POT-Creation-Date: 2023-06-13 17:01+0400\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -34,12 +34,12 @@ msgstr "Text color"
 msgid "Link"
 msgstr "Link"
 
-#: app/models/home.py:13 app/models/product.py:13 app/models/product.py:99
-#: app/models/product.py:113
+#: app/models/home.py:13 app/models/product.py:13 app/models/product.py:100
+#: app/models/product.py:114
 msgid "Image"
 msgstr "Image"
 
-#: app/models/home.py:14 app/models/product.py:14 app/models/product.py:100
+#: app/models/home.py:14 app/models/product.py:14 app/models/product.py:101
 msgid "ImageAlt"
 msgstr "Image alternative text"
 
@@ -84,7 +84,7 @@ msgstr "Sold"
 msgid "CareatedAt"
 msgstr "Date of creation"
 
-#: app/models/product.py:66 app/models/product.py:86 app/models/product.py:101
+#: app/models/product.py:66 app/models/product.py:86 app/models/product.py:102
 msgid "Product"
 msgstr "Product"
 
@@ -100,11 +100,11 @@ msgstr "Feature"
 msgid "Features"
 msgstr "Features"
 
-#: app/models/product.py:102
+#: app/models/product.py:103
 msgid "Default"
 msgstr "Default"
 
-#: app/models/product.py:114
+#: app/models/product.py:115
 msgid "Images"
 msgstr "Images"
 
@@ -165,8 +165,8 @@ msgstr "Tarpaulin"
 #: templates/components/features_list.html:34
 msgid "IndexFeature1Text"
 msgstr ""
-"In production, we use a used cargo tarp, durable, "
-"moisture-resistant material. However, we are always in search of new raw materials"
+"In production, we use a used cargo tarp, durable, moisture-resistant "
+"material. However, we are always in search of new raw materials"
 
 #: templates/components/features_list.html:10
 #: templates/components/features_list.html:41
@@ -189,8 +189,8 @@ msgstr "Manufactured"
 #: templates/components/features_list.html:58
 msgid "IndexFeature3Text"
 msgstr ""
-"Our bags are handmade by experienced artisians, resulting in "
-"unique and personalized products"
+"Our bags are handmade by experienced artisians, resulting in unique and "
+"personalized products"
 
 #: templates/components/features_list.html:18
 #: templates/components/features_list.html:65
@@ -201,8 +201,8 @@ msgstr "Unique"
 #: templates/components/features_list.html:70
 msgid "IndexFeature4Text"
 msgstr ""
-"Every product we create is completely unique, from different "
-"color solutions and textures to individual fraying"
+"Every product we create is completely unique, from different color solutions "
+"and textures to individual fraying"
 
 #: templates/components/footer.html:6
 msgid "FooterInformation"
