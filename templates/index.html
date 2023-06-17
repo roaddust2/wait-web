@@ -1,5 +1,10 @@
 {% extends "base.html" %}
 {% load i18n static svg %}
+{% block og %}
+<meta property="og:title" content="WAIT! | {% translate 'IndexTitle' %}">
+<meta property="og:url" content="https://waitbags.ru{{ request.get_full_path }}">
+<meta property="og:image" content="https://waitbags.ru{% static 'images/index_og.jpg' %}">
+{% endblock %}
 {% block title %}WAIT! | {% translate 'IndexTitle' %}{% endblock %}
 {% block content %}
 <section class="py-lg-5">
