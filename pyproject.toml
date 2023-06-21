@@ -18,12 +18,12 @@ django-modeltranslation = "0.18.9"
 django-inline-svg = "0.1.1"
 django-cleanup = "7.0.0"
 
-
-[tool.poetry.dev-dependencies]
+[tool.poetry.group.dev.dependencies]
 flake8 = "^6.0.0"
 pytest-django = "^4.5.2"
 coverage = "^7.2.2"
 django-debug-toolbar = "^4.1.0"
+factory-boy = "^3.2.1"
 
 [build-system]
 requires = ["poetry-core"]
