@@ -42,7 +42,7 @@ jobs:
       - name: Pull repository
         run: ssh deploy 'cd /var/www/production/wait-web/ && git pull'
       - name: Install dependencies
-        run: ssh deploy 'cd /var/www/production/wait-web/ && poetry install'
+        run: ssh deploy 'cd /var/www/production/wait-web/ && poetry install --without dev'
       - name: Apply migrations
         run: ssh deploy 'cd /var/www/production/wait-web/ && poetry run python3 manage.py migrate'
       - name: Collect static files

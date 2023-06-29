@@ -1,29 +1,25 @@
-# import pytest
-# import os
-# from app.models.home import CarouselItem
-# from app.models.product import Category, Product, ProductImage
-# from django.conf import settings
+import pytest
+from django.core.files.storage import default_storage
+from app.models.home import CarouselItem
+from app.models.product import Category, ProductImage
 
 
-# @pytest.fixture
-# def carousel_item(db):
-#     item = CarouselItem.objects.create(
-#         label='Label1',
-#         placeholder='Placeholder1',
-#         image=os.path.join(settings.STATIC_ROOT, 'images', 'carousel_empty.jpg'),
-#         image_alt='alt_text',
-#         priority=1,
-#     )
-#     return item
-
-
-# @pytest.fixture
-# def carousel_item_data():
-#     data = {
-#         'label': 'Label1',
-#         'placeholder': 'Placeholder1',
-#         'image': os.path.join(settings.STATIC_ROOT, 'images', 'carousel_empty.jpg'),
-#         'image_alt': 'alt_text',
-#         'priority': 1,
-#     }
-#     return data
+@pytest.fixture(autouse=True)
+def cleanup_images(request):
+    """Delete images after tests"""
+    yield
+    categories = Category.objects.all()
+    for category in categories:
+        if category.image:
+            image_path = category.image.path
+            default_storage.delete(image_path)
+    carousel_items = CarouselItem.objects.all()
+    for item in carousel_items:
+        if item.image:
+            image_path = item.image.path
+            default_storage.delete(image_path)
+    product_images = ProductImage.objects.all()
+    for item in product_images:
+        if item.image:
+            image_path = item.image.path
+            default_storage.delete(image_path)
