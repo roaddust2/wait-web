@@ -1,7 +1,5 @@
 import pytest
 from django.urls import reverse
-from django.core.files.storage import default_storage
-from app.models.home import CarouselItem
 from app.views.home import ITEMS_COUNT_CAROUSEL, ITEMS_COUNT_FEATURED
 from tests.factories import (
     CarouselItemFactory,
@@ -9,17 +7,6 @@ from tests.factories import (
     ProductFactory,
     ProductSoldFactory,
 )
-
-
-@pytest.fixture(autouse=True)
-def cleanup_images(request):
-    """Delete images associated with CarouselItem instances"""
-    yield
-    carousel_items = CarouselItem.objects.all()
-    for item in carousel_items:
-        if item.image:
-            image_path = item.image.path
-            default_storage.delete(image_path)
 
 
 @pytest.mark.django_db
@@ -61,7 +48,7 @@ def test_carousel_items(client):
     #  Test view context
     carousel_items_context = response.context['carousel_items']
     assert len(carousel_items_context) == ITEMS_COUNT_CAROUSEL
-    assert carousel_items[:-1] == carousel_items_context[:]
+    assert carousel_items[:ITEMS_COUNT_CAROUSEL] == carousel_items_context[:]
 
 
 @pytest.mark.django_db

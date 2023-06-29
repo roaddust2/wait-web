@@ -7,10 +7,10 @@ from app.models.product import Category, Product, ProductFeature, ProductImage
 from django.core.files.uploadedfile import SimpleUploadedFile
 
 
-def create_image(name: str) -> SimpleUploadedFile:
+def create_image(name: str, size: tuple) -> SimpleUploadedFile:
     """Function that creates image for testing purposes"""
     img_data = BytesIO()
-    image = Image.new('RGB', size=(1, 1))
+    image = Image.new('RGB', size=size)
     image.save(img_data, format='JPEG')
     return SimpleUploadedFile(name.lower().replace(" ", "_"), img_data.getvalue())
 
@@ -29,7 +29,7 @@ class CarouselItemFactory(factory.django.DjangoModelFactory):
 
     @factory.lazy_attribute
     def image(self):
-        image = create_image(f'image_{self.label}.jpg')
+        image = create_image(f'image_{self.label}.jpg', (416, 624))
         return image
 
 
@@ -48,7 +48,7 @@ class CategoryFactory(factory.django.DjangoModelFactory):
 
     @factory.lazy_attribute
     def image(self):
-        image = create_image(f'image_{self.name}.jpg')
+        image = create_image(f'image_{self.name}.jpg', (200, 200))
         return image
 
 
@@ -60,11 +60,25 @@ class ProductFactory(factory.django.DjangoModelFactory):
     name = factory.Sequence(lambda n: 'Name %d' % n)
     description = factory.Sequence(lambda n: 'Description %d' % n)
     price = factory.Sequence(lambda n: n)
-    category = factory.SubFactory(CategoryFactory)
+
+    @factory.lazy_attribute
+    def category(self):
+        if Category.objects.exists():
+            return Category.objects.first()
+        else:
+            return CategoryFactory.create()
 
     @factory.lazy_attribute
     def product_slug(self):
         return slugify(self.name)
+
+    @factory.post_generation
+    def create_features_and_images(self, create, extracted, **kwargs):
+        if not create:
+            return
+        ProductFeatureFactory.create_batch(3, product=self)
+        ProductImageFactory.create(product=self, default=True)
+        ProductImageFactory.create_batch(2, product=self)
 
 
 class ProductFeatureFactory(factory.django.DjangoModelFactory):
@@ -83,10 +97,11 @@ class ProductImageFactory(factory.django.DjangoModelFactory):
 
     image_alt = factory.Sequence(lambda n: 'Image alt text %d' % n)
     product = factory.SubFactory(ProductFactory)
+    default = False
 
     @factory.lazy_attribute
     def image(self):
-        image = create_image(f'image_{self.product.name}.jpg')
+        image = create_image(f'image_{self.product.name}.jpg', (200, 200))
         return image
 
 
