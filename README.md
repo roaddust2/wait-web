@@ -16,22 +16,22 @@ It is a small app written on Python with Django framework for commercial purpose
 * [Bootstrap 5](https://getbootstrap.com/)
 
 ### 1.2 Packages we used
-**Django app:**
-1. [Django](https://pypi.org/project/Django/)
-2. [psycopg2-binary](https://pypi.org/project/psycopg2-binary/)
-3. [gunicorn](https://pypi.org/project/gunicorn/)
-4. [Pillow](https://pypi.org/project/Pillow/)
-**Test, Lint, Debug:**
-1. [flake8](https://pypi.org/project/flake8/)
-2. [pytest-django](https://pypi.org/project/pytest-django/)
-3. [coverage](https://pypi.org/project/coverage/)
-4. [factory-boy](https://pypi.org/project/factory-boy/)
-5. [django-debug-toolbar](https://pypi.org/project/django-debug-toolbar/)
-**Translation:**
-1. [Django modeltranslation](https://pypi.org/project/django-modeltranslation/)
-**Other:**
-1. [django-inline-svg](https://pypi.org/project/django-inline-svg/)
-2. [django-cleanup](https://pypi.org/project/django-cleanup/)
+#### Django app:
+* [Django](https://pypi.org/project/Django/)
+* [psycopg2-binary](https://pypi.org/project/psycopg2-binary/)
+* [gunicorn](https://pypi.org/project/gunicorn/)
+* [Pillow](https://pypi.org/project/Pillow/)  
+#### Test, Lint, Debug:
+* [flake8](https://pypi.org/project/flake8/)
+* [pytest-django](https://pypi.org/project/pytest-django/)
+* [coverage](https://pypi.org/project/coverage/)
+* [factory-boy](https://pypi.org/project/factory-boy/)
+* [django-debug-toolbar](https://pypi.org/project/django-debug-toolbar/)  
+#### Translation:
+* [Django modeltranslation](https://pypi.org/project/django-modeltranslation/)
+#### Other:
+* [django-inline-svg](https://pypi.org/project/django-inline-svg/)
+* [django-cleanup](https://pypi.org/project/django-cleanup/)
 
 ### 1.3 Installation
 Feel free to install and investigate project
