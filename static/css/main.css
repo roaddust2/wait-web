@@ -46,3 +46,10 @@
 .card-img-wrap-sold:hover:after {
     opacity: 1;
 }
+
+.cookie-allow-tag{
+    bottom: 1em;
+    max-width: 500px;
+    width: 90%;
+    z-index: 1;
+}
