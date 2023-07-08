@@ -38,6 +38,19 @@
         {% block content %}{% endblock %}
     </main>
     {% include 'components/footer.html' %}
+
+    <div id="cookie-allow-tag" class="position-fixed cookie-allow-tag bg-dark flex-column p-3 d-flex flex-column rounded start-50 translate-middle-x">
+        <span class="text-white text-center">{% translate 'CookieWarning' %}</span>
+        <button class="btn btn-light mt-1" onclick='localStorage.setItem("cookie-allow-tag", "true"); this.parentNode.remove();'>{% translate 'CookieWarningAccept' %}</button>
+    </div>
+
+    <script>
+        if (localStorage.getItem("cookie-allow-tag"))
+        {
+            document.getElementById("cookie-allow-tag").remove();
+        }
+    </script>
+
     <script src="{% static 'js/bootstrap.bundle.js' %}"></script>
 </body>
 </html>
