@@ -112,6 +112,14 @@ msgstr "Сурәтләр"
 msgid "ErrorEmptyEmail"
 msgstr "Email язу кыры тутырылган булырга тиеш"
 
+#: templates/base.html:43
+msgid "CookieWarning"
+msgstr "Кисәтү! Бу сайт cookie'ларны куллана. Бу сайтны кулланып сез барлык кукиларны кабул итәсез."
+
+#: templates/base.html:44
+msgid "CookieWarningAccept"
+msgstr "Cookie'ларны кабул итегез"
+
 #: templates/404.html:3 templates/404.html:7
 msgid "404Title"
 msgstr "404 бит табылмаган"

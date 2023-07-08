@@ -114,6 +114,14 @@ msgstr "Изображения"
 msgid "ErrorEmptyEmail"
 msgstr "Поле Email должно быть заполнено"
 
+#: templates/base.html:43
+msgid "CookieWarning"
+msgstr "Предупреждение! Этот веб-сайт использует файлы cookie. Используя этот сайт, вы принимаете все файлы cookie."
+
+#: templates/base.html:44
+msgid "CookieWarningAccept"
+msgstr "Принимать файлы cookie"
+
 #: templates/404.html:3 templates/404.html:7
 msgid "404Title"
 msgstr "Страница не найдена 404"
