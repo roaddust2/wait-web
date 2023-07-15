@@ -114,11 +114,11 @@ msgstr "Email field must not be empty"
 
 #: templates/base.html:43
 msgid "CookieWarning"
-msgstr "Warning! This website uses cookies. By using this site you are accepting all cookies."
+msgstr "Our website uses cookies, by using it, you are accepting all cookies."
 
 #: templates/base.html:44
 msgid "CookieWarningAccept"
-msgstr "Accept Cookies"
+msgstr "Accept"
 
 #: templates/404.html:3 templates/404.html:7
 msgid "404Title"
