@@ -12,6 +12,9 @@
 10. Add and commit changes **git commit -am 'Added some feature'**
 11. Push changes **git push origin new-feature**
 12. Create new Pull Request on GitHub
-13. Check if Request passed GithubActions
-14. Wait, until PR is reviewed
-15. You are awesome :)
+13. Don't forget to add GitHub Action vars to your fork, otherwise PR check will fail:  
+    secret **DJANGO_SECRET_KEY** with something like secret_key123  
+    variable **DJANGO_DEBUG** with **True**  
+    variable **DJANGO_ALLOWED_HOSTS** with **127.0.0.1,localhost,0.0.0.0**  
+15. Wait, until PR is reviewed
+16. You are awesome :)
