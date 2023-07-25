@@ -1,7 +1,7 @@
 {% load i18n static %}
 <h1 class="display-5 fw-bold text-body-emphasis lh-1 mb-3">{% translate 'Categories' %}</h1>
 <div class="row row-cols-2 row-cols-lg-4">
-    {% for category in categories|slice:"1:5" %}
+    {% for category in categories %}
     <div class="col mb-4 text-center">
         <a href="{{ category.get_absolute_url }}">
             <img src="{{ category.image.url }}" class="card-img-top" alt="{% if category.image_alt %}{{ category.image_alt }}{% else %}{{ category.name }}{% endif %}">
