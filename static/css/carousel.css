@@ -1,0 +1,31 @@
+.carousel-container {
+  --main-height: auto;
+  display: grid;
+  grid-template-columns: 4fr 1fr;
+  column-gap: 20px;
+  max-height: calc(var(--main-height) * 1px);
+  overflow: hidden;
+}
+
+.carousel-container img {
+  width: 100%;
+  cursor: pointer;
+}
+
+.carousel-aside {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  justify-content: space-between;
+  overflow-y: scroll;
+  scroll-behavior: smooth;
+  max-height: calc(var(--main-height) * 1px);
+}
+
+.carousel-aside::-webkit-scrollbar {
+  width: 17px;
+}
+
+.carousel-aside::-webkit-scrollbar-button:single-button {
+  background: #555;
+}
