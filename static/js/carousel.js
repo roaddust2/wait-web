@@ -3,6 +3,8 @@
     const mainContainer = document.querySelector(".carousel-container");
     const mainImage = mainContainer.querySelector("img");
     const allAsideImg = mainContainer.querySelectorAll(".carousel-aside img");
+    const modalImg = document.querySelector('#carouselModal img');
+    // const hiddenArea = document.getElementById('carouselModal').getAttribute('aria-hidden')
 
     mainContainer.focus();
 
@@ -32,6 +34,7 @@
         if (state.active === ind + 1) return;
         state.active = ind + 1;
         mainImage.src = this.src;
+        modalImg.src = this.src;
         mainImage.animate(animation.blur, animation.blurTiming);
       };
     }
@@ -42,23 +45,26 @@
     }
 
     function arrowSliding(e) {
-      const inFocus = document.activeElement === mainContainer
-      if (/arrowleft/i.test(e.code) && inFocus) {
+      // const inFocus = document.activeElement === mainContainer
+      if (/arrowleft/i.test(e.code)) {
         state.active -= 1;
         if (state.active < 1) state.active = allAsideImg.length;
         arrowControl()  
       }
-      if (/arrowright/i.test(e.code) && inFocus) {
+      if (/arrowright/i.test(e.code)) {
         state.active += 1;
         if (state.active > allAsideImg.length) state.active = 1;
         arrowControl()  
       }
 
       function arrowControl() {
-        mainImage.src = allAsideImg[state.active - 1].src;
+        const imageSrc = allAsideImg[state.active - 1].src;
+        mainImage.src = imageSrc;
+        modalImg.src = imageSrc;
         mainImage.animate(animation.blur, animation.blurTiming);
       }
     }
+
   } catch (error) {
     console.warn(error);
   }

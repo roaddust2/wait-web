@@ -14,14 +14,11 @@
   <div class="modal-dialog modal-dialog-centered">
     <div class="modal-content">
       <div class="modal-header">
-        <h4 class="modal-title fs-5" id="carouselModalLabel">{{ product.get_default_name }}</h4>
+        <h4 class="modal-title fs-5" id="carouselModalLabel">{{ product.name }}</h4>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body d-flex justify-content-center">
         <img draggable="false" class="rounded" src="{{ product.get_default_image }}" alt="main_image" style="max-width: 100%;"/>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
       </div>
     </div>
   </div>

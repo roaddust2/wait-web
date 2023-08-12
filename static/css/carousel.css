@@ -39,16 +39,4 @@
 }
 
 #carouselModal img {
-  cursor: grab;
-  animation: zooming 5s forwards;
-}
-
-@keyframes zooming {
-  from {
-    transform: scale(1);
-  } 
-  
-  to {
-    transform: scale(3);
-  }
 }
