@@ -12,6 +12,10 @@
   cursor: pointer;
 }
 
+.carousel-main img {
+  cursor: zoom-in;
+}
+
 .carousel-aside {
   display: flex;
   flex-direction: column;
@@ -28,4 +32,23 @@
 
 .carousel-aside::-webkit-scrollbar-button:single-button {
   background: #555;
+}
+
+#carouselModal .modal-body {
+  overflow: hidden;
+}
+
+#carouselModal img {
+  cursor: grab;
+  animation: zooming 5s forwards;
+}
+
+@keyframes zooming {
+  from {
+    transform: scale(1);
+  } 
+  
+  to {
+    transform: scale(3);
+  }
 }
