@@ -21,22 +21,36 @@
   flex-direction: column;
   gap: 20px;
   justify-content: space-between;
-  overflow-y: scroll;
+  overflow-y: auto;
   scroll-behavior: smooth;
   max-height: calc(var(--main-height) * 1px);
 }
 
-.carousel-aside::-webkit-scrollbar {
+
+.carousel-aside img {
+  opacity: 0.7;
+}
+
+.carousel-aside img:hover {
+  opacity: 1;
+  transition: opacity 0.5s ease;
+}
+
+/* .carousel-aside::-webkit-scrollbar {
   width: 20px;
 }
 
 .carousel-aside::-webkit-scrollbar-button:single-button {
   background: #555;
-}
+} */
 
 #carouselModal .modal-body {
   overflow: hidden;
 }
 
 #carouselModal img {
+}
+
+.carousel-aside .image-active {
+  opacity: 1;
 }

@@ -1,28 +1,41 @@
 (function () {
   try {
     const mainContainer = document.querySelector(".carousel-container");
+    const backgroundContainer = mainContainer.querySelector('.carousel-main');
     const mainImage = mainContainer.querySelector("img");
     const allAsideImg = mainContainer.querySelectorAll(".carousel-aside img");
     const modalImg = document.querySelector('#carouselModal img');
     // const hiddenArea = document.getElementById('carouselModal').getAttribute('aria-hidden')
 
-    mainContainer.focus();
 
     const state = {
       active: 1,
+      animating: false,
     };
 
     const animation = {
-      blur: [{ filter: "blur(2px)" }, { filter: "blur(0)" }],
+      fadeIn: [{ opacity: 0.3 }, { opacity: 1 }],
       blurTiming: {
-        duration: 1000,
+        duration: 500,
         iterations: 1,
+        easing: 'ease-out'
+      },
+      animate(imageSrc) {
+        state.animating = true;
+        backgroundContainer.style.background = (`left top / cover url(${mainImage.src}) no-repeat`);
+        mainImage.src = imageSrc;
+        mainImage.animate(this.fadeIn, this.blurTiming)
+        .finished.then(r => {
+          state.animating = false;
+          backgroundContainer.style.background = 'none';
+        })
       }
     }
 
     setContainerHeight();
 
     allAsideImg.forEach((image, ind) => {
+      if (ind === 0) image.classList.add('image-active');
       image.addEventListener("click", setImage(ind))
     })
 
@@ -31,11 +44,14 @@
 
     function setImage(ind) {
       return function() {
-        if (state.active === ind + 1) return;
+        if (state.active === ind + 1 || state.animating) return;
+        allAsideImg.forEach((image, index) => {
+          if (index === ind) {
+            image.classList.add('image-active');
+          } else image.classList.remove('image-active');
+        })
         state.active = ind + 1;
-        mainImage.src = this.src;
-        modalImg.src = this.src;
-        mainImage.animate(animation.blur, animation.blurTiming);
+        animation.animate(this.src)
       };
     }
 
@@ -45,23 +61,25 @@
     }
 
     function arrowSliding(e) {
-      // const inFocus = document.activeElement === mainContainer
-      if (/arrowleft/i.test(e.code)) {
+      if (/arrowleft/i.test(e.code) && !state.animating) {
         state.active -= 1;
         if (state.active < 1) state.active = allAsideImg.length;
         arrowControl()  
       }
-      if (/arrowright/i.test(e.code)) {
+      if (/arrowright/i.test(e.code) && !state.animating) {
         state.active += 1;
         if (state.active > allAsideImg.length) state.active = 1;
-        arrowControl()  
+        arrowControl()
       }
 
       function arrowControl() {
+        allAsideImg.forEach((image, index) => {
+          if (index === state.active - 1) {
+            image.classList.add('image-active');
+          } else image.classList.remove('image-active');
+        })
         const imageSrc = allAsideImg[state.active - 1].src;
-        mainImage.src = imageSrc;
-        modalImg.src = imageSrc;
-        mainImage.animate(animation.blur, animation.blurTiming);
+        animation.animate(imageSrc);
       }
     }
 
