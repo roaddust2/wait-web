@@ -1,16 +1,16 @@
 (function () {
   try {
     const mainContainer = document.querySelector(".carousel-container");
+    if (!mainContainer) return;
     const backgroundContainer = mainContainer.querySelector('.carousel-main');
     const mainImage = mainContainer.querySelector("img");
     const allAsideImg = mainContainer.querySelectorAll(".carousel-aside img");
     const modalImg = document.querySelector('#carouselModal img');
-    // const hiddenArea = document.getElementById('carouselModal').getAttribute('aria-hidden')
-
 
     const state = {
       active: 1,
       animating: false,
+      openedModal: () => document.getElementById('carouselModal').getAttribute('aria-hidden'),
     };
 
     const animation = {
@@ -24,12 +24,18 @@
         state.animating = true;
         backgroundContainer.style.background = (`left top / cover url(${mainImage.src}) no-repeat`);
         mainImage.src = imageSrc;
+        modalImg.src = imageSrc;
         mainImage.animate(this.fadeIn, this.blurTiming)
         .finished.then(r => {
           state.animating = false;
           backgroundContainer.style.background = 'none';
         })
       }
+    }
+
+    if (!/Android|iPhone/i.test(navigator.userAgent)) {
+      backgroundContainer.setAttribute('data-bs-toggle', 'modal')
+      backgroundContainer.setAttribute('data-bs-target', '#carouselModal')
     }
 
     setContainerHeight();
@@ -42,6 +48,8 @@
     window.removeEventListener("keydown", arrowSliding);
     window.addEventListener("keydown", arrowSliding);
 
+
+    
     function setImage(ind) {
       return function() {
         if (state.active === ind + 1 || state.animating) return;
@@ -61,12 +69,13 @@
     }
 
     function arrowSliding(e) {
-      if (/arrowleft/i.test(e.code) && !state.animating) {
+      const modal = state.openedModal()
+      if (/arrowleft/i.test(e.code) && !state.animating && modal) {
         state.active -= 1;
         if (state.active < 1) state.active = allAsideImg.length;
         arrowControl()  
       }
-      if (/arrowright/i.test(e.code) && !state.animating) {
+      if (/arrowright/i.test(e.code) && !state.animating && modal) {
         state.active += 1;
         if (state.active > allAsideImg.length) state.active = 1;
         arrowControl()

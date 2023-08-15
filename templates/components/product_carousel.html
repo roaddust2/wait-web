@@ -1,6 +1,6 @@
 {% load i18n static svg %} {% if product.get_all_images.count > 1 %}
 <div class="carousel-container" tabindex="0">
-  <div class="carousel-main" data-bs-toggle="modal" data-bs-target="#carouselModal">
+  <div class="carousel-main">
     <img src="{{ product.get_default_image }}" alt="main_image" />
   </div>
   <div class="carousel-aside">
@@ -10,20 +10,15 @@
   </div>
 </div>
 
-{%comment%}
 <div class="modal fade" id="carouselModal" tabindex="-1" aria-labelledby="carouselModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered">
+  <div class="modal-dialog modal-dialog-centered modal-lg">
     <div class="modal-content">
-      <div class="modal-header">
-        <h4 class="modal-title fs-5" id="carouselModalLabel">{{ product.name }}</h4>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body d-flex justify-content-center">
+      <div class="modal-body p-0 d-flex justify-content-center">
+        <button type="button" class="btn-close fs-2 position-absolute top-0 end-0" data-bs-dismiss="modal" aria-label="Close"></button>
         <img draggable="false" class="rounded" src="{{ product.get_default_image }}" alt="main_image" style="max-width: 100%;"/>
       </div>
     </div>
   </div>
 </div>
-{%endcomment%}
 
 {% endif %}

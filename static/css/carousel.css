@@ -36,21 +36,36 @@
   transition: opacity 0.5s ease;
 }
 
-/* .carousel-aside::-webkit-scrollbar {
-  width: 20px;
+::-webkit-scrollbar {
+  width: 10px;
 }
 
-.carousel-aside::-webkit-scrollbar-button:single-button {
-  background: #555;
-} */
+::-webkit-scrollbar-track {
+  background: #F2F2F2;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #BDBDBD;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #6E6E6E;
+}
 
 #carouselModal .modal-body {
   overflow: hidden;
 }
 
-#carouselModal img {
-}
-
 .carousel-aside .image-active {
   opacity: 1;
+}
+
+@media (max-width: 600px) {
+  .carousel-container {
+    column-gap: 10px;
+  }
+
+  .carousel-aside {
+    gap: 10px;
+  }
 }
