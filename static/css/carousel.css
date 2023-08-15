@@ -1,7 +1,7 @@
 .carousel-container {
   --main-height: auto;
   display: grid;
-  grid-template-columns: 4fr 1fr;
+  grid-template-columns: 4.5fr 1fr;
   column-gap: 20px;
   max-height: calc(var(--main-height) * 1px);
   overflow: hidden;
@@ -21,7 +21,8 @@
   flex-direction: column;
   gap: 20px;
   justify-content: space-between;
-  overflow-y: auto;
+  overflow-y: scroll;
+  overflow-x: hidden;
   scroll-behavior: smooth;
   max-height: calc(var(--main-height) * 1px);
 }
@@ -36,28 +37,28 @@
   transition: opacity 0.5s ease;
 }
 
-::-webkit-scrollbar {
-  width: 10px;
-}
-
-::-webkit-scrollbar-track {
-  background: #F2F2F2;
-}
-
-::-webkit-scrollbar-thumb {
-  background: #BDBDBD;
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background: #6E6E6E;
-}
-
 #carouselModal .modal-body {
   overflow: hidden;
 }
 
 .carousel-aside .image-active {
   opacity: 1;
+}
+
+.carousel-aside::-webkit-scrollbar {
+  width: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.carousel-aside::-webkit-scrollbar-thumb {
+  background: transparent;
+}
+
+.carousel-aside:hover::-webkit-scrollbar-thumb {
+  background: #6E6E6E;
 }
 
 @media (max-width: 600px) {
