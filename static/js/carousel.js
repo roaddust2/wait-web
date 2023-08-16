@@ -40,7 +40,6 @@
           })
         !isPhone && modalImg.animate(this.fadeIn, this.blurTiming)
           .finished.then(r => {
-            console.log(33)
             state.animating = false;
             modalBg.style.background = 'none';
           })
@@ -48,7 +47,7 @@
     }
 
     if (!isPhone) {
-      // Все модальные события добавляются только при проверке
+      // All modal events are only added on validation
       backgroundContainer.setAttribute('data-bs-toggle', 'modal')
       backgroundContainer.setAttribute('data-bs-target', '#carouselModal')
       window.removeEventListener("keydown", arrowSliding);
@@ -65,7 +64,7 @@
       }
     }
 
-    // Чтобы сделать оверфлоу хидден (скролл) для боковых слайдов
+    // To make an overflow hidden (scroll) for side slides
     setContainerHeight();
 
     allAsideImg.forEach((image, ind) => {
@@ -73,7 +72,7 @@
       image.addEventListener("click", setImage(ind))
     })
 
-    // Функция висит на боковых картинках слайда
+    // Handler for side images of a slide
     function setImage(ind) {
       return function () {
         if (state.active === ind + 1 || state.animating) return;
@@ -92,7 +91,7 @@
       mainContainer.style.setProperty("--main-height", height);
     }
 
-    // Обработчик на контроль стрелок
+    // Arrow control handler
     function arrowSliding(e) {
       if (/arrowleft/i.test(e.code) && !state.animating) {
         state.active -= 1;
@@ -106,7 +105,7 @@
       }
     }
 
-    // Так же работает в модалке при клике вправо влево
+    // It also works in the modal when you click right / left
     function arrowControl() {
       allAsideImg.forEach((image, index) => {
         if (index === state.active - 1) {
