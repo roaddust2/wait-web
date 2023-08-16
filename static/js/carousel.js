@@ -2,15 +2,22 @@
   try {
     const mainContainer = document.querySelector(".carousel-container");
     if (!mainContainer) return;
+
     const backgroundContainer = mainContainer.querySelector('.carousel-main');
     const mainImage = mainContainer.querySelector("img");
     const allAsideImg = mainContainer.querySelectorAll(".carousel-aside img");
-    const modalImg = document.querySelector('#carouselModal img');
+    const modal = document.querySelector('#carouselModal');
+    const modalImg = modal.querySelector('img');
+    const modalBg = modal.querySelector('.modal-bg')
+    const modalLeft = modal.querySelector('.modal-left')
+    const modalRight = modal.querySelector('.modal-right')
+
+    const isPhone = /Android|iPhone/i.test(navigator.userAgent);
 
     const state = {
       active: 1,
       animating: false,
-      openedModal: () => document.getElementById('carouselModal').getAttribute('aria-hidden'),
+      // openedModal: () => document.getElementById('carouselModal').getAttribute('aria-hidden'),
     };
 
     const animation = {
@@ -23,21 +30,42 @@
       animate(imageSrc) {
         state.animating = true;
         backgroundContainer.style.background = (`left top / cover url(${mainImage.src}) no-repeat`);
+        !isPhone ? modalBg.style.background = (`left top / cover url(${mainImage.src}) no-repeat`) : '';
         mainImage.src = imageSrc;
-        modalImg.src = imageSrc;
+        !isPhone ? modalImg.src = imageSrc : '';
         mainImage.animate(this.fadeIn, this.blurTiming)
-        .finished.then(r => {
-          state.animating = false;
-          backgroundContainer.style.background = 'none';
-        })
+          .finished.then(r => {
+            state.animating = false;
+            backgroundContainer.style.background = 'none';
+          })
+        !isPhone && modalImg.animate(this.fadeIn, this.blurTiming)
+          .finished.then(r => {
+            console.log(33)
+            state.animating = false;
+            modalBg.style.background = 'none';
+          })
       }
     }
 
-    if (!/Android|iPhone/i.test(navigator.userAgent)) {
+    if (!isPhone) {
+      // Все модальные события добавляются только при проверке
       backgroundContainer.setAttribute('data-bs-toggle', 'modal')
       backgroundContainer.setAttribute('data-bs-target', '#carouselModal')
+      window.removeEventListener("keydown", arrowSliding);
+      window.addEventListener("keydown", arrowSliding);
+      modalLeft.onclick = () => {
+        state.active -= 1;
+        if (state.active < 1) state.active = allAsideImg.length;
+        arrowControl()
+      }
+      modalRight.onclick = () => {
+        state.active += 1;
+        if (state.active > allAsideImg.length) state.active = 1;
+        arrowControl()
+      }
     }
 
+    // Чтобы сделать оверфлоу хидден (скролл) для боковых слайдов
     setContainerHeight();
 
     allAsideImg.forEach((image, ind) => {
@@ -45,13 +73,9 @@
       image.addEventListener("click", setImage(ind))
     })
 
-    window.removeEventListener("keydown", arrowSliding);
-    window.addEventListener("keydown", arrowSliding);
-
-
-    
+    // Функция висит на боковых картинках слайда
     function setImage(ind) {
-      return function() {
+      return function () {
         if (state.active === ind + 1 || state.animating) return;
         allAsideImg.forEach((image, index) => {
           if (index === ind) {
@@ -68,28 +92,29 @@
       mainContainer.style.setProperty("--main-height", height);
     }
 
+    // Обработчик на контроль стрелок
     function arrowSliding(e) {
-      const modal = state.openedModal()
-      if (/arrowleft/i.test(e.code) && !state.animating && modal) {
+      if (/arrowleft/i.test(e.code) && !state.animating) {
         state.active -= 1;
         if (state.active < 1) state.active = allAsideImg.length;
-        arrowControl()  
+        arrowControl()
       }
-      if (/arrowright/i.test(e.code) && !state.animating && modal) {
+      if (/arrowright/i.test(e.code) && !state.animating) {
         state.active += 1;
         if (state.active > allAsideImg.length) state.active = 1;
         arrowControl()
       }
+    }
 
-      function arrowControl() {
-        allAsideImg.forEach((image, index) => {
-          if (index === state.active - 1) {
-            image.classList.add('image-active');
-          } else image.classList.remove('image-active');
-        })
-        const imageSrc = allAsideImg[state.active - 1].src;
-        animation.animate(imageSrc);
-      }
+    // Так же работает в модалке при клике вправо влево
+    function arrowControl() {
+      allAsideImg.forEach((image, index) => {
+        if (index === state.active - 1) {
+          image.classList.add('image-active');
+        } else image.classList.remove('image-active');
+      })
+      const imageSrc = allAsideImg[state.active - 1].src;
+      animation.animate(imageSrc);
     }
 
   } catch (error) {

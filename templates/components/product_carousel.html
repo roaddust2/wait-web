@@ -13,7 +13,10 @@
 <div class="modal fade" id="carouselModal" tabindex="-1" aria-labelledby="carouselModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered modal-lg">
     <div class="modal-content">
-      <div class="modal-body p-0 d-flex justify-content-center">
+      <div role='button' class="modal-body position-relative p-0 d-flex justify-content-center">
+        <div class="modal-bg rounded position-absolute top-0 bottom-0 end-0 start-0"></div>
+        <div class="modal-left position-absolute top-0 bottom-0 end-50 start-0"></div>
+        <div class="modal-right position-absolute top-0 bottom-0 start-50 end-0"></div>
         <button type="button" class="btn-close fs-2 position-absolute top-0 end-0" data-bs-dismiss="modal" aria-label="Close"></button>
         <img draggable="false" class="rounded" src="{{ product.get_default_image }}" alt="main_image" style="max-width: 100%;"/>
       </div>
