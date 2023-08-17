@@ -1,6 +1,5 @@
 from django.db import models
 from django.utils.translation import gettext_lazy as _
-from utils.optimizer import compress
 
 from app.models.abstract import AbstractCompressImage
 
