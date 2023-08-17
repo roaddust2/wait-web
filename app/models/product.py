@@ -1,10 +1,11 @@
 from django.db import models
 from django.urls import reverse
 from django.utils.translation import gettext_lazy as _
-from utils.optimizer import compress
+
+from app.models.abstract import AbstractCompressImage
 
 
-class Category(models.Model):
+class Category(AbstractCompressImage):
     """Categories of products"""
 
     category_slug = models.SlugField(_('Category'), unique=True)
@@ -16,11 +17,6 @@ class Category(models.Model):
     class Meta:
         verbose_name = _('Category')
         verbose_name_plural = _('Categories')
-
-    def save(self, *args, **kwargs):
-        new_image = compress(self.image)
-        self.image = new_image
-        super().save(*args, **kwargs)
 
     def __str__(self):
         return self.name
@@ -94,18 +90,13 @@ class ProductFeature(models.Model):
         ordering = ['id']
 
 
-class ProductImage(models.Model):
+class ProductImage(AbstractCompressImage):
     """Image model connected with product"""
 
     image = models.ImageField(_('Image'), upload_to='static/images/products/')
     image_alt = models.CharField(_('ImageAlt'), max_length=255, null=True, blank=True)
     product = models.ForeignKey(Product, on_delete=models.CASCADE, verbose_name=_('Product'))
     default = models.BooleanField(default=False, verbose_name=_('Default'))
-
-    def save(self, *args, **kwargs):
-        new_image = compress(self.image)
-        self.image = new_image
-        super().save(*args, **kwargs)
 
     def __str__(self):
         return self.image.url
