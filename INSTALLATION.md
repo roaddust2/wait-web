@@ -10,67 +10,55 @@ curl -sSL https://install.python-poetry.org | python3 -
 
 Official documentation of Poetry can be found [here](https://python-poetry.org/docs/).
 
-## 1. Installation
+## Installation
+### Variables
 
-### 1.1 Cloning the repository and installing dependencies
-First of all clone the repo:
+  ```.env
+  # Django settings vars
+  
+  DJANGO_SECRET_KEY=
+  DJANGO_DEBUG=True
+  DJANGO_ALLOWED_HOSTS=127.0.0.1,localhost,0.0.0.0
+  
+  
+  # Postgres vars
+  # For DATABASE_TYPE use postgres
+  # In development environment leave empty, sqlite3 will be used
+  
+  DATABASE_TYPE=
+  
+  POSTGRES_DB=
+  POSTGRES_USER=
+  POSTGRES_PASSWORD=
+  POSTGRES_HOST=
+  POSTGRES_PORT=
+  ```
 
-```bash
-git clone https://github.com/roaddust2/wait-web.git
-cd wait-web
-make install
-```
+### Steps
 
-To activate virtual environment in terminal simply use:
+  ```bash
+  # Clone the repository and install dependencies
+  git clone https://github.com/roaddust2/wait-web.git
+  cd wait-web
+  make install
 
-```bash
-poetry shell
-```
+  # To activate virtual environment in terminal simply use
+  poetry shell
 
-### 1.2 Set the values of the environment variables in the .env file
-Create .env file in project directory:
+  # Create .env file and add environment variables
+  touch .env
 
-```bash
-touch .env
-```
+  # For generating DJANGO_SECRET_KEY use
+  make secretkey # and then copy paste it in .env file.
 
-Then add the following variables:
+  # Apply migrations
+  make migrate
 
-```.env
-# Django settings vars
+  # Create superuser
+  poetry run python3 manage.py createsuperuser
 
-DJANGO_SECRET_KEY=
-DJANGO_DEBUG=True
-DJANGO_ALLOWED_HOSTS=127.0.0.1,localhost,0.0.0.0
+  # Start application
+  make dev
 
-
-# Postgres vars
-# For DATABASE_TYPE use postgres
-# In development environment leave empty, sqlite3 will be used
-
-DATABASE_TYPE=
-
-POSTGRES_DB=
-POSTGRES_USER=
-POSTGRES_PASSWORD=
-POSTGRES_HOST=
-POSTGRES_PORT=
-```
-
-For generating DJANGO_SECRET_KEY use:
-
-```bash
-make secretkey
-```
-
-and then copy paste it in .env file.
-
-## 3. Running a server
-
-Insert the command:
-
-```bash
-make dev
-```
-
-App will be availible at 127.0.0.1:8000 on your browser
+  # App will be availible at 127.0.0.1:8000 on your browser
+  ```
