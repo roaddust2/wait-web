@@ -95,13 +95,6 @@ CONN_MAX_AGE = 600
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
-}
-
-if os.getenv('DATABASE_TYPE') == 'postgres':
-    DATABASES['default'] = {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': os.getenv('POSTGRES_DB'),
         'USER': os.getenv('POSTGRES_USER'),
@@ -110,6 +103,7 @@ if os.getenv('DATABASE_TYPE') == 'postgres':
         'PORT': os.getenv('POSTGRES_PORT'),
         'CONN_MAX_AGE': CONN_MAX_AGE,
     }
+}
 
 
 # Custom user model
