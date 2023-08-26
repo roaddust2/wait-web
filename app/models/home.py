@@ -11,7 +11,7 @@ class CarouselItem(AbstractCompressImage):
     placeholder = models.CharField(_('Placeholder'), max_length=255, null=True, blank=True)
     text_color = models.CharField(_('TextColor'), max_length=255, null=True, blank=True)
     link = models.CharField(_('Link'), max_length=255, null=True, blank=True)
-    image = models.ImageField(_('Image'), upload_to='static/images/carousel/')
+    image = models.ImageField(_('Image'), upload_to='images/carousel/')
     image_alt = models.CharField(_('ImageAlt'), max_length=255, null=True, blank=True)
     priority = models.IntegerField(_('Priority'), default=1)
 

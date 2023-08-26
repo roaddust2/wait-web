@@ -11,7 +11,7 @@ class Category(AbstractCompressImage):
     category_slug = models.SlugField(_('Category'), unique=True)
     name = models.CharField(_('Category'), max_length=255)
     description = models.TextField(_('Description'), max_length=600)
-    image = models.ImageField(_('Image'), upload_to='static/images/categories/')
+    image = models.ImageField(_('Image'), upload_to='images/categories/')
     image_alt = models.CharField(_('ImageAlt'), max_length=255, null=True, blank=True)
 
     class Meta:
@@ -93,7 +93,7 @@ class ProductFeature(models.Model):
 class ProductImage(AbstractCompressImage):
     """Image model connected with product"""
 
-    image = models.ImageField(_('Image'), upload_to='static/images/products/')
+    image = models.ImageField(_('Image'), upload_to='images/products/')
     image_alt = models.CharField(_('ImageAlt'), max_length=255, null=True, blank=True)
     product = models.ForeignKey(Product, on_delete=models.CASCADE, verbose_name=_('Product'))
     default = models.BooleanField(default=False, verbose_name=_('Default'))
