@@ -1,10 +1,10 @@
 from django.db import models
 from django.utils.translation import gettext_lazy as _
 
-from app.models.abstract import AbstractCompressImage
+from app.models.abstract import AbstractImage
 
 
-class CarouselItem(AbstractCompressImage):
+class CarouselItem(AbstractImage):
     """Carousel slide object to display on home page"""
 
     label = models.CharField(_('Label'), max_length=255)

@@ -2,10 +2,10 @@ from django.db import models
 from django.urls import reverse
 from django.utils.translation import gettext_lazy as _
 
-from app.models.abstract import AbstractCompressImage
+from app.models.abstract import AbstractImage
 
 
-class Category(AbstractCompressImage):
+class Category(AbstractImage):
     """Categories of products"""
 
     category_slug = models.SlugField(_('Category'), unique=True)
@@ -90,7 +90,7 @@ class ProductFeature(models.Model):
         ordering = ['id']
 
 
-class ProductImage(AbstractCompressImage):
+class ProductImage(AbstractImage):
     """Image model connected with product"""
 
     image = models.ImageField(_('Image'), upload_to='images/products/')
