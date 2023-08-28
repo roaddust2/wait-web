@@ -4,13 +4,31 @@ on:
   workflow_call:
 
 env:
-  DJANGO_SECRET_KEY: 'OQlkugPvF1F0QQljgkFByicEqjT7fKwrQ5800xMQ'
+  DJANGO_SECRET_KEY: OQlkugPvF1F0QQljgkFByicEqjT7fKwrQ5800xMQ
   DJANGO_DEBUG: 'True'
-  DJANGO_ALLOWED_HOSTS: '127.0.0.1,localhost,0.0.0.0'
+  DJANGO_ALLOWED_HOSTS: 127.0.0.1,localhost,0.0.0.0
+  POSTGRES_DB: github_action
+  POSTGRES_USER: postgres
+  POSTGRES_PASSWORD: postgres
+  POSTGRES_HOST: 'localhost'
+  POSTGRES_PORT: '5432'
 
 jobs:
+
   lint_test:
     runs-on: ubuntu-latest
+
+    services:
+      postgres:
+        image: postgres:14.9
+        env:
+          POSTGRES_USER: postgres
+          POSTGRES_PASSWORD: postgres
+          POSTGRES_DB: github_action
+        ports:
+          - 5432:5432
+        options: --health-cmd pg_isready --health-interval 10s --health-timeout 5s --health-retries 5
+
     steps:
       - uses: actions/checkout@v3
       - name: Set up Python 3.11
@@ -20,12 +38,14 @@ jobs:
           architecture: 'x64'
       - name: Install dependencies
         run: |
-          python3 -m pip install --upgrade pip
-          pip install poetry
+          curl -sSL https://install.python-poetry.org | python3 -
           poetry install
+      - name: Apply migrations
+        run: |
+          python3 manage.py migrate
       - name: Run linter
         run: |
-          make lint
+          poetry run flake8
       - name: Run pytest
         run: |
-          make test
+          poetry run pytest

@@ -1,8 +1,14 @@
+from uuid import uuid4
 from django.db import models
 from django.urls import reverse
 from django.utils.translation import gettext_lazy as _
-
 from app.models.abstract import AbstractImage
+
+
+def category_directory_path(instance, filename):
+    ext = filename.split('.')[-1]
+    path = "images/categories/{0}.{1}".format(uuid4().hex, ext)
+    return path
 
 
 class Category(AbstractImage):
@@ -11,7 +17,8 @@ class Category(AbstractImage):
     category_slug = models.SlugField(_('Category'), unique=True)
     name = models.CharField(_('Category'), max_length=255)
     description = models.TextField(_('Description'), max_length=600)
-    image = models.ImageField(_('Image'), upload_to='images/categories/')
+    image = models.ImageField(_('Image'), upload_to=category_directory_path)
+    image_webp = models.ImageField(upload_to=category_directory_path, null=True, blank=True)
     image_alt = models.CharField(_('ImageAlt'), max_length=255, null=True, blank=True)
 
     class Meta:
@@ -52,10 +59,10 @@ class Product(models.Model):
 
     def get_default_image(self):
         """Returns the product's first availible default image, or first in a set"""
-        default_image = self.productimage_set.filter(default=True).first()
-        if default_image:
+        try:
+            default_image = self.productimage_set.get(default=True)
             return default_image
-        else:
+        except ProductImage.DoesNotExist:
             return self.productimage_set.first()
 
     class Meta:
@@ -90,10 +97,17 @@ class ProductFeature(models.Model):
         ordering = ['id']
 
 
+def productimage_directory_path(instance, filename):
+    ext = filename.split('.')[-1]
+    path = "images/products/{0}.{1}".format(uuid4().hex, ext)
+    return path
+
+
 class ProductImage(AbstractImage):
     """Image model connected with product"""
 
-    image = models.ImageField(_('Image'), upload_to='images/products/')
+    image = models.ImageField(_('Image'), upload_to=productimage_directory_path)
+    image_webp = models.ImageField(upload_to=productimage_directory_path, null=True, blank=True)
     image_alt = models.CharField(_('ImageAlt'), max_length=255, null=True, blank=True)
     product = models.ForeignKey(Product, on_delete=models.CASCADE, verbose_name=_('Product'))
     default = models.BooleanField(default=False, verbose_name=_('Default'))

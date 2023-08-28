@@ -11,10 +11,16 @@
             <div class="carousel-item {% if forloop.first %}active{% endif %}">
                 {% if item.link %}
                 <a href="{{ item.link }}">
-                    <img src="{{ item.image.url }}" class="d-block w-100" alt="{{ item.image_alt }}">
+                    <picture>
+                        <source srcset="{{ item.image_webp.url }}" type="image/webp">
+                        <img src="{{ item.image.url }}" class="d-block w-100" alt="{{ item.image_alt }}">
+                    </picture>
                 </a>
                 {% else %}
-                <img src="{{ item.image.url }}" class="d-block w-100" alt="{{ item.image_alt }}">
+                <picture>
+                    <source srcset="{{ item.image_webp.url }}" type="image/webp">
+                    <img src="{{ item.image.url }}" class="d-block w-100" alt="{{ item.image_alt }}">
+                </picture>
                 {% endif %}
                 <div class="carousel-caption">
                     <h5 class="text-{{item.text_color}}">{{ item.label }}</h5>
@@ -41,10 +47,16 @@
             <div class="carousel-item active">
                 {% if item.link %}
                 <a href="{% url item.link %}">
-                    <img src="{{ item.image.url }}" class="d-block w-100" alt="{{ item.image_alt }}">
+                    <picture>
+                        <source srcset="{{ item.image_webp.url }}" type="image/webp">
+                        <img src="{{ item.image.url }}" class="d-block w-100" alt="{{ item.image_alt }}">
+                    </picture>
                 </a>
                 {% else %}
-                <img src="{{ item.image.url }}" class="d-block w-100" alt="{{ item.image_alt }}">
+                <picture>
+                    <source srcset="{{ item.image_webp.url }}" type="image/webp">
+                    <img src="{{ item.image.url }}" class="d-block w-100" alt="{{ item.image_alt }}">
+                </picture>
                 {% endif %}
                 <div class="carousel-caption">
                     <h5 class="text-{{item.text_color}}">{{ item.label }}</h5>

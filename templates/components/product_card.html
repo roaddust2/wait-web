@@ -1,7 +1,10 @@
 {% load i18n static %}
 <a href="{{ product.get_absolute_url }}">
     <div class="card-img-wrap{% if product.sold %}-sold{% endif %}">
-        <img src="{{ product.get_default_image }}" class="card-img-top zoom" alt="{{ product.name }}">
+        <picture>
+            <source srcset="{{ product.get_default_image.image_webp.url }}" type="image/webp">
+            <img src="{{ product.get_default_image.image.url }}" class="card-img-top zoom" alt="{{ product.name }}">
+        </picture>
     </div>
 </a>
 <div class="mt-2 text-center">

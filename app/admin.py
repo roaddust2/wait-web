@@ -47,12 +47,14 @@ class CarouselAdmin(TranslationAdmin):
     list_display = ('label', 'placeholder', 'link', 'priority')
     search_fields = ['label', 'placehilder']
     model = CarouselItem
+    exclude = ['image_webp']
 
 
 @admin.register(Category)
 class CategoryAdmin(TranslationAdmin):
     model = Category
     prepopulated_fields = {'category_slug': ['name']}
+    exclude = ['image_webp']
 
 
 class ProductFeatureInline(TranslationTabularInline):
@@ -61,6 +63,7 @@ class ProductFeatureInline(TranslationTabularInline):
 
 class ProductImageInline(admin.StackedInline):
     model = ProductImage
+    exclude = ['image_webp']
 
 
 @admin.register(Product)
