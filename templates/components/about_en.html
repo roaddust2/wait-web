@@ -1,6 +1,9 @@
 {% load static i18n %}
 <p>
-    <img class="d-none d-md-block float-end py-3 ps-3" src="{% static 'images/about_1.jpg' %}" alt="Two guys sitting on trunk of blue car" style="width: 35%;">
+    <picture>
+        <source srcset="{% static 'images/about_1.webp' %}" type="image/webp">
+        <img class="d-none d-md-block float-end py-3 ps-3" src="{% static 'images/about_1.jpg' %}" alt="Two guys sitting on trunk of blue car" style="width: 35%;">
+    </picture>
     <blockquote class="blockquote">
         <p>
             Upcycling is a process in which old things or materials are transformed into a new product, usually with a completely different functionality.
@@ -17,4 +20,7 @@
     <br><br>
     To make a high-quality and bright product that would comply with the principles of conscious consumption is our goal.
 </p>
-<img class="d-block d-md-none img-fluid" src="{% static 'images/about_1.jpg' %}" alt="Two guys sitting on trunk of blue car">
+<picture>
+    <source srcset="{% static 'images/about_1.webp' %}" type="image/webp">
+    <img class="d-block d-md-none img-fluid" src="{% static 'images/about_1.jpg' %}" alt="Two guys sitting on trunk of blue car">
+</picture>

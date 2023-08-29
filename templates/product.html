@@ -3,7 +3,7 @@
 {% block og %}
 <meta property="og:title" content="{{ product.name }} | WAIT!">
 <meta property="og:url" content="https://waitbags.ru{{ request.get_full_path }}">
-{% with product.get_default_image as image %}
+{% with product.get_default_image.image.url as image %}
 <meta property="og:image" content="https://waitbags.ru{{ image }}">
 {% endwith %}
 {% endblock %}

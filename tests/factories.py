@@ -56,6 +56,7 @@ class ProductFactory(factory.django.DjangoModelFactory):
 
     class Meta:
         model = Product
+        skip_postgeneration_save = True
 
     name = factory.Sequence(lambda n: 'Name %d' % n)
     description = factory.Sequence(lambda n: 'Description %d' % n)

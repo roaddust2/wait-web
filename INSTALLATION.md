@@ -22,10 +22,6 @@ Official documentation of Poetry can be found [here](https://python-poetry.org/d
   
   
   # Postgres vars
-  # For DATABASE_TYPE use postgres
-  # In development environment leave empty, sqlite3 will be used
-  
-  DATABASE_TYPE=
   
   POSTGRES_DB=
   POSTGRES_USER=
@@ -44,6 +40,8 @@ Official documentation of Poetry can be found [here](https://python-poetry.org/d
 
   # To activate virtual environment in terminal simply use
   poetry shell
+
+  # Create basic postgres database
 
   # Create .env file and add environment variables
   touch .env
