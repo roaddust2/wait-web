@@ -17,7 +17,14 @@ class CarouselItem(AbstractImage):
     placeholder = models.CharField(_('Placeholder'), max_length=255, null=True, blank=True)
     text_color = models.CharField(_('TextColor'), max_length=255, null=True, blank=True)
     link = models.CharField(_('Link'), max_length=255, null=True, blank=True)
-    image = models.ImageField(_('Image'), upload_to=carouselitem_directory_path)
+    image = models.ImageField(
+        _('Image'),
+        width_field='image_width',
+        height_field='image_height',
+        upload_to=carouselitem_directory_path
+    )
+    image_width = models.IntegerField(blank=True, null=True)
+    image_height = models.IntegerField(blank=True, null=True)
     image_webp = models.ImageField(upload_to=carouselitem_directory_path, null=True, blank=True)
     image_alt = models.CharField(_('ImageAlt'), max_length=255, null=True, blank=True)
     priority = models.IntegerField(_('Priority'), default=1)
