@@ -2,21 +2,16 @@
 {% if product.get_all_images.count > 1 %}
 <div class="carousel-container">
   <div class="carousel-main">
-    {% comment "ERROR" %}
-    <!-- If add this picture tag, main image not changing at all -->
-    <picture>
-      <source srcset="{{ product.get_default_image.image_webp.url }}" type="image/webp">
-      <img src="{{ product.get_default_image.image.url }}" alt="main_image" />
-    </picture>
-    <!--  -->
+    {% comment "TODO" %}
+    <!-- TODO: Add webp support -->
     {% endcomment %}
-    <img src="{{ product.get_default_image.image.url }}" alt="main_image" />
+    <img src="{{ product.get_default_image.image.url }}" width="{{ product.get_default_image.image_width }}" height="{{ product.get_default_image.image_height }}" class="img_responsive" alt="main_image" />
   </div>
   <div class="carousel-aside">
     {% for image in product.get_all_images %}
       <picture>
         <source srcset="{{ image.image_webp.url }}" type="image/webp">
-        <img src="{{ image.image.url }}" alt="{{ image.image_alt}}" />
+        <img src="{{ image.image.url }}" width="{{ image.image_width }}" height="{{ image.image_height }}" class="img_responsive" alt="{{ image.image_alt}}" />
       </picture>
     {% endfor %}
   </div>
@@ -29,7 +24,7 @@
         <div class="modal-left position-absolute top-0 bottom-0 end-50 start-0"></div>
         <div class="modal-right position-absolute top-0 bottom-0 start-50 end-0"></div>
         <button type="button" class="btn-close fs-2 position-absolute top-0 end-0" data-bs-dismiss="modal" aria-label="Close"></button>
-        <img draggable="false" class="rounded" src="{{ product.get_default_image.image.url }}" alt="main_image" style="max-width: 100%;"/>
+        <img draggable="false" class="img_responsive rounded" src="{{ product.get_default_image.image.url }}" width="{{ product.get_default_image.image_width }}" height="{{ product.get_default_image.image_height }}" alt="main_image" style="max-width: 100%;"/>
       </div>
     </div>
   </div>

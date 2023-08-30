@@ -17,7 +17,14 @@ class Category(AbstractImage):
     category_slug = models.SlugField(_('Category'), unique=True)
     name = models.CharField(_('Category'), max_length=255)
     description = models.TextField(_('Description'), max_length=600)
-    image = models.ImageField(_('Image'), upload_to=category_directory_path)
+    image = models.ImageField(
+        _('Image'),
+        width_field='image_width',
+        height_field='image_height',
+        upload_to=category_directory_path
+    )
+    image_width = models.IntegerField(blank=True, null=True)
+    image_height = models.IntegerField(blank=True, null=True)
     image_webp = models.ImageField(upload_to=category_directory_path, null=True, blank=True)
     image_alt = models.CharField(_('ImageAlt'), max_length=255, null=True, blank=True)
 
@@ -106,7 +113,14 @@ def productimage_directory_path(instance, filename):
 class ProductImage(AbstractImage):
     """Image model connected with product"""
 
-    image = models.ImageField(_('Image'), upload_to=productimage_directory_path)
+    image = models.ImageField(
+        _('Image'),
+        width_field='image_width',
+        height_field='image_height',
+        upload_to=productimage_directory_path
+    )
+    image_width = models.IntegerField(blank=True, null=True)
+    image_height = models.IntegerField(blank=True, null=True)
     image_webp = models.ImageField(upload_to=productimage_directory_path, null=True, blank=True)
     image_alt = models.CharField(_('ImageAlt'), max_length=255, null=True, blank=True)
     product = models.ForeignKey(Product, on_delete=models.CASCADE, verbose_name=_('Product'))

@@ -6,7 +6,7 @@
         <a href="{{ category.get_absolute_url }}">
             <picture>
                 <source srcset="{{ category.image_webp.url }}" type="image/webp">
-                <img src="{{ category.image.url }}" class="card-img-top" alt="{% if category.image_alt %}{{ category.image_alt }}{% else %}{{ category.name }}{% endif %}">
+                <img src="{{ category.image.url }}" width="{{ category.image_width }}" height="{{ category.image_height }}" class="card-img-top img_responsive" alt="{% if category.image_alt %}{{ category.image_alt }}{% else %}{{ category.name }}{% endif %}">
             </picture>
         </a>
         <h2 class="card-text h4 mt-3">

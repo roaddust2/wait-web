@@ -3,7 +3,7 @@
     <div class="card-img-wrap{% if product.sold %}-sold{% endif %}">
         <picture>
             <source srcset="{{ product.get_default_image.image_webp.url }}" type="image/webp">
-            <img src="{{ product.get_default_image.image.url }}" class="card-img-top zoom" alt="{{ product.name }}">
+            <img src="{{ product.get_default_image.image.url }}" width="{{ item.image_width }}" height="{{ item.image_height }}" class="img_responsive card-img-top zoom" alt="{{ product.name }}">
         </picture>
     </div>
 </a>

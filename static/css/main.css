@@ -1,3 +1,8 @@
+.img_responsive {
+    width: 100%;
+    height: auto;
+}
+
 .card-img-wrap {
     overflow: hidden;
     position: relative;

@@ -13,13 +13,13 @@
                 <a href="{{ item.link }}">
                     <picture>
                         <source srcset="{{ item.image_webp.url }}" type="image/webp">
-                        <img src="{{ item.image.url }}" class="d-block w-100" alt="{{ item.image_alt }}">
+                        <img src="{{ item.image.url }}" width="{{ item.image_width }}" height="{{ item.image_height }}" class="img_responsive d-block w-100" alt="{{ item.image_alt }}">
                     </picture>
                 </a>
                 {% else %}
                 <picture>
                     <source srcset="{{ item.image_webp.url }}" type="image/webp">
-                    <img src="{{ item.image.url }}" class="d-block w-100" alt="{{ item.image_alt }}">
+                    <img src="{{ item.image.url }}" width="{{ item.image_width }}" height="{{ item.image_height }}" class="img_responsive d-block w-100" alt="{{ item.image_alt }}">
                 </picture>
                 {% endif %}
                 <div class="carousel-caption">
@@ -49,13 +49,13 @@
                 <a href="{% url item.link %}">
                     <picture>
                         <source srcset="{{ item.image_webp.url }}" type="image/webp">
-                        <img src="{{ item.image.url }}" class="d-block w-100" alt="{{ item.image_alt }}">
+                        <img src="{{ item.image.url }}" width="{{ item.image_width }}" height="{{ item.image_height }}" class="img_responsive d-block w-100" alt="{{ item.image_alt }}">
                     </picture>
                 </a>
                 {% else %}
                 <picture>
                     <source srcset="{{ item.image_webp.url }}" type="image/webp">
-                    <img src="{{ item.image.url }}" class="d-block w-100" alt="{{ item.image_alt }}">
+                    <img src="{{ item.image.url }}" width="{{ item.image_width }}" height="{{ item.image_height }}" class="img_responsive d-block w-100" alt="{{ item.image_alt }}">
                 </picture>
                 {% endif %}
                 <div class="carousel-caption">
