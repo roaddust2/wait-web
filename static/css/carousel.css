@@ -1,9 +1,7 @@
 .carousel-container {
-  --main-height: auto;
   display: grid;
   grid-template-columns: 4.5fr 1fr;
   column-gap: 20px;
-  max-height: calc(var(--main-height) * 1px);
   overflow: hidden;
 }
 
@@ -24,7 +22,6 @@
   overflow-y: scroll;
   overflow-x: hidden;
   scroll-behavior: smooth;
-  max-height: calc(var(--main-height) * 1px);
 }
 
 
