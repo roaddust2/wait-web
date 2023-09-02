@@ -4,7 +4,7 @@
   <div class="carousel-main">
     <picture>
       <source srcset="{{ product.get_default_image.image_webp.url }}" type="image/webp">
-      <img class="testimg" src="{{ product.get_default_image.image.url }}" width="{{ image.image_width }}" height="{{ image.image_height }}" class="img_responsive" alt="main_image" />
+      <img src="{{ product.get_default_image.image.url }}" width="{{ product.get_default_image.image_width }}" height="{{ product.get_default_image.image_height }}" class="img_responsive" alt="main_image" />
     </picture>
   </div>
   <div class="carousel-aside">
