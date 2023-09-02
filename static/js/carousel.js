@@ -102,53 +102,53 @@ document.addEventListener('DOMContentLoaded', async () => {
 			});
 		}
 
-    	// Arrow control handler
-			function arrowSliding(state, images, src) {
-        return function(e) {
-          if (/arrowleft/i.test(e.code) && !state.animating) {
-            state.active -= 1;
-            state.prev = state.active + 1;
-            if (state.active < 1) state.active = allAsideImg.length;
-            arrowControl(state, images, src);
-          }
-          if (/arrowright/i.test(e.code) && !state.animating) {
-            state.active += 1;
-            state.prev = state.active - 1;
-            if (state.active > allAsideImg.length) state.active = 1;
-            arrowControl(state, images, src);
-          }
-        }
-			}
+		// Arrow control handler
+		function arrowSliding(state, images, src) {
+			return function(e) {
+				if (/arrowleft/i.test(e.code) && !state.animating) {
+					state.active -= 1;
+					state.prev = state.active + 1;
+					if (state.active < 1) state.active = allAsideImg.length;
+					arrowControl(state, images, src);
+				}
+				if (/arrowright/i.test(e.code) && !state.animating) {
+					state.active += 1;
+					state.prev = state.active - 1;
+					if (state.active > allAsideImg.length) state.active = 1;
+					arrowControl(state, images, src);
+				}
+			};
+		}
 
-      // All modal events are only added on validation
-      function notMobile(state, images, src) {
-        if (!isPhone) {
-          backgroundContainer.setAttribute('data-bs-toggle', 'modal');
-          backgroundContainer.setAttribute('data-bs-target', '#carouselModal');
-          window.addEventListener('keydown', arrowSliding(state, images, src));
-          modalLeft.onclick = () => {
-            state.active -= 1;
-            state.prev = state.active + 1;
-            if (state.active < 1) state.active = allAsideImg.length;
-            arrowControl(state, images, src);
-          };
-          modalRight.onclick = () => {
-            state.active += 1;
-            state.prev = state.active - 1;
-            if (state.active > allAsideImg.length) state.active = 1;
-            arrowControl(state, images, src);
-          };
-        }
-      }
+		// All modal events are only added on validation
+		function notMobile(state, images, src) {
+			if (!isPhone) {
+				backgroundContainer.setAttribute('data-bs-toggle', 'modal');
+				backgroundContainer.setAttribute('data-bs-target', '#carouselModal');
+				window.addEventListener('keydown', arrowSliding(state, images, src));
+				modalLeft.onclick = () => {
+					state.active -= 1;
+					state.prev = state.active + 1;
+					if (state.active < 1) state.active = allAsideImg.length;
+					arrowControl(state, images, src);
+				};
+				modalRight.onclick = () => {
+					state.active += 1;
+					state.prev = state.active - 1;
+					if (state.active > allAsideImg.length) state.active = 1;
+					arrowControl(state, images, src);
+				};
+			}
+		}
 
 		if (webpSupport) {
 			const state = initialState;
 			initialActiveImageAndSetImage(state, allWbpSrc, 'srcset');
-      notMobile(state, allWbpSrc, 'srcset');
+			notMobile(state, allWbpSrc, 'srcset');
 		} else {
 			const state = initialState;
 			initialActiveImageAndSetImage(state, allAsideImg, 'src');
-      notMobile(state, allAsideImg, 'src');
+			notMobile(state, allAsideImg, 'src');
 		}
 	} catch (error) {
 		console.warn(error);
