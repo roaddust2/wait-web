@@ -36,9 +36,13 @@
 <body class="pt-5 pt-sm-6">
     {% include 'components/header.html' %}
     <main>
-        {% block content %}{% endblock %}
+        <div class="wrapper">
+            <div class="content">
+                {% block content %}{% endblock %}
+            </div>
+            {% include 'components/footer.html' %}
+        </div>
     </main>
-    {% include 'components/footer.html' %}
 
     <div id="cookie-allow-tag" class="position-fixed cookie-allow-tag bg-dark flex-column p-3 d-flex flex-column rounded start-50 translate-middle-x">
         <span class="text-white text-center">{% translate 'CookieWarning' %}</span>
