@@ -1,0 +1,45 @@
+{% extends "account/profile_base.html" %}
+{% load i18n static django_bootstrap5 svg allauth %}
+{% block tabs %}
+<a href="{% url 'profile' %}" class="list-group-item list-group-item-action" >
+    <span class="me-2">{% svg 'gear' %}</span>
+    {% translate 'ProfileSettings' %}
+</a>
+<a href="{% url 'account_email' %}" class="list-group-item list-group-item-action disabled" aria-current="true">
+    <span class="me-2">{% svg 'envelope-at' %}</span>
+    {% translate 'EmailSettings' %}
+</a>
+<a href="{% url 'account_set_password' %}" class="list-group-item list-group-item-action">
+    <span class="me-2">{% svg 'lock' %}</span>
+    {% translate 'SecuritySettings' %}
+</a>
+{% endblock %}
+{% block profile_content %}
+    <h2 class="mb-3">{% translate 'EmailSettings' %}</h2>
+    {% include "account/messages.html" %}
+    {% if emailaddresses %}
+        {% if new_emailaddress %}
+            <div class="alert alert-info" role="alert">
+                <form method="post" action="{% url 'account_email' %}">{% csrf_token %}
+                    <input type="hidden" name="email" value="{{ new_emailaddress.email }}">
+                    {% translate 'YourEmailAddressIsStillPendingVerification' %}:
+                    <button class="btn btn-link p-0" type="submit" name="action_send">{% translate 'ReSendVerification' %}</button>
+                </form>
+            </div>
+            <div class="mb-3">
+                <label for="disabledTextInput" class="form-label">Email</label>
+                <input type="email" id="disabledTextInput" class="form-control" placeholder="{{ new_emailaddress.email }}" disabled>
+            </div>
+            {% else %}
+            <div class="mb-3">
+                <label for="disabledTextInput" class="form-label">Email</label>
+                <input type="email" id="disabledTextInput" class="form-control" placeholder="{{ current_emailaddress.email }}" disabled>
+            </div>
+        {% endif %}
+    {% endif %}
+    <form action="{% url 'account_email' %}" method="post">{% csrf_token %}
+        {% bootstrap_form form %}
+        {% translate 'ChangeEmail' as change_email %}
+        {% bootstrap_button button_type="submit" button_class="btn-primary" content=change_email name="action_add" %}
+    </form>
+{% endblock %}

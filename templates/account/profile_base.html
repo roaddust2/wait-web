@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% load i18n static django_bootstrap5 svg %}
+{% block title %}WAIT! | {% translate 'MyAccount' %}{% endblock %}
+{% block content %}
+<section class="py-3 py-lg-5">
+    <div class="container">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+              <li class="breadcrumb-item"><a class="text-dark" href="{% url 'index' %}">{% translate 'HeaderHome' %}</a></li>
+              <li class="breadcrumb-item text-dark active" aria-current="page">{% translate 'MyAccount' %}</li>
+            </ol>
+        </nav>
+        <h1 class="display-5 fw-bold text-body-emphasis lh-1 mb-3">{% translate 'MyAccount' %}</h1>
+        <div class="row py-3">
+            <div class="col-3">
+                <div class="list-group list-group-flush">
+                    {% block tabs %}
+                    {% endblock %}
+                </div>
+            </div>
+            <div class="col">
+                {% block profile_content %}
+                {% endblock %}
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

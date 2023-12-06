@@ -1,4 +1,4 @@
-from django.urls import path
+from django.urls import include, path
 from app import views
 import django.contrib.flatpages.views as fp_views
 
@@ -12,4 +12,6 @@ urlpatterns = [
     path('delivery/', fp_views.flatpage, {"url": "/delivery/"}, name="delivery"),
     path('returns/', fp_views.flatpage, {"url": "/returns/"}, name="returns"),
     path('cooperation/', fp_views.flatpage, {"url": "/cooperation/"}, name="cooperation"),
+    path('accounts/', include('allauth.urls')),
+    path('accounts/profile/', views.account.UserProfileChangeView.as_view(), name='profile')
 ]
