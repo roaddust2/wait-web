@@ -17,6 +17,8 @@ pillow = "10.0.0"
 django-modeltranslation = "0.18.9"
 django-inline-svg = "0.1.1"
 django-cleanup = "7.0.0"
+django-allauth = "0.58.0"
+django-bootstrap5 = "23.3"
 
 [tool.poetry.group.dev.dependencies]
 flake8 = "^6.0.0"

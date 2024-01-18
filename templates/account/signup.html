@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% load i18n django_bootstrap5 %}
+{% block title %}WAIT! | {% translate 'SignUp' %}{% endblock %}
+{% block content %}
+<section class="p-3 py-lg-5 px-lg-0">
+    <div class="container">
+        <div class="row mt-3">
+            <div class="col d-none d-md-block"></div>
+            <div class="col">
+                <div class="display-5 d-flex fw-bold lh-1 mb-4">
+                    <p class="text-decoration-underline link-offset-2 me-3">{% translate 'SignUp' %}</p>
+                    <a class="link-secondary text-decoration-none" href="{% url 'account_login' %}">{% translate 'Login' %}</a>
+                </div>
+                <form method="post">{% csrf_token %}
+                    {% bootstrap_form form %}
+                    {% translate 'SignUp' as signup %}
+                    {% bootstrap_button button_type="submit" button_class="btn-dark" content=signup %}
+                </form>
+            </div>
+            <div class="col d-none d-md-block"></div>
+        </div>
+    </div>
+</section>
+{% endblock %}

@@ -54,6 +54,20 @@
                                     </form>   
                                 </li>
                             </ul>
+                            {% if user.is_authenticated %}
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{% url 'profile' %}">{% svg 'person-circle' %}</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{% url 'account_logout' %}">{% svg 'box-arrow-right' %}</a>
+                                </li>
+                            {% else %}
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{% url 'account_signup' %}">
+                                        {% svg 'person-circle' %}
+                                    </a>
+                                </li>
+                            {% endif %}
                         </ul>                    
                     </li>
                 </ul>
