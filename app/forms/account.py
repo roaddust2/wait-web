@@ -15,7 +15,7 @@ class CustomLoginForm(LoginForm):
                 reverse("account_reset_password")
             )
         )
-        self.fields["remember"].label=_("RememberMe")
+        self.fields["remember"].label = _("RememberMe")
 
 
 class CustomSignupForm(SignupForm):
