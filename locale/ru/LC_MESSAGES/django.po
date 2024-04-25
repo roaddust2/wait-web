@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-12-06 16:49+0400\n"
+"POT-Creation-Date: 2023-06-13 17:01+0400\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -20,119 +20,107 @@ msgstr ""
 "n%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || "
 "(n%100>=11 && n%100<=14)? 2 : 3);\n"
 
-#: app/forms/account.py:14
-msgid "<a href=\"{}\">Forgot your password?</a>"
-msgstr "<a href=\"{}\">Забыли свой пароль?</a>"
-
-#: app/forms/account.py:18
-msgid "RememberMe"
-msgstr "Запомнить меня"
-
-#: app/forms/account.py:26
-msgid "Already have an account? <a href=\"{}\">Login</a>"
-msgstr "Уже есть аккаунт? <a href=\"{}\">Вход</a>"
-
-#: app/forms/account.py:38
-msgid "FirstName"
-msgstr "Имя"
-
-#: app/forms/account.py:44
-msgid "LastName"
-msgstr "Фамилия"
-
-#: app/models/home.py:16
+#: app/models/home.py:9
 msgid "Label"
 msgstr "Лейбл"
 
-#: app/models/home.py:17
+#: app/models/home.py:10
 msgid "Placeholder"
 msgstr "Заполнитель"
 
-#: app/models/home.py:18
+#: app/models/home.py:11
 msgid "TextColor"
 msgstr "Цвет текста"
 
-#: app/models/home.py:19
+#: app/models/home.py:12
 msgid "Link"
 msgstr "Ссылка"
 
-#: app/models/home.py:21 app/models/product.py:21 app/models/product.py:117
-#: app/models/product.py:133
+#: app/models/home.py:13 app/models/product.py:13 app/models/product.py:100
+#: app/models/product.py:114
 msgid "Image"
 msgstr "Изображение"
 
-#: app/models/home.py:29 app/models/product.py:29 app/models/product.py:125
+#: app/models/home.py:14 app/models/product.py:14 app/models/product.py:101
 msgid "ImageAlt"
 msgstr "Альтернативный текст изображения"
 
-#: app/models/home.py:30
+#: app/models/home.py:15
 msgid "Priority"
 msgstr "Приоритет"
 
-#: app/models/home.py:36
+#: app/models/home.py:26
 msgid "CarouselItem"
 msgstr "Элемент карусели"
 
-#: app/models/home.py:37
+#: app/models/home.py:27
 msgid "CarouselItems"
 msgstr "Элементы карусели"
 
-#: app/models/product.py:17 app/models/product.py:18 app/models/product.py:32
-#: app/models/product.py:53
+#: app/models/product.py:10 app/models/product.py:11 app/models/product.py:17
+#: app/models/product.py:43
 msgid "Category"
 msgstr "Категория"
 
-#: app/models/product.py:19 app/models/product.py:51
+#: app/models/product.py:12 app/models/product.py:41
 msgid "Description"
 msgstr "Описание"
 
-#: app/models/product.py:33 templates/components/categories_list.html:2
+#: app/models/product.py:18 templates/components/categories_list.html:2
 msgid "Categories"
 msgstr "Категории"
 
-#: app/models/product.py:49 app/models/product.py:50
+#: app/models/product.py:39 app/models/product.py:40
 msgid "Denomination"
 msgstr "Наименование"
 
-#: app/models/product.py:52
+#: app/models/product.py:42
 msgid "Price"
 msgstr "Цена"
 
-#: app/models/product.py:54 templates/product.html:40
+#: app/models/product.py:44 templates/product.html:35
 msgid "Sold"
 msgstr "Продано"
 
-#: app/models/product.py:55
+#: app/models/product.py:45
 msgid "CareatedAt"
 msgstr "Дата создания"
 
-#: app/models/product.py:76 app/models/product.py:96 app/models/product.py:126
+#: app/models/product.py:66 app/models/product.py:86 app/models/product.py:102
 msgid "Product"
 msgstr "Товар"
 
-#: app/models/product.py:77
+#: app/models/product.py:67
 msgid "Products"
 msgstr "Товары"
 
-#: app/models/product.py:95 app/models/product.py:102
+#: app/models/product.py:85 app/models/product.py:92
 msgid "Feature"
 msgstr "Особенность"
 
-#: app/models/product.py:103
+#: app/models/product.py:93
 msgid "Features"
 msgstr "Особенности"
 
-#: app/models/product.py:127
+#: app/models/product.py:103
 msgid "Default"
 msgstr "По умолчанию"
 
-#: app/models/product.py:134
+#: app/models/product.py:115
 msgid "Images"
 msgstr "Изображения"
 
-#: app/views/account.py:26
-msgid "User profile changed successfully!"
-msgstr "Профиль пользователя успешно изменен!"
+#: app/models/user.py:11
+msgid "ErrorEmptyEmail"
+msgstr "Поле Email должно быть заполнено"
+
+#: templates/base.html:43
+msgid "CookieWarning"
+msgstr "Наш веб-сайт использует файлы cookie, оставаясь на нем, вы принимаете все файлы cookie."
+
+#: templates/base.html:44
+msgid "CookieWarningAccept"
+msgstr "Принять"
 
 #: templates/404.html:3 templates/404.html:7
 msgid "404Title"
@@ -143,9 +131,6 @@ msgid "404Text"
 msgstr "К сожалению страница не найдена"
 
 #: templates/404.html:11 templates/500.html:11
-#: templates/account/email_confirm.html:32
-#: templates/account/password_reset.html:22
-#: templates/account/password_reset_done.html:16
 msgid "BackOnMain"
 msgstr "Вернуться на Главную"
 
@@ -157,308 +142,27 @@ msgstr "Ошибка сервера 500"
 msgid "500Text"
 msgstr "К сожалению произошла ошибка на сервере"
 
-#: templates/about.html:4 templates/about.html:8 templates/about.html:15
-#: templates/about.html:18 templates/components/header.html:28
+#: templates/about.html:3 templates/about.html:10 templates/about.html:13
+#: templates/components/header.html:28
 msgid "HeaderAbout"
 msgstr "О нас"
 
-#: templates/about.html:14 templates/account/profile_base.html:9
-#: templates/catalog.html:20 templates/components/header.html:12
-#: templates/flatpages/default.html:9 templates/product.html:16
+#: templates/about.html:9 templates/catalog.html:15
+#: templates/components/header.html:12 templates/flatpages/default.html:9
+#: templates/product.html:9
 msgid "HeaderHome"
 msgstr "Главная"
 
-#: templates/account/email/account_already_exists_message.txt:4
-#, python-format
-msgid ""
-"You are receiving this email because you or someone else tried to signup for "
-"an\n"
-"account using email address:\n"
-"\n"
-"%(email)s\n"
-"\n"
-"However, an account using that email address already exists.  In case you "
-"have\n"
-"forgotten about this, please use the password forgotten procedure to "
-"recover\n"
-"your account:\n"
-"\n"
-"%(password_reset_url)s"
-msgstr ""
-"Вы получили это письмо, потому что вы или кто-то другой пытался зарегистрировать учетную запись, "
-"используя адрес электронной почты:\n"
-"\n"
-"%(email)s\n"
-"\n"
-"Однако учетная запись, использующая этот адрес электронной почты, уже существует. "
-"Если вы забыли об этом, воспользуйтесь процедурой забытого пароля для восстановления учетной записи:\n"
-"%(password_reset_url)s"
-
-#: templates/account/email/account_already_exists_subject.txt:3
-msgid "Account Already Exists"
-msgstr "Аккаунт уже существует"
-
-#: templates/account/email/base_message.txt:1
-#, python-format
-msgid "Hello from %(site_name)s!"
-msgstr "Привет от %(site_name)s!"
-
-#: templates/account/email/base_message.txt:5
-#, python-format
-msgid ""
-"Thank you for using %(site_name)s!\n"
-"%(site_domain)s"
-msgstr ""
-"Спасибо за использование %(site_name)s!\n"
-"%(site_domain)s"
-
-#: templates/account/email/email_confirmation_message.txt:5
-#, python-format
-msgid ""
-"You're receiving this email because user %(user_display)s has given your "
-"email address to register an account on %(site_domain)s.\n"
-"\n"
-"To confirm this is correct, go to %(activate_url)s"
-msgstr ""
-"Вы получили это сообщение, потому что пользователь %(user_display)s дал ваш "
-"email адрес для регистрации аккаунта на %(site_domain)s.\n"
-"\n"
-"Для подтверждения, перейдите по ссылке %(activate_url)s"
-
-#: templates/account/email/email_confirmation_subject.txt:3
-msgid "Please Confirm Your Email Address"
-msgstr "Пожалуйста, подтвердите ваш email"
-
-#: templates/account/email/password_reset_key_message.txt:4
-msgid ""
-"You're receiving this email because you or someone else has requested a "
-"password reset for your user account.\n"
-"It can be safely ignored if you did not request a password reset. Click the "
-"link below to reset your password."
-msgstr ""
-"Вы получили это сообщение, потому что кто-то запросил "
-"сброс пароля вашего аккаунта.\n"
-"Вы можете проигнорировать это сообщение, если это были не вы. "
-"Или перейдите по ссылке для сброса пароля."
-
-#: templates/account/email/password_reset_key_message.txt:9
-#, python-format
-msgid "In case you forgot, your username is %(username)s."
-msgstr "Если вы забыли, ваш логин %(username)s."
-
-#: templates/account/email/password_reset_key_subject.txt:3
-#: templates/account/email/unknown_account_subject.txt:3
-msgid "Password Reset Email"
-msgstr "Email сброса пароля"
-
-#: templates/account/email/unknown_account_message.txt:4
-#, python-format
-msgid ""
-"You are receiving this email because you or someone else has requested a\n"
-"password for your user account. However, we do not have any record of a "
-"user\n"
-"with email %(email)s in our database.\n"
-"\n"
-"This mail can be safely ignored if you did not request a password reset.\n"
-"\n"
-"If it was you, you can sign up for an account using the link below."
-msgstr ""
-"Вы получили это сообщение, потому что кто-то запросил\n"
-"пароль от вашего аккаунта. Однако, у нас нет записи для аккаунта "
-"с email %(email)s в нашей базе данных.\n"
-"\n"
-"Вы можете проигнорировать это сообщение, если не запрашивали сброс пароля.\n"
-"\n"
-"Если это были вы, вы можете войти в аккаунт используя ссылку ниже."
-
-#: templates/account/email_change.html:6
-#: templates/account/password_change.html:6
-#: templates/account/password_set.html:7
-#: templates/account/profile_settings.html:7
-#: templates/account/profile_settings.html:19
-msgid "ProfileSettings"
-msgstr "Настройки профиля"
-
-#: templates/account/email_change.html:10
-#: templates/account/email_change.html:18
-#: templates/account/password_change.html:10
-#: templates/account/password_set.html:11
-#: templates/account/profile_settings.html:11
-msgid "EmailSettings"
-msgstr "Настройки Email"
-
-#: templates/account/email_change.html:14
-#: templates/account/password_change.html:14
-#: templates/account/password_change.html:18
-#: templates/account/password_set.html:15
-#: templates/account/password_set.html:19
-#: templates/account/profile_settings.html:15
-msgid "SecuritySettings"
-msgstr "Настройки безопасности"
-
-#: templates/account/email_change.html:25
-msgid "YourEmailAddressIsStillPendingVerification"
-msgstr "Ваш email требует подтверждения"
-
-#: templates/account/email_change.html:26
-msgid "ReSendVerification"
-msgstr "Выслать ссылку для подтверждения еще раз"
-
-#: templates/account/email_change.html:42
-msgid "ChangeEmail"
-msgstr "Изменить email"
-
-#: templates/account/email_confirm.html:3
-#: templates/account/email_confirm.html:7
-msgid "ConfirmEmailAddress"
-msgstr "Подтвердить email"
-
-#: templates/account/email_confirm.html:14
-#, python-format
-msgid ""
-"Please confirm that <a href=\"mailto:%(email)s\">%(email)s</a> is an email "
-"address for user %(user_display)s."
-msgstr ""
-"Пожалуйста, подтвердите, что <a href=\"mailto:%(email)s\">%(email)s</a> это email "
-"пользователя %(user_display)s."
-
-#: templates/account/email_confirm.html:18
-msgid "Confirm"
-msgstr "Gjlndthlbnm"
-
-#: templates/account/email_confirm.html:23
-#: templates/account/messages/email_confirmation_failed.txt:2
-#, python-format
-msgid ""
-"Unable to confirm %(email)s because it is already confirmed by a different "
-"account."
-msgstr ""
-"Невозможно подтвердить %(email)s, потому что он уже подтвержден в другом "
-"аккаунте."
-
-#: templates/account/email_confirm.html:29
-#, python-format
-msgid ""
-"This email confirmation link expired or is invalid. Please <a "
-"href=\"%(email_url)s\">issue a new email confirmation request</a>."
-msgstr ""
-"Эта ссылка для подтверждения email истекла. Пожалуйста <a "
-"href=\"%(email_url)s\">запросите новую ссылку</a>."
-
-#: templates/account/login.html:3 templates/account/login.html:12
-#: templates/account/login.html:16 templates/account/signup.html:12
-msgid "Login"
-msgstr "Вход"
-
-#: templates/account/login.html:11 templates/account/signup.html:3
-#: templates/account/signup.html:11 templates/account/signup.html:16
-msgid "SignUp"
-msgstr "Регистрация"
-
-#: templates/account/messages/email_confirmation_sent.txt:2
-#, python-format
-msgid "Confirmation email sent to %(email)s."
-msgstr "Ссылка для подтверждения выслана на %(email)s."
-
-#: templates/account/messages/email_confirmed.txt:2
-#, python-format
-msgid "You have confirmed %(email)s."
-msgstr "Вы подтвердили %(email)s."
-
-#: templates/account/messages/password_changed.txt:2
-msgid "Password successfully changed."
-msgstr "Пароль успешно изменен."
-
-#: templates/account/messages/password_set.txt:2
-msgid "Password successfully set."
-msgstr "Пароль успешно применен."
-
-#: templates/account/password_change.html:22
-msgid "ChangePassword"
-msgstr "Изменит пароль"
-
-#: templates/account/password_reset.html:3
-#: templates/account/password_reset.html:7
-#: templates/account/password_reset_done.html:3
-#: templates/account/password_reset_done.html:7
-msgid "PasswordReset"
-msgstr "Сбросить пароль"
-
-#: templates/account/password_reset.html:14
-msgid ""
-"Forgotten your password? Enter your email address below, and we'll send you "
-"an email allowing you to reset it."
-msgstr ""
-"Забыли пароль? Введите свой email ниже и мы отправим вам "
-"ссылку для сброса пароля."
-
-#: templates/account/password_reset.html:18
-msgid "ResetPassword"
-msgstr "Сбросить пароль"
-
-#: templates/account/password_reset.html:21
-msgid "Please contact us if you have any trouble resetting your password."
-msgstr "Пожалуйста, свяжитесь с нами, если у вас есть проблемы со сбросом пароля."
-
-#: templates/account/password_reset_done.html:14
-msgid ""
-"We have sent you an email. If you have not received it please check your "
-"spam folder. Otherwise contact us if you do not receive it in a few minutes."
-msgstr ""
-"Мы отправили вам сообщение. Если вы его не получили, пожалуйста проверьте вашу "
-"папку Спам. Или свяжитесь с нами, если не получили ссылку в течении нескольких минут."
-
-#: templates/account/password_set.html:23
-msgid "SetPassword"
-msgstr "Установить пароль"
-
-#: templates/account/profile_base.html:3 templates/account/profile_base.html:10
-#: templates/account/profile_base.html:13 templates/components/footer.html:19
-#: templates/components/footer.html:23
-msgid "MyAccount"
-msgstr "Мой аккаунт"
-
-#: templates/account/profile_settings.html:23
-msgid "UpdateProfile"
-msgstr "Обновить профиль"
-
-#: templates/account/snippets/warn_no_email.html:3
-#, fuzzy
-#| msgid "CookieWarning"
-msgid "Warning:"
-msgstr ""
-"Наш веб-сайт использует файлы cookie, оставаясь на нем, вы принимаете все "
-"файлы cookie."
-
-#: templates/account/snippets/warn_no_email.html:3
-msgid ""
-"You currently do not have any email address set up. You should really add an "
-"email address so you can receive notifications, reset your password, etc."
-msgstr ""
-"На текущий момент у вас не установлен email. Вам необходимо "
-"добавить email, чтобы получать уведомления, сбрасывать пароль и т.д."
-
-#: templates/base.html:8 templates/base.html:33 templates/index.html:4
-#: templates/index.html:8
+#: templates/base.html:8 templates/index.html:3
 msgid "IndexTitle"
 msgstr "Аксессуары из переработанных материалов"
 
-#: templates/base.html:48
-msgid "CookieWarning"
-msgstr ""
-"Наш веб-сайт использует файлы cookie, оставаясь на нем, вы принимаете все "
-"файлы cookie."
-
-#: templates/base.html:49
-msgid "CookieWarningAccept"
-msgstr "Принять"
-
-#: templates/catalog.html:4 templates/catalog.html:12 templates/catalog.html:22
-#: templates/catalog.html:25 templates/product.html:17
+#: templates/catalog.html:7 templates/catalog.html:17 templates/catalog.html:20
+#: templates/product.html:10
 msgid "Catalog"
 msgstr "Каталог"
 
-#: templates/catalog.html:31 templates/index.html:35
+#: templates/catalog.html:26 templates/index.html:30
 msgid "IndexProductsTitle"
 msgstr "Рекомендованные товары"
 
@@ -522,9 +226,13 @@ msgstr "Доставка"
 msgid "FooterReturns"
 msgstr "Возврат"
 
+#: templates/components/footer.html:19 templates/components/footer.html:23
+msgid "FooterMyAccount"
+msgstr "Мой аккаунт"
+
 #: templates/components/footer.html:26
-msgid "MyOrders"
-msgstr "Мои заказы"
+msgid "FooterOrderHistory"
+msgstr "История заказов"
 
 #: templates/components/footer.html:32
 msgid "FooterOurCompany"
@@ -575,11 +283,11 @@ msgstr "Предыдущая"
 msgid "Next"
 msgstr "Следующая"
 
-#: templates/index.html:19
+#: templates/index.html:14
 msgid "HeroTitle"
 msgstr "Апсайкл. Простота. Качество."
 
-#: templates/index.html:20
+#: templates/index.html:15
 msgid "HeroLead"
 msgstr ""
 "Формула, которую мы применили в изготовлении нашей коллекции. Представляем "
@@ -587,10 +295,10 @@ msgstr ""
 "пошита вручную в единственном экземпляре. В результате получились уникальные "
 "и прочные сумки, которые идеально подходят для любых приключений."
 
-#: templates/index.html:23
+#: templates/index.html:18
 msgid "HeroButton"
 msgstr "За покупками"
 
-#: templates/product.html:43
+#: templates/product.html:38
 msgid "Buy"
 msgstr "Купить"
