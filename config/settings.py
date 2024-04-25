@@ -34,11 +34,7 @@ INSTALLED_APPS = [
     'django.contrib.flatpages',
     'svg',
     'debug_toolbar',
-    'django_bootstrap5',
     'app',  # Project app
-    'allauth',
-    'allauth.account',
-    'allauth.socialaccount',
     'django_cleanup.apps.CleanupConfig',  # Uses signals, put in the bottom
 ]
 
@@ -52,7 +48,6 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    "allauth.account.middleware.AccountMiddleware",
 ]
 
 ROOT_URLCONF = 'config.urls'
@@ -111,33 +106,14 @@ DATABASES = {
 }
 
 
-# Authentification
+# Custom user model
+# https://docs.djangoproject.com/en/4.1/ref/settings/#std-setting-AUTH_USER_MODEL
 
 AUTH_USER_MODEL = 'app.CustomUser'
 
-ACCOUNT_USER_MODEL_USERNAME_FIELD = None
 
-ACCOUNT_EMAIL_REQUIRED = True
-
-ACCOUNT_USERNAME_REQUIRED = False
-
-ACCOUNT_AUTHENTICATION_METHOD = 'email'
-
-ACCOUNT_CHANGE_EMAIL = True
-
-ACCOUNT_CONFIRM_EMAIL_ON_GET = True
-
-ACCOUNT_LOGOUT_ON_GET = True
-
-AUTHENTICATION_BACKENDS = [
-    'django.contrib.auth.backends.ModelBackend',
-    'allauth.account.auth_backends.AuthenticationBackend',
-]
-
-ACCOUNT_FORMS = {
-    'login': 'app.forms.account.CustomLoginForm',
-    'signup': 'app.forms.account.CustomSignupForm',
-}
+# Password validation
+# https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators
 
 AUTH_PASSWORD_VALIDATORS = [
     {
@@ -213,12 +189,3 @@ INTERNAL_IPS = [
     '127.0.0.1',
     'localhost',
 ]
-
-DEFAULT_FROM_EMAIL = os.getenv('EMAIL_HOST_USER')
-EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-EMAIL_HOST = os.getenv('EMAIL_HOST')
-EMAIL_PORT = os.getenv('EMAIL_PORT')
-EMAIL_USE_TLS = False
-EMAIL_USE_SSL = True
-EMAIL_HOST_USER = os.getenv('EMAIL_HOST_USER')
-EMAIL_HOST_PASSWORD = os.getenv('EMAIL_HOST_PASSWORD')
